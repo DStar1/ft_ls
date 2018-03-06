@@ -6,11 +6,18 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/05 21:42:34 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/05 22:33:22 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
+
+/*
+** parse args
+** read args
+** 
+** 
+*/
 
 int main()
 {
