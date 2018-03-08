@@ -6,7 +6,7 @@
 #    By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/05 15:20:50 by hasmith           #+#    #+#              #
-#    Updated: 2018/03/05 23:47:29 by hasmith          ###   ########.fr        #
+#    Updated: 2018/03/08 01:31:40 by hasmith          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ MAIN = main.c
 
 TEST = <argv[1]>
 
-SRC = 	srcs/ft_ls.c
+SRC = 	srcs/ft_ls.c srcs/ft_subdir.c
 
 FLAGS = -Wall -Werror -Wextra
 
