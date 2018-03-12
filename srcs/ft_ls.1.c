@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/12 14:30:57 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/12 11:53:06 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	print_binary(t_bi *tree)
 	if (tree == NULL)
 		return ;
 	print_binary(tree->left);
-	ft_printf("%d, %s\n", tree->d_type, tree->d_name);
+	ft_printf("%s\n", tree->d_name);
 	print_binary(tree->right);
 }
 
@@ -44,7 +44,7 @@ void	print_binary(t_bi *tree)
 ** Sort by alphabet
 */
 
-int	add_to_binary(t_bi *tree, char *name, int d_type, int dir)
+int	add_to_binary(t_bi *tree, char *name, int dir)
 {
 	int i;
 
@@ -57,7 +57,6 @@ int	add_to_binary(t_bi *tree, char *name, int d_type, int dir)
 			{
 				tree->left = (t_bi*)ft_memalloc(sizeof(t_bi));
 				tree->left->d_name = ft_strdup(name);
-				tree->left->d_type = d_type;
 				tree->left->dir = dir;
 				tree->left->left = NULL;
 				tree->left->right = NULL;
@@ -71,7 +70,6 @@ int	add_to_binary(t_bi *tree, char *name, int d_type, int dir)
 			{
 				tree->right = (t_bi*)ft_memalloc(sizeof(t_bi));
 				tree->right->d_name = ft_strdup(name);
-				tree->right->d_type = d_type;
 				tree->right->dir = dir;
 				tree->right->left = NULL;
 				tree->right->right = NULL;
@@ -94,8 +92,6 @@ void listdir(char *path, int indent)
 	struct dirent *entry;
 	t_bi *tree;
 	struct stat file_info;////lstat
-	// path = ft_strdup("./srcs/test_dir");
-	// char *path1;
 	// char path1[1024];
 
 	ft_bzero(&tree, sizeof(&tree));
@@ -104,9 +100,22 @@ void listdir(char *path, int indent)
 		while ((entry = readdir(dir)) != NULL)
 		{
 
-			// lstat(entry->d_name, &file_info);
-			// lstat(path, &file_info); //////////////
-			if (entry->d_type == 4)//file_info.st_mode&S_IFDIR)//S_ISDIR(file_info.st_mode))//directory
+	// {
+	// 	if (!strcmp(pt->d_name, ".")||!strcmp(pt->d_name, "..")) continue;
+	// 	strcpy(path, dir);
+	// 	if (path[strlen(path)-1]!='/') strcat(path, "/");
+	// 	strcat(path, pt->d_name);
+	// 	if (!(lstat(path, &file_info)>=0)) continue;
+	// 	if (file_info.st_mode&S_IFDIR)
+    //                   //Is a folder
+    //               else if (file_info.st_mode&S_IFREG)
+    //                   //File
+    //       }
+
+
+			// ft_printf("YOOOOOOOOOOOOOOOOOOOO %c %s\n", entry->d_type, entry->d_name);
+			lstat(entry->d_name, &file_info); 
+			if (S_ISDIR(file_info.st_mode))//directory
 			{
 				// ft_printf("YOOOOOOOOOOOOOOOOOOOO %s\n", entry->d_name);
 				// char path1[1024];
@@ -116,14 +125,12 @@ void listdir(char *path, int indent)
 				{
 					tree = (t_bi*)ft_memalloc(sizeof(t_bi));
 					tree->d_name = ft_strdup(entry->d_name);
-					tree->d_type = entry->d_type;
-					tree->dir = 1;
 					tree->left = NULL;
 					tree->right = NULL;
 				}
 				else
 				{
-					add_to_binary(tree, entry->d_name, entry->d_type, 1);
+					add_to_binary(tree, entry->d_name, 1);
 					// ft_printf("%s\n", entry->d_name);
 				}
 				// snprintf(path1, sizeof(path1), "%s/%s", path1, entry->d_name);
@@ -136,21 +143,18 @@ void listdir(char *path, int indent)
 				{
 					tree = (t_bi*)ft_memalloc(sizeof(t_bi));
 					tree->d_name = ft_strdup(entry->d_name);
-					tree->d_type = entry->d_type;
-					tree->dir = 1;
 					tree->left = NULL;
 					tree->right = NULL;
 				}
 				else
 				{
-					add_to_binary(tree, entry->d_name, entry->d_type, 0);
+					add_to_binary(tree, entry->d_name, 0);
 					// ft_printf("%s\n", entry->d_name);
 				}
 			}
 		}
 		print_binary(tree);
 		// free_binary(tree);
-		// chdir("..");
 		closedir(dir);
 	}
 	else
@@ -159,7 +163,6 @@ void listdir(char *path, int indent)
 ///////////if -R	
 
 	subdir(tree, path, indent);//goes throught binary tree and finds all directories and does listdir for each
-	// listdir(path1, indent);//////////////////
 	free_binary(tree);
 
 
@@ -205,13 +208,13 @@ void listdir1(const char *name, int indent)
 
     while ((entry = readdir(dir)) != NULL) {
 		lstat(entry->d_name, &file_info); 
-        if (file_info.st_mode&S_IFDIR) {
+        if (S_ISDIR(file_info.st_mode)) {
             char path[1024];
             if (ft_strcmp(entry->d_name, ".") == 0 || ft_strcmp(entry->d_name, "..") == 0)
                 continue;
             snprintf(path, sizeof(path), "%s/%s", name, entry->d_name);
             printf("%*s[%s]\n", indent, "", entry->d_name);
-            listdir1(path, indent + 2);
+            listdir(path, indent + 2);
         } else {
             printf("%*s- %s\n", indent, "", entry->d_name);
         }
@@ -231,7 +234,6 @@ void listdir1(const char *name, int indent)
 // 	}
 // }
 
-
 int main(int ac, char **av)//test with /dev
 {
 	char *path;
@@ -243,7 +245,6 @@ int main(int ac, char **av)//test with /dev
 		path = av[1];
 		// parse_args(&ls, ac + 1, av);
 	}
-	// RecDir(path, 1);
 	listdir(path, 0); //first arg is the path
 	// while (1)
 		// 	;

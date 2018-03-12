@@ -24,7 +24,11 @@ void RecDir(char * path, int flag) {
   printf(BLUE "\n%s :\n" WHITE, path);
   while((ep = readdir(dp)))
     if(strncmp(ep->d_name, ".", 1))
-      printf(GREEN "\t%s\n" WHITE, ep->d_name);
+      printf(GREEN "\t%d: %s\n" WHITE, ep->d_type, ep->d_name);
+  //   if(flag && ep->d_type == 4) {
+	// sprintf(newdir, "%s/%s", path, ep->d_name);
+	// RecDir(newdir, 1);
+  //     }
   closedir(dp);
   dp = opendir(path);
   while((ep = readdir(dp))) if(strncmp(ep->d_name, ".", 1)) {

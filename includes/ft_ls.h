@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/08 01:33:05 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/12 13:32:54 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct		s_bi
     //                                by all file system types */
 	int				dir;
     char           *d_name;//[256]; /* filename */
+	int				d_type;
 	struct s_bi	*left;
 	struct s_bi	*right;
 }					t_bi;
