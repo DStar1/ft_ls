@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/12 19:21:17 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/12 20:13:34 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,19 @@ void	free_binary(t_bi *tree)
 	free_binary(tree->left);
 	free_binary(tree->right);
 	free(tree);
+}
+
+/*
+** print tree in reverse alpha order
+*/
+
+void	print_binary_rev(t_bi *tree)
+{
+	if (tree == NULL)
+		return ;
+	print_binary_rev(tree->right);
+	ft_printf("%s\n", tree->d_name);
+	print_binary_rev(tree->left);
 }
 
 /*
@@ -88,7 +101,7 @@ int	add_to_binary(t_bi *tree, char *name, int d_type, int dir)
 ** read args
 */
 
-void listdir(char *path, int indent)
+void listdir(char *path, int indent, t_lsargs *args)
 {
 	DIR *dir;
 	struct dirent *entry;
@@ -116,7 +129,7 @@ void listdir(char *path, int indent)
 			{
 				// ft_printf("YOOOOOOOOOOOOOOOOOOOO %s\n", entry->d_name);
 				// char path1[1024];
-				if (ft_strncmp(entry->d_name, ".", 1) == 0)// || ft_strcmp(entry->d_name, "..") == 0)//hides the . directories (add -a flag check here)
+				if (!args->a && ft_strncmp(entry->d_name, ".", 1) == 0)// || ft_strcmp(entry->d_name, "..") == 0)//hides the . directories (add -a flag check here)
 					continue;
 				if (!tree)
 				{
@@ -153,7 +166,10 @@ void listdir(char *path, int indent)
 				}
 			}
 		}
-		print_binary(tree);
+		if (args->r)
+			print_binary_rev(tree);/////////////////////////
+		else
+			print_binary(tree);
 		// free_binary(tree);
 		// chdir("..");
 		closedir(dir);
@@ -162,41 +178,10 @@ void listdir(char *path, int indent)
     	perror ("Couldn't open the directory");///////////possibly change to "ft_ls: <av[1]>"...
 	
 ///////////if -R	
-
-	subdir(tree, path, indent);//goes throught binary tree and finds all directories and does listdir for each
+	if (args->c_r)
+		subdir(tree, path, indent, args);//goes throught binary tree and finds all directories and does listdir for each
 	// listdir(path1, indent);//////////////////
 	free_binary(tree);
-
-
-
-
-
-
-	
-	// if ((dir = opendir(path)))
-	// {
-	// 	while ((entry = readdir(dir)) != NULL)
-	// 	{
-	// 		// ft_printf("YOOOOOOOOOOOOOOOOOOOO %c %s\n", entry->d_type, entry->d_name);
-	// 		lstat(entry->d_name, &file_info); 
-	// 		if (S_ISDIR(file_info.st_mode))//directory
-	// 		{
-	// 			// printf("%s\n", entry->d_name);
-				
-	// 			if (ft_strcmp(entry->d_name, ".") == 0 || ft_strcmp(entry->d_name, "..") == 0)
-	// 				continue;
-	// 			snprintf(path1, sizeof(path1), "%s/%s", path, entry->d_name);//make new path
-	// 			printf("%*s[%s]: Path: %s\n", indent, "", entry->d_name, path1);
-	// 			// listdir(path1, indent + 2);
-	// 		}
-	// 		// else {
-    //         // printf("%*s- %s\n", indent, "", entry->d_name);
-    //     	// }
-	// 	}
-	// 	closedir(dir);
-	// }
-	// else
-    // 	perror ("Couldn't open the directory");///////////possibly change to "ft_ls: <av[1]>"...
 }
 
 void listdir1(const char *name, int indent)
@@ -241,15 +226,29 @@ int main(int ac, char **av)//test with /dev
 {
 	char *path;
 	t_ls ls;
-	
+	t_lsargs args;
+
+	ft_bzero(&args, sizeof(args));
 	path = ".";
 	if (ac > 1)
 	{
 		path = av[1];
 		// parse_args(&ls, ac + 1, av);
 	}
-	// RecDir(path, 1);
-	listdir(path, 0); //first arg is the path
+	int i = 2;
+	while (i < ac)
+	{
+		if (!ft_strcmp(av[i], "-R"))
+			{ft_printf("-R\n");args.c_r = 1;}
+		else if (!ft_strcmp(av[i], "-l"))
+			args.l = 1;
+		else if (!ft_strcmp(av[i], "-a"))
+			args.a = 1;
+		else if (!ft_strcmp(av[i], "-t"))
+			args.t = 1;
+		i++;
+	}
+	listdir(path, 0, &args); //first arg is the path
 	// while (1)
 		// 	;
 	return (0);

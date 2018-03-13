@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/12 13:32:54 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/12 19:46:18 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ typedef struct		s_ls
 	// va_list			ap;
 }					t_ls;
 
-// typedef struct		s_flags
-// {
-// 	int				i;
-// }					t_flags;
+typedef struct		s_lsargs
+{
+	int				l;
+	int				c_r;
+	int				r;
+	int				t;
+	int				a;
+}					t_lsargs;
 
 typedef struct		s_bi
 {
@@ -44,7 +48,7 @@ typedef struct		s_bi
 }					t_bi;
 
 int ft_ls(char *fmt, ...);
-void	subdir(t_bi *tree, char *path, int indent);
-void listdir(char *path, int indent);
+void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args);
+void listdir(char *path, int indent, t_lsargs *args);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:30:25 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/12 19:20:27 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/12 20:09:57 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 ** print tree in alpha order
 */
 
-void	subdir(t_bi *tree, char *path, int indent)
+void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args)
 {
 	char *path1;///////////////////////free?
 	
 	if (tree == NULL)
 		return ;
-	subdir(tree->left, path, indent);
+	subdir(tree->left, path, indent, args);
 	if (tree->dir)//tree->d_type == 4)
 	{
 
@@ -41,8 +41,8 @@ void	subdir(t_bi *tree, char *path, int indent)
 		// snprintf(path1, sizeof(path1), "%s/%s", path, tree->d_name);//make new path
 		// printf("       %s Path: %s\n", tree->d_name, path1);
 		
-		listdir(path1, indent);
+		listdir(path1, indent, args);
 	}
 	// ft_printf("%s\n", tree->d_name);
-	subdir(tree->right, path, indent);
+	subdir(tree->right, path, indent, args);
 }
