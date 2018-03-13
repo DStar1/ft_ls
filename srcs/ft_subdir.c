@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:30:25 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/12 14:13:29 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/12 19:20:27 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	subdir(t_bi *tree, char *path, int indent)
 	if (tree == NULL)
 		return ;
 	subdir(tree->left, path, indent);
-	if (tree->d_type == 4)
+	if (tree->dir)//tree->d_type == 4)
 	{
 
 		// if (!ft_strcmp(pt->d_name, ".")||!ft_strcmp(pt->d_name, "..")) continue;

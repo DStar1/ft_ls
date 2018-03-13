@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/12 14:30:57 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/12 19:21:17 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	print_binary(t_bi *tree)
 	if (tree == NULL)
 		return ;
 	print_binary(tree->left);
-	ft_printf("%d, %s\n", tree->d_type, tree->d_name);
+	ft_printf("%s\n", tree->d_name);
 	print_binary(tree->right);
 }
 
@@ -93,6 +93,7 @@ void listdir(char *path, int indent)
 	DIR *dir;
 	struct dirent *entry;
 	t_bi *tree;
+	char *path1;
 	struct stat file_info;////lstat
 	// path = ft_strdup("./srcs/test_dir");
 	// char *path1;
@@ -105,8 +106,13 @@ void listdir(char *path, int indent)
 		{
 
 			// lstat(entry->d_name, &file_info);
-			// lstat(path, &file_info); //////////////
-			if (entry->d_type == 4)//file_info.st_mode&S_IFDIR)//S_ISDIR(file_info.st_mode))//directory
+			//to get the right path
+			path1 = ft_strjoin(path, "/");
+        	path1 = ft_strjoin_clr_1st(path1, entry->d_name);
+
+			// printf("PATH1: %s\n", path1);
+			lstat(path1, &file_info); //////////////
+			if (S_ISDIR(file_info.st_mode))//directory
 			{
 				// ft_printf("YOOOOOOOOOOOOOOOOOOOO %s\n", entry->d_name);
 				// char path1[1024];
@@ -137,7 +143,6 @@ void listdir(char *path, int indent)
 					tree = (t_bi*)ft_memalloc(sizeof(t_bi));
 					tree->d_name = ft_strdup(entry->d_name);
 					tree->d_type = entry->d_type;
-					tree->dir = 1;
 					tree->left = NULL;
 					tree->right = NULL;
 				}
