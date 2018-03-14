@@ -6,13 +6,14 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/12 20:13:34 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/14 16:47:44 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 #include <dirent.h>
 #include <sys/stat.h>
+#include <time.h>//////////////////?????????????????????????/
 
 /*
 ** print tree in alpha order
@@ -49,28 +50,77 @@ void	print_binary(t_bi *tree)
 	if (tree == NULL)
 		return ;
 	print_binary(tree->left);
-	ft_printf("%s\n", tree->d_name);
+	ft_printf("%-14s | TIME: %-10s\n", tree->d_name, ctime(&tree->time));////////////////////////printing time
 	print_binary(tree->right);
 }
 
+
+
+/*
+** Add to binary tree helper
+*/
+
+int	set_node(t_bi **tree, char *name, t_lsargs *args, int dir)
+{
+
+}
 /*
 ** Sort by alphabet
 */
 
-int	add_to_binary(t_bi *tree, char *name, int d_type, int dir)
+int	add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 {
 	int i;
-
+	int f_time;
+//////////////////////////////////////time does not sort exactly the same as ls
 	i = 0;
 	while (tree)
 	{
-		if (ft_strcmp(name, tree->d_name) < 0)
+		f_time = 0;
+		args->l = 0;
+		args->r = 0;
+		if (args->t && args->time == tree->time)
+		{
+			f_time = 1;
+			if (ft_strcmp(name, tree->d_name) >= 0)//maybe >=
+			{
+				if (!tree->left)
+				{
+					tree->left = (t_bi*)ft_memalloc(sizeof(t_bi));
+					tree->left->d_name = ft_strdup(name);
+					tree->left->time = args->time;
+					// tree->left->d_type = d_type;///////////add time to this
+					tree->left->dir = dir;
+					tree->left->left = NULL;
+					tree->left->right = NULL;
+					return (1);
+				}
+				tree = tree->left;
+			}
+			else if (ft_strcmp(name, tree->d_name) < 0)//maybe <=
+			{
+				if (!tree->right)
+				{
+					tree->right = (t_bi*)ft_memalloc(sizeof(t_bi));
+					tree->right->d_name = ft_strdup(name);
+					tree->right->time = args->time;
+					// tree->right->d_type = d_type;
+					tree->right->dir = dir;
+					tree->right->left = NULL;
+					tree->right->right = NULL;
+					return (1);
+				}
+				tree = tree->right;
+			}
+		}
+		else if ((ft_strcmp(name, tree->d_name) < 0 && (!args->t || f_time)) || ((args->t && !f_time) && args->time > tree->time))//maybe >=
 		{
 			if (!tree->left)
 			{
 				tree->left = (t_bi*)ft_memalloc(sizeof(t_bi));
 				tree->left->d_name = ft_strdup(name);
-				tree->left->d_type = d_type;
+				tree->left->time = args->time;
+				// tree->left->d_type = d_type;///////////add time to this
 				tree->left->dir = dir;
 				tree->left->left = NULL;
 				tree->left->right = NULL;
@@ -78,13 +128,14 @@ int	add_to_binary(t_bi *tree, char *name, int d_type, int dir)
 			}
 			tree = tree->left;
 		}
-		else
+		else if ((ft_strcmp(name, tree->d_name) >= 0 && (!args->t || f_time)) || ((args->t && !f_time) && args->time < tree->time))//maybe <=
 		{
 			if (!tree->right)
 			{
 				tree->right = (t_bi*)ft_memalloc(sizeof(t_bi));
 				tree->right->d_name = ft_strdup(name);
-				tree->right->d_type = d_type;
+				tree->right->time = args->time;
+				// tree->right->d_type = d_type;
 				tree->right->dir = dir;
 				tree->right->left = NULL;
 				tree->right->right = NULL;
@@ -125,6 +176,8 @@ void listdir(char *path, int indent, t_lsargs *args)
 
 			// printf("PATH1: %s\n", path1);
 			lstat(path1, &file_info); //////////////
+			args->time = file_info.st_mtime;////////////free?????
+			// printf("%d\n", args->time);
 			if (S_ISDIR(file_info.st_mode))//directory
 			{
 				// ft_printf("YOOOOOOOOOOOOOOOOOOOO %s\n", entry->d_name);
@@ -135,19 +188,17 @@ void listdir(char *path, int indent, t_lsargs *args)
 				{
 					tree = (t_bi*)ft_memalloc(sizeof(t_bi));
 					tree->d_name = ft_strdup(entry->d_name);
-					tree->d_type = entry->d_type;
+					tree->time = args->time;
+					// tree->d_type = entry->d_type;
 					tree->dir = 1;
 					tree->left = NULL;
 					tree->right = NULL;
 				}
 				else
 				{
-					add_to_binary(tree, entry->d_name, entry->d_type, 1);
+					add_to_binary(tree, entry->d_name, args, 1);
 					// ft_printf("%s\n", entry->d_name);
 				}
-				// snprintf(path1, sizeof(path1), "%s/%s", path1, entry->d_name);
-				// printf("%*s[%s]\n", indent, "", entry->d_name);
-				// listdir(path1, indent + 2);
 			}
 			else// if (S_ISREG(file_info.st_mode))//reg file
 			{
@@ -155,13 +206,14 @@ void listdir(char *path, int indent, t_lsargs *args)
 				{
 					tree = (t_bi*)ft_memalloc(sizeof(t_bi));
 					tree->d_name = ft_strdup(entry->d_name);
-					tree->d_type = entry->d_type;
+					tree->time = args->time;
+					// tree->d_type = entry->d_type;
 					tree->left = NULL;
 					tree->right = NULL;
 				}
 				else
 				{
-					add_to_binary(tree, entry->d_name, entry->d_type, 0);
+					add_to_binary(tree, entry->d_name, args, 0);
 					// ft_printf("%s\n", entry->d_name);
 				}
 			}
@@ -192,7 +244,6 @@ void listdir1(const char *name, int indent)
 
     if (!(dir = opendir(name)))
         return;
-
     while ((entry = readdir(dir)) != NULL) {
 		lstat(entry->d_name, &file_info); 
         if (file_info.st_mode&S_IFDIR) {
@@ -239,13 +290,15 @@ int main(int ac, char **av)//test with /dev
 	while (i < ac)
 	{
 		if (!ft_strcmp(av[i], "-R"))
-			{ft_printf("-R\n");args.c_r = 1;}
+			args.c_r = 1;
 		else if (!ft_strcmp(av[i], "-l"))
 			args.l = 1;
 		else if (!ft_strcmp(av[i], "-a"))
 			args.a = 1;
 		else if (!ft_strcmp(av[i], "-t"))
 			args.t = 1;
+		else if (!ft_strcmp(av[i], "-r"))
+			args.r = 1;
 		i++;
 	}
 	listdir(path, 0, &args); //first arg is the path

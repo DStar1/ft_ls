@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/12 19:46:18 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/14 16:31:22 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ typedef struct		s_lsargs
 	int				r;
 	int				t;
 	int				a;
+	char			path[255];/////?
+	int				time;
+	int				r;
+	int				l;
+	// int				time2;
 }					t_lsargs;
 
 typedef struct		s_bi
@@ -43,6 +48,7 @@ typedef struct		s_bi
 	int				dir;
     char           *d_name;//[256]; /* filename */
 	int				d_type;
+	time_t			time;
 	struct s_bi	*left;
 	struct s_bi	*right;
 }					t_bi;
