@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/14 16:47:44 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/15 16:49:35 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,37 @@ void	print_binary(t_bi *tree)
 }
 
 
-
 /*
 ** Add to binary tree helper
 */
 
-int	set_node(t_bi **tree, char *name, t_lsargs *args, int dir)
+int	set_node(t_bi **tree, char *name, t_lsargs *args, int direction)
 {
-
+	if (direction)//go left
+	{
+		(*tree)->left = (t_bi*)ft_memalloc(sizeof(t_bi));
+		(*tree)->left->d_name = ft_strdup(name);
+		(*tree)->left->time = args->time;
+		// tree->left->d_type = d_type;///////////add time to this
+		(*tree)->left->dir = args->dir;
+		(*tree)->left->left = NULL;
+		(*tree)->left->right = NULL;
+		return (1);
+	}
+	else
+	{
+		(*tree)->right = (t_bi*)ft_memalloc(sizeof(t_bi));
+		(*tree)->right->d_name = ft_strdup(name);
+		(*tree)->right->time = args->time;
+		// tree->left->d_type = d_type;///////////add time to this
+		(*tree)->right->dir = args->dir;
+		(*tree)->right->left = NULL;
+		(*tree)->right->right = NULL;
+		return (1);	
+	}
+	return (0);
 }
+
 /*
 ** Sort by alphabet
 */
@@ -77,70 +99,39 @@ int	add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 	while (tree)
 	{
 		f_time = 0;
-		args->l = 0;
-		args->r = 0;
+		args->left = 0;
+		args->right = 0;
+		args->dir = dir;
 		if (args->t && args->time == tree->time)
 		{
 			f_time = 1;
 			if (ft_strcmp(name, tree->d_name) >= 0)//maybe >=
 			{
 				if (!tree->left)
-				{
-					tree->left = (t_bi*)ft_memalloc(sizeof(t_bi));
-					tree->left->d_name = ft_strdup(name);
-					tree->left->time = args->time;
-					// tree->left->d_type = d_type;///////////add time to this
-					tree->left->dir = dir;
-					tree->left->left = NULL;
-					tree->left->right = NULL;
-					return (1);
-				}
+					if (set_node(&tree, name, args, 1))
+						return (1);
 				tree = tree->left;
 			}
 			else if (ft_strcmp(name, tree->d_name) < 0)//maybe <=
 			{
 				if (!tree->right)
-				{
-					tree->right = (t_bi*)ft_memalloc(sizeof(t_bi));
-					tree->right->d_name = ft_strdup(name);
-					tree->right->time = args->time;
-					// tree->right->d_type = d_type;
-					tree->right->dir = dir;
-					tree->right->left = NULL;
-					tree->right->right = NULL;
-					return (1);
-				}
+					if (set_node(&tree, name, args, 0))
+						return (1);
 				tree = tree->right;
 			}
 		}
 		else if ((ft_strcmp(name, tree->d_name) < 0 && (!args->t || f_time)) || ((args->t && !f_time) && args->time > tree->time))//maybe >=
 		{
 			if (!tree->left)
-			{
-				tree->left = (t_bi*)ft_memalloc(sizeof(t_bi));
-				tree->left->d_name = ft_strdup(name);
-				tree->left->time = args->time;
-				// tree->left->d_type = d_type;///////////add time to this
-				tree->left->dir = dir;
-				tree->left->left = NULL;
-				tree->left->right = NULL;
-				return (1);
-			}
+				if (set_node(&tree, name, args, 1))
+					return (1);
 			tree = tree->left;
 		}
 		else if ((ft_strcmp(name, tree->d_name) >= 0 && (!args->t || f_time)) || ((args->t && !f_time) && args->time < tree->time))//maybe <=
 		{
 			if (!tree->right)
-			{
-				tree->right = (t_bi*)ft_memalloc(sizeof(t_bi));
-				tree->right->d_name = ft_strdup(name);
-				tree->right->time = args->time;
-				// tree->right->d_type = d_type;
-				tree->right->dir = dir;
-				tree->right->left = NULL;
-				tree->right->right = NULL;
-				return (1);
-			}
+				if (set_node(&tree, name, args, 0))
+					return (1);
 			tree = tree->right;
 		}
 	}
@@ -222,8 +213,6 @@ void listdir(char *path, int indent, t_lsargs *args)
 			print_binary_rev(tree);/////////////////////////
 		else
 			print_binary(tree);
-		// free_binary(tree);
-		// chdir("..");
 		closedir(dir);
 	}
 	else
