@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/18 19:57:00 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/18 22:33:43 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,20 @@
 # define FT_LS_H
 
 # include "../libft/libft.h"
+# include <dirent.h>
+# include <sys/stat.h>
+
+# include <sys/ioctl.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <sys/stat.h>
+# include <sys/xattr.h>
+# include <sys/acl.h>
+# include <dirent.h>
+# include <pwd.h>
+# include <grp.h>
+# include <time.h>
+# include <errno.h>
 
 typedef struct		s_ls
 {
@@ -31,7 +45,16 @@ typedef struct		s_lsargs
 	int				r;
 	int				t;
 	int				a;
-	char			path[255];/////?
+	// char			path[255];/////?
+	struct passwd	user;
+	struct group	group;
+	char			*ctime;
+	int				links;
+	int				size;
+	char			*year_month;
+	char			*month_time;
+	char			*path;
+	char			*permissions;
 	long			time;
 	long			sec;
 	long			nsec;
@@ -50,6 +73,7 @@ typedef struct		s_bi
     //                                by all file system types */
 	int				dir;
     char			*d_name;//[256]; /* filename */
+	char			*path;
 	int				d_type;
 	long			time;
 	long			sec;
@@ -68,7 +92,8 @@ typedef struct		s_bi
 }					t_bi;
 
 int		ft_ls(char *fmt, ...);
-void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args);
-void	listdir(char *path, int indent, t_lsargs *args);
+void	subdir(t_bi *tree, char **path, int indent, t_lsargs *args);
+void	listdir(char **path, int indent, t_lsargs *args);
+char		*permissions(int mode, t_lsargs *args);
 
 #endif
