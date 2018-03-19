@@ -6,11 +6,12 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/18 22:37:16 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/19 00:43:49 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
+//////////////////////////////////////////////////////////sometimes it segfaults on -R!!!!!!!!!!!!!!!!!
 
 /*
 ** print tree in alpha order
@@ -45,7 +46,6 @@ void	print_binary_rev(t_bi *tree, char **path)
 int	setdata(t_bi *tree, char **path, t_lsargs *args)
 {
 	struct stat file_info;////lstat
-	// char *path2;
 
 	args->path = ft_strjoin(*path, "/");
 	args->path = ft_strjoin_clr_1st(args->path, tree->d_name);
@@ -57,6 +57,7 @@ int	setdata(t_bi *tree, char **path, t_lsargs *args)
 	args->month_time = ft_strsub(args->ctime, 4, 12);
 	args->links = file_info.st_nlink;
 	args->size = file_info.st_size;
+	// args->blocks += file_info.st_blocks;
 	return (0);
 }
 
@@ -66,13 +67,22 @@ int	setdata(t_bi *tree, char **path, t_lsargs *args)
 
 void	print_binary(t_bi *tree, char **path, t_lsargs *args)
 {
+	int intlen;
+
+	intlen = 0;
 	if (tree == NULL)
 		return ;
 	print_binary(tree->left, path, args);
 	if (args->l)
 	{
 		setdata(tree, path, args);
-		ft_printf("%-10s  %d %-8.8s %-10s  %6d %s %-14s\n", args->permissions, args->links, args->user.pw_name, args->group.gr_name, args->size, args->month_time, tree->d_name);
+		// intlen = ft_inlen(args->size);
+
+//fix	// ft_printf("%s  %d %s  %s  %*d %s %s\n", args->permissions, args->links, args->user.pw_name, args->group.gr_name, args->size_len, args->size, args->month_time, tree->d_name);
+		printf("%s  %d %s  %s  %*d %s %s\n", args->permissions, args->links, args->user.pw_name, args->group.gr_name, args->size_len, args->size, args->month_time, tree->d_name);
+
+		// printf("%*d", args->size_len, args->size);
+		// ft_printf(" %s %s\n", args->month_time, tree->d_name);
 		free(args->path);
 		// free(args->permissions);
 	}
@@ -80,7 +90,6 @@ void	print_binary(t_bi *tree, char **path, t_lsargs *args)
 		ft_printf("%s\n", tree->d_name);
 	print_binary(tree->right, path, args);
 }
-
 
 /*
 ** Add to binary tree helper
@@ -191,8 +200,13 @@ void listdir(char **path, int indent, t_lsargs *args)
 			// printf("args->PATH: %s\n", args->path);
 			lstat(args->path, &file_info); //////////////
 			args->time = file_info.st_mtime;////////////free?????
+
 			
 			args->nsec = file_info.st_mtimespec.tv_nsec;
+			if (args->size_len < file_info.st_size)
+				args->size_len = file_info.st_size;
+			if (!(!args->a && ft_strncmp(entry->d_name, ".", 1) == 0))
+				args->blocks += file_info.st_blocks;
 			// args->sec = file_info.st_mtimespec.tv_sec;
 			// printf("%d\n", args->time);
 			if (S_ISDIR(file_info.st_mode))//directory
@@ -235,10 +249,15 @@ void listdir(char **path, int indent, t_lsargs *args)
 				}
 			}
 		}
+		args->size_len = ft_intlen(args->size_len);
+		if (args->l)
+			ft_printf("total %d, largest:%d\n", args->blocks, args->size_len);
+		args->blocks = 0;
 		if (args->r)
 			print_binary_rev(tree, path);/////////////////////////
 		else
 			print_binary(tree, path, args);
+		args->size_len = 0;
 		closedir(dir);
 	}
 	else

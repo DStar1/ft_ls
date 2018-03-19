@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:30:25 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/18 22:00:06 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/18 23:28:59 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@
 void	subdir(t_bi *tree, char **path, int indent, t_lsargs *args)
 {
 	char *path1;///////////////////////free?
-	
+
 	if (tree == NULL)
 		return ;
 	subdir(tree->left, path, indent, args);
-	if (tree->dir)//tree->d_type == 4)
+	if (tree->dir)// && ft_strcmp(tree->d_name, ".") && ft_strcmp(tree->d_name, ".."))//tree->d_type == 4)
 	{
+
+		if (ft_strcmp(tree->d_name, ".") == 0 || ft_strcmp(tree->d_name, "..") == 0)//hides the . directories (add -a flag check here)
+				return ;
 
 		// if (!ft_strcmp(pt->d_name, ".")||!ft_strcmp(pt->d_name, "..")) continue;
 		// strcpy(path, dir);

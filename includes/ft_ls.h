@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/18 22:33:43 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/18 23:53:51 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct		s_lsargs
 	char			*year_month;
 	char			*month_time;
 	char			*path;
+	int				blocks;
 	char			*permissions;
 	long			time;
 	long			sec;
@@ -61,6 +62,7 @@ typedef struct		s_lsargs
 	int				right;
 	int				left;
 	int				dir;
+	int				size_len;
 	// int				time2;
 }					t_lsargs;
 
