@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/15 16:49:35 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/18 20:27:43 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	print_binary(t_bi *tree)
 	if (tree == NULL)
 		return ;
 	print_binary(tree->left);
-	ft_printf("%-14s | TIME: %-10s\n", tree->d_name, ctime(&tree->time));////////////////////////printing time
+	ft_printf("%-14s | %10d | TIME: %-10s\n", tree->d_name, tree->nsec, ctime(&tree->time));////////////////////////printing time
 	print_binary(tree->right);
 }
 
@@ -66,7 +66,7 @@ int	set_node(t_bi **tree, char *name, t_lsargs *args, int direction)
 		(*tree)->left = (t_bi*)ft_memalloc(sizeof(t_bi));
 		(*tree)->left->d_name = ft_strdup(name);
 		(*tree)->left->time = args->time;
-		// tree->left->d_type = d_type;///////////add time to this
+		(*tree)->left->nsec = args->nsec;
 		(*tree)->left->dir = args->dir;
 		(*tree)->left->left = NULL;
 		(*tree)->left->right = NULL;
@@ -77,7 +77,7 @@ int	set_node(t_bi **tree, char *name, t_lsargs *args, int direction)
 		(*tree)->right = (t_bi*)ft_memalloc(sizeof(t_bi));
 		(*tree)->right->d_name = ft_strdup(name);
 		(*tree)->right->time = args->time;
-		// tree->left->d_type = d_type;///////////add time to this
+		(*tree)->right->nsec = args->nsec;
 		(*tree)->right->dir = args->dir;
 		(*tree)->right->left = NULL;
 		(*tree)->right->right = NULL;
@@ -105,19 +105,36 @@ int	add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 		if (args->t && args->time == tree->time)
 		{
 			f_time = 1;
-			if (ft_strcmp(name, tree->d_name) >= 0)//maybe >=
+			if (args->nsec > (tree)->nsec)//maybe >=
 			{
-				if (!tree->left)
+				if (!(tree)->left)
 					if (set_node(&tree, name, args, 1))
 						return (1);
-				tree = tree->left;
+				(tree) = (tree)->left;
 			}
-			else if (ft_strcmp(name, tree->d_name) < 0)//maybe <=
+			else if (args->nsec < (tree)->nsec)//maybe <=
 			{
-				if (!tree->right)
+				if (!(tree)->right)
 					if (set_node(&tree, name, args, 0))
 						return (1);
-				tree = tree->right;
+				(tree) = (tree)->right;
+			}
+			else 
+			{
+				if (ft_strcmp(name, tree->d_name) < 0)//maybe >=
+				{
+					if (!tree->left)
+						if (set_node(&tree, name, args, 1))
+							return (1);
+					tree = tree->left;
+				}
+				else if (ft_strcmp(name, tree->d_name) >= 0)//maybe <=
+				{
+					if (!tree->right)
+						if (set_node(&tree, name, args, 0))
+							return (1);
+					tree = tree->right;
+				}
 			}
 		}
 		else if ((ft_strcmp(name, tree->d_name) < 0 && (!args->t || f_time)) || ((args->t && !f_time) && args->time > tree->time))//maybe >=
@@ -137,6 +154,71 @@ int	add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 	}
 	return (0);
 }
+
+// int	add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
+// {
+// 	int i;
+// 	int f_time;
+// //////////////////////////////////////time does not sort exactly the same as ls
+// 	i = 0;
+// 	while (tree)
+// 	{
+// 		f_time = 0;
+// 		args->left = 0;
+// 		args->right = 0;
+// 		args->dir = dir;
+// 		if (args->t && args->time == tree->time)
+// 		{
+// 			f_time = 1;
+// 			if (args->nsec > (tree)->nsec)//maybe >=
+// 			{
+// 				if (!(tree)->left)
+// 					if (set_node(&tree, name, args, 1))
+// 						return (1);
+// 				(tree) = (tree)->left;
+// 			}
+// 			else if (args->nsec < (tree)->nsec)//maybe <=
+// 			{
+// 				if (!(tree)->right)
+// 					if (set_node(&tree, name, args, 0))
+// 						return (1);
+// 				(tree) = (tree)->right;
+// 			}
+// 			else 
+// 			{
+// 				if (ft_strcmp(name, tree->d_name) < 0)//maybe >=
+// 				{
+// 					if (!tree->left)
+// 						if (set_node(&tree, name, args, 1))
+// 							return (1);
+// 					tree = tree->left;
+// 				}
+// 				else if (ft_strcmp(name, tree->d_name) >= 0)//maybe <=
+// 				{
+// 					if (!tree->right)
+// 						if (set_node(&tree, name, args, 0))
+// 							return (1);
+// 					tree = tree->right;
+// 				}
+// 			}
+// 		}
+// 		else if ((ft_strcmp(name, tree->d_name) < 0 && (!args->t || f_time)) || ((args->t && !f_time) && args->time > tree->time))//maybe >=
+// 		{
+// 			if (!tree->left)
+// 				if (set_node(&tree, name, args, 1))
+// 					return (1);
+// 			tree = tree->left;
+// 		}
+// 		else if ((ft_strcmp(name, tree->d_name) >= 0 && (!args->t || f_time)) || ((args->t && !f_time) && args->time < tree->time))//maybe <=
+// 		{
+// 			if (!tree->right)
+// 				if (set_node(&tree, name, args, 0))
+// 					return (1);
+// 			tree = tree->right;
+// 		}
+// 	}
+// 	return (0);
+// }
 
 /*
 ** parse args
@@ -168,6 +250,9 @@ void listdir(char *path, int indent, t_lsargs *args)
 			// printf("PATH1: %s\n", path1);
 			lstat(path1, &file_info); //////////////
 			args->time = file_info.st_mtime;////////////free?????
+			
+			args->nsec = file_info.st_mtimespec.tv_nsec;
+			args->sec = file_info.st_mtimespec.tv_sec;
 			// printf("%d\n", args->time);
 			if (S_ISDIR(file_info.st_mode))//directory
 			{
@@ -180,6 +265,7 @@ void listdir(char *path, int indent, t_lsargs *args)
 					tree = (t_bi*)ft_memalloc(sizeof(t_bi));
 					tree->d_name = ft_strdup(entry->d_name);
 					tree->time = args->time;
+					tree->nsec = args->nsec;
 					// tree->d_type = entry->d_type;
 					tree->dir = 1;
 					tree->left = NULL;
@@ -198,7 +284,7 @@ void listdir(char *path, int indent, t_lsargs *args)
 					tree = (t_bi*)ft_memalloc(sizeof(t_bi));
 					tree->d_name = ft_strdup(entry->d_name);
 					tree->time = args->time;
-					// tree->d_type = entry->d_type;
+					tree->nsec = args->nsec;
 					tree->left = NULL;
 					tree->right = NULL;
 				}
