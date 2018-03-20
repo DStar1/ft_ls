@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/18 23:53:51 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/19 16:21:38 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,9 @@ typedef struct		s_bi
 }					t_bi;
 
 int		ft_ls(char *fmt, ...);
-void	subdir(t_bi *tree, char **path, int indent, t_lsargs *args);
-void	listdir(char **path, int indent, t_lsargs *args);
-char		*permissions(int mode, t_lsargs *args);
+void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args);
+void	listdir(char *path, int indent, t_lsargs *args);
+char	*permissions(int mode, t_lsargs *args);
+char	*construct_path(char *path, char *name);
 
 #endif

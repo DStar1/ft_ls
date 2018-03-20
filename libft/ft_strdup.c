@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_cpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 14:08:04 by hasmith           #+#    #+#             */
-/*   Updated: 2017/09/24 19:40:33 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/19 17:25:18 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@
 char	*ft_strdup(const char *str)
 {
 	int		i;
-	int		strlen;
-	char	*strdup;
+	int		len;
+	char	*cpy;
 
 	i = 0;
-	strlen = ft_strlen((char*)str);
-	strdup = (char*)malloc((strlen + 1) * sizeof(*str));
-	if (strdup == NULL)
+	len = ft_strlen((char*)str);
+	cpy = (char*)malloc((len + 1) * sizeof(*str));
+	if (cpy == NULL)
 		return (NULL);
-	strdup[strlen + 1] = '\0';
-	while (i <= strlen)
+	cpy[len + 1] = '\0';
+	while (i <= len)
 	{
-		strdup[i] = str[i];
+		cpy[i] = str[i];
 		i++;
 	}
-	return (strdup);
+	return (cpy);
 }

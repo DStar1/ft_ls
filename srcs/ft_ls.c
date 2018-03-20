@@ -6,12 +6,12 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/19 00:43:49 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/19 17:47:01 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
-//////////////////////////////////////////////////////////sometimes it segfaults on -R!!!!!!!!!!!!!!!!!
+//////////////////////////////////////////////////////////sometimes it segfaults on -R!!!!!!!!!!!!!!!!! the first time I go into recursive function/// path is wrong in recursion!!!!!!
 
 /*
 ** print tree in alpha order
@@ -30,7 +30,7 @@ void	free_binary(t_bi *tree)
 ** print tree in reverse alpha order
 */
 
-void	print_binary_rev(t_bi *tree, char **path)
+void	print_binary_rev(t_bi *tree, char *path)
 {
 	if (tree == NULL)
 		return ;
@@ -43,13 +43,16 @@ void	print_binary_rev(t_bi *tree, char **path)
 ** set data for dash l
 */
 
-int	setdata(t_bi *tree, char **path, t_lsargs *args)
+int	setdata(t_bi *tree, char *path, t_lsargs *args)
 {
 	struct stat file_info;////lstat
+	char *lstatpath;
 
-	args->path = ft_strjoin(*path, "/");
-	args->path = ft_strjoin_clr_1st(args->path, tree->d_name);
-	lstat(args->path, &file_info);
+	// if (args->path)
+	// 	free(args->path);
+	lstatpath = construct_path(path, tree->d_name);
+
+	lstat(lstatpath, &file_info);
 	args->permissions = permissions(file_info.st_mode, args);
 	args->user = *getpwuid(file_info.st_uid);
 	args->group = *getgrgid(file_info.st_gid);
@@ -57,6 +60,7 @@ int	setdata(t_bi *tree, char **path, t_lsargs *args)
 	args->month_time = ft_strsub(args->ctime, 4, 12);
 	args->links = file_info.st_nlink;
 	args->size = file_info.st_size;
+	free(lstatpath);
 	// args->blocks += file_info.st_blocks;
 	return (0);
 }
@@ -65,7 +69,7 @@ int	setdata(t_bi *tree, char **path, t_lsargs *args)
 ** print tree in alpha order
 */
 
-void	print_binary(t_bi *tree, char **path, t_lsargs *args)
+void	print_binary(t_bi *tree, char *path, t_lsargs *args)
 {
 	int intlen;
 
@@ -81,9 +85,10 @@ void	print_binary(t_bi *tree, char **path, t_lsargs *args)
 //fix	// ft_printf("%s  %d %s  %s  %*d %s %s\n", args->permissions, args->links, args->user.pw_name, args->group.gr_name, args->size_len, args->size, args->month_time, tree->d_name);
 		printf("%s  %d %s  %s  %*d %s %s\n", args->permissions, args->links, args->user.pw_name, args->group.gr_name, args->size_len, args->size, args->month_time, tree->d_name);
 
+		// ft_printf("NEWPATH IN PRINTING: %s | OLDPATH IN PRINTING: %s\n", path);
 		// printf("%*d", args->size_len, args->size);
 		// ft_printf(" %s %s\n", args->month_time, tree->d_name);
-		free(args->path);
+		// free(args->path);
 		// free(args->permissions);
 	}
 	else
@@ -122,16 +127,19 @@ int	set_node(t_bi **tree, char *name, t_lsargs *args, int direction)
 	return (0);
 }
 
+int	add_to_binary_time(t_bi *tree, char *name, t_lsargs *args, int dir)
+{
+	return (0);
+}
+
 /*
 ** Sort by alphabet
 */
 
 int	add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 {
-	int i;
 	int f_time;
 
-	i = 0;
 	while (tree)
 	{
 		f_time = 0;
@@ -178,41 +186,39 @@ int	add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 ** read args
 */
 
-void listdir(char **path, int indent, t_lsargs *args)
+void listdir(char *path, int indent, t_lsargs *args)
 {
 	DIR *dir;
 	struct dirent *entry;
 	t_bi *tree;
-	// char *args->path;
+	char *path2;
 	struct stat file_info;////lstat
 
 	ft_bzero(&tree, sizeof(&tree));
-	if ((dir = opendir(*path)))
+	path2 = NULL;
+	if ((dir = opendir(path)))
 	{
 		while ((entry = readdir(dir)) != NULL)
 		{
-
-			// lstat(entry->d_name, &file_info);
 			//to get the right path
-			args->path = ft_strjoin(*path, "/");
-        	args->path = ft_strjoin_clr_1st(args->path, entry->d_name);
+			// args->path = ft_strjoin(*path, "/");
+        	// args->path = ft_strjoin_clr_1st(args->path, entry->d_name);
+			if (path2)
+				free(path2);
+			// ft_printf("Passing path: %s to construct\n", path);
+			path2 = construct_path(path, entry->d_name);
+			// ft_printf("NEWPATH in listdir: %s | OLDPATH in listdir: %s\n", path2, path);
 
 			// printf("args->PATH: %s\n", args->path);
-			lstat(args->path, &file_info); //////////////
+			lstat(path2, &file_info); //////////////
 			args->time = file_info.st_mtime;////////////free?????
-
-			
 			args->nsec = file_info.st_mtimespec.tv_nsec;
-			if (args->size_len < file_info.st_size)
+			if (args->size_len < file_info.st_size)//count the blocks
 				args->size_len = file_info.st_size;
 			if (!(!args->a && ft_strncmp(entry->d_name, ".", 1) == 0))
 				args->blocks += file_info.st_blocks;
-			// args->sec = file_info.st_mtimespec.tv_sec;
-			// printf("%d\n", args->time);
 			if (S_ISDIR(file_info.st_mode))//directory
 			{
-				// ft_printf("YOOOOOOOOOOOOOOOOOOOO %s\n", entry->d_name);
-				// char args->path[1024];
 				if (!args->a && ft_strncmp(entry->d_name, ".", 1) == 0)// || ft_strcmp(entry->d_name, "..") == 0)//hides the . directories (add -a flag check here)
 					continue;
 				if (!tree)
@@ -226,10 +232,7 @@ void listdir(char **path, int indent, t_lsargs *args)
 					tree->right = NULL;
 				}
 				else
-				{
 					add_to_binary(tree, entry->d_name, args, 1);
-					// ft_printf("%s\n", entry->d_name);
-				}
 			}
 			else// if (S_ISREG(file_info.st_mode))//reg file
 			{
@@ -251,7 +254,7 @@ void listdir(char **path, int indent, t_lsargs *args)
 		}
 		args->size_len = ft_intlen(args->size_len);
 		if (args->l)
-			ft_printf("total %d, largest:%d\n", args->blocks, args->size_len);
+			ft_printf("total %d\n", args->blocks);
 		args->blocks = 0;
 		if (args->r)
 			print_binary_rev(tree, path);/////////////////////////
@@ -262,11 +265,8 @@ void listdir(char **path, int indent, t_lsargs *args)
 	}
 	else
     	perror ("Couldn't open the directory");///////////possibly change to "ft_ls: <av[1]>"...
-	
-///////////if -R	
-	if (args->c_r)
+	if (args->c_r)///////////if -R
 		subdir(tree, path, indent, args);//goes throught binary tree and finds all directories and does listdir for each
-	// listdir(args->path, indent);//////////////////
 	free_binary(tree);
 }
 
@@ -292,7 +292,7 @@ int main(int ac, char **av)//test with /dev
 	ft_bzero(&args, sizeof(args));
 	if (ac > 1)
 	{
-		path = av[1];
+		path = ft_strdup(av[1]);
 		// parse_args(&ls, ac + 1, av);
 	}
 	else
@@ -312,7 +312,9 @@ int main(int ac, char **av)//test with /dev
 			args.r = 1;
 		i++;
 	}
-	listdir(&path, 0, &args); //first arg is the path
+	// ft_printf("Path: %s\n", construct_path(".", "hello"));
+	listdir(path, 0, &args); //first arg is the path
+	
 	// free(path);
 	// while (1)
 	// 		;
