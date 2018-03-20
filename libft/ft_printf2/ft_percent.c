@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cpy.c                                        :+:      :+:    :+:   */
+/*   ft_percent.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/20 14:08:04 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/19 17:25:18 by hasmith          ###   ########.fr       */
+/*   Created: 2017/11/29 20:43:55 by hasmith           #+#    #+#             */
+/*   Updated: 2017/12/08 18:12:51 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** allocates sufficient memory for a copy of the string
-** s1, does the copy, and returns a pointer to it.
-*/
+#include "ft_printf.h"
 
-#include "libft.h"
-
-char	*ft_strdup(const char *src)
+void	ft_percent(t_print *print, t_flags *flags)
 {
-	char *cpy;
-
-	cpy = NULL;
-	cpy = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
-	if (cpy != NULL)
-		ft_strcpy(cpy, src);
-	return (cpy);
+	flags->intlen = 1;
+	if (flags->width)
+	{
+		if (flags->neg)
+		{
+			ft_putchar('%');
+			fill(flags, print, ' ');
+		}
+		else
+		{
+			fill(flags, print, ' ');
+			ft_putchar('%');
+		}
+	}
+	else
+	{
+		ft_putchar('%');
+	}
+	IFELSE((flags->width == 0), print->ret += flags->intlen,
+		print->ret += flags->width);
 }

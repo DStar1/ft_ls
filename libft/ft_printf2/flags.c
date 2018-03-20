@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 19:05:30 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/19 22:01:54 by hasmith          ###   ########.fr       */
+/*   Updated: 2017/12/08 19:55:05 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void			set_flags(t_flags *flags)
 {
-	flags->star = 0;
 	flags->hash = 0;
 	flags->zero = 0;
 	flags->space = 0;

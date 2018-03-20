@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cpy.c                                        :+:      :+:    :+:   */
+/*   ft_pf_intlen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/20 14:08:04 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/19 17:25:18 by hasmith          ###   ########.fr       */
+/*   Created: 2017/09/24 01:06:30 by hasmith           #+#    #+#             */
+/*   Updated: 2017/12/08 18:13:14 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** allocates sufficient memory for a copy of the string
-** s1, does the copy, and returns a pointer to it.
+** Counts the length of an int
 */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strdup(const char *src)
+int		ft_pf_intlen(uintmax_t n)
 {
-	char *cpy;
+	uintmax_t	len;
 
-	cpy = NULL;
-	cpy = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
-	if (cpy != NULL)
-		ft_strcpy(cpy, src);
-	return (cpy);
+	if (n == 0)
+		return (1);
+	len = 0;
+	while (n)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }

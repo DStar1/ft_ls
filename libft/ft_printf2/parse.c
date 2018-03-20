@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 19:05:59 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/19 22:45:06 by hasmith          ###   ########.fr       */
+/*   Updated: 2017/12/08 19:50:45 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int				check_flags(t_print *p)
 {
 	if (p->fmt[p->i] == '#' || p->fmt[p->i] == '+' ||
 		p->fmt[p->i] == '-' || p->fmt[p->i] == '0' ||
-		p->fmt[p->i] == ' ' || p->fmt[p->i] == '*')
+		p->fmt[p->i] == ' ')
 		return (1);
 	if (p->fmt[p->i] == 'l' || p->fmt[p->i] == 'h' ||
 		p->fmt[p->i] == 'j' || p->fmt[p->i] == 'z')
@@ -56,7 +56,6 @@ static void		loop(t_print *p, t_flags *flags, int j, int mod)
 {
 	while (p->fmt[p->i] && (check_flags(p)))
 	{
-		IF(p->fmt[p->i] == '*', flags->star = j++);
 		IF(p->fmt[p->i] == '#', flags->hash = j++);
 		IF(p->fmt[p->i] == '+', flags->pos = j++);
 		IF(p->fmt[p->i] == '-', flags->neg = j++);
@@ -66,7 +65,8 @@ static void		loop(t_print *p, t_flags *flags, int j, int mod)
 			flags->l = mod++;
 		else if (p->fmt[p->i] == 'l' && mod == 2)
 		{
-			BRACKETS(flags->l = 0, flags->ll = 1);
+			flags->l = 0;
+			flags->ll = 1;
 		}
 		if (p->fmt[p->i] == 'h' && mod == 1)
 			flags->h = mod++;

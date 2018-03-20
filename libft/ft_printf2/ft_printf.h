@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/19 21:58:55 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/05 21:05:47 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ typedef struct		s_print
 
 typedef struct		s_flags
 {
-	int				star;
 	int				hash;
 	int				zero;
 	int				space;

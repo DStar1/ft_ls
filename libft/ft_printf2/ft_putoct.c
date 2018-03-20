@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cpy.c                                        :+:      :+:    :+:   */
+/*   ft_putoct.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/20 14:08:04 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/19 17:25:18 by hasmith          ###   ########.fr       */
+/*   Created: 2017/11/28 20:12:57 by hasmith           #+#    #+#             */
+/*   Updated: 2017/12/08 18:32:24 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** allocates sufficient memory for a copy of the string
-** s1, does the copy, and returns a pointer to it.
-*/
+#include "ft_printf.h"
 
-#include "libft.h"
-
-char	*ft_strdup(const char *src)
+void	ft_putoct(uintmax_t nb, t_print *print, int cap)
 {
-	char *cpy;
+	if (nb < 8 && cap == 0)
+		ft_putchar(OCT[nb]);
+	else if (nb < 16 && cap == 1)
+		ft_putchar(OCT[nb + 8]);
+	else
+	{
+		ft_putoct(nb / 8, print, cap);
+		ft_putoct(nb % 8, print, cap);
+	}
+}
 
-	cpy = NULL;
-	cpy = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
-	if (cpy != NULL)
-		ft_strcpy(cpy, src);
-	return (cpy);
+void	ft_octlen(uintmax_t nb, t_flags *flags)
+{
+	if (nb < 8)
+		flags->intlen++;
+	else
+	{
+		ft_octlen(nb / 8, flags);
+		ft_octlen(nb % 8, flags);
+	}
 }

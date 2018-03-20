@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:30:25 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/19 17:53:27 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/19 23:37:30 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*construct_path(char *path, char *name)
 	{
 		newpath = ft_strnew(ft_strlen(path)+1);
 		// ft_printf("Previous path in construct: %s\n", path);
-		ft_memcpy(newpath, path, ft_strlen(path)+1);//newpath = ft_strdup(path);//ft_strcpy(newpath, path);////////
+		// ft_memcpy(newpath, path, ft_strlen(path)+1);//newpath = ft_strdup(path);//ft_strcpy(newpath, path);////////
+		newpath = ft_strdup(path);
 		// ft_printf("2Previous path in construct: %s\n", newpath);
 		if (path[ft_strlen(path) - 1] != '/')
 			newpath = ft_strjoin(path, "/");

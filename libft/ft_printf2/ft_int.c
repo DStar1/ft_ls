@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 20:00:03 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/19 22:39:39 by hasmith          ###   ########.fr       */
+/*   Updated: 2017/12/08 18:00:18 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	int_data(t_print *p, t_flags *f)
 {
-	IF(f->star, (f->width = va_arg(p->ap, int)));
 	p->data.super = va_arg(p->ap, intmax_t);
 	if (f->res == 'D')
 		p->data.super_u = (unsigned long)p->data.super_u;
