@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/21 01:45:42 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/21 15:27:06 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,15 @@ void listdir(char *path, int indent, t_lsargs *args)
 	{
 		while ((entry = readdir(dir)) != NULL)
 		{
+
 			listdir_loop(path, &args, entry, &tree);
 		}
 		args->size_len = ft_intlen(args->size_len);
+		if (args->first == 0 || (args->p > 1 && !args->c_r))
+		{
+			ft_printf("%s:\n", (args->all_paths)[args->i]);
+			
+		}
 		if (args->l)
 			ft_printf("total %d\n", args->blocks);
 		args->blocks = 0;
@@ -78,7 +84,10 @@ void listdir(char *path, int indent, t_lsargs *args)
 		closedir(dir);
 	}
 	else
-    	perror ("Couldn't open the directory");///////////possibly change to "ft_ls: <av[1]>"...
+	{
+    	perror (ft_strjoin("ft_ls: ", path));
+		args->error = 1;
+	}
 	if (args->c_r)
 		subdir(tree, path, indent, args);
 	free_binary(tree);
@@ -88,48 +97,104 @@ void listdir(char *path, int indent, t_lsargs *args)
 ** Parsing args
 */
 
-// void parse_args(t_ls *ls, int ac, char **av)
-// {
-// 	while ()
-// 	{
-		
-// 	}
-// }
+int parse_arg(char *str, t_lsargs *args)
+{
+	int i;
 
+	i = 0;
+	while (str[++i] != '\0')
+	{
+		str[i] == 'r' ? args->r = 1 : 0;
+		str[i] == 'a' ? args->a = 1 : 0;
+		str[i] == 'l' ? args->l = 1 : 0;
+		str[i] == 't' ? args->t = 1 : 0;
+		str[i] == 'R' ? args->c_r = 1 : 0;
+		str[i] == '1' ? args->l = 0 : 0;
+		if (str[i] != 'r' && str[i] != 'a' && str[i] != '1'
+			&& str[i] != 'l' && str[i] != 't' && str[i] != 'R')
+		{
+			ft_printf("ft_ls: illegal option -- %c\n", str[i]);
+			ft_printf("usage: ls [-alrRt1] [file ...]\n");
+			// ft_printf("Try 'ft_ls --help' for more information.\n");
+			args->error = 1;
+			return (1);
+		}
+	}
+	return (0);
+}
+
+void ft_strswap(char **s1, char **s2)
+{
+	char *tmp;
+
+	tmp = *s1;
+	*s1 = *s2;
+	*s2 = tmp;
+}
+
+void     ft_strsort(t_lsargs *args)
+{
+	int i;
+
+	i = 0;
+	while ((args->all_paths)[i + 1])
+	{
+		if (ft_strcmp((args->all_paths)[i], (args->all_paths)[i + 1]) > 0)
+		{
+			ft_strswap(&(args->all_paths[i]), &(args->all_paths[i + 1]));
+			i = -1;
+		}
+		i++;
+	}
+}
 
 int main(int ac, char **av)//test with /dev
 {
-	char *path;
+	char **path;
 	t_ls ls;
 	t_lsargs args;
 
+
 	ft_bzero(&args, sizeof(args));
-	path = NULL;
+	args.all_paths = (char**)ft_memalloc(sizeof(char*) * ac);
+	args.p = 0;
+	// ft_bzero(&path, sizeof(char*) * ac - 1);
+	// path = NULL;
 	int i = 1;
 	while (i < ac)
 	{
-		if (!ft_strcmp(av[i], "-R"))
-			args.c_r = 1;
-		else if (!ft_strcmp(av[i], "-l"))
-			args.l = 1;
-		else if (!ft_strcmp(av[i], "-a"))
-			args.a = 1;
-		else if (!ft_strcmp(av[i], "-t"))
-			args.t = 1;
-		else if (!ft_strcmp(av[i], "-r"))
-			args.r = 1;
-		else if (i == ac - 1)
-			path = ft_strdup(av[ac - 1]);
-		else
-			ft_printf("Invalid Input\n");
+		// ft_printf("%d, %s\n", i, av[i]);
+		if (!args.p && av[i][0] == '-' && av[i][1] != '\0')// && flags->endflag != 1)
+		{
+			parse_arg(av[i], &args);
+		}
+		else //if (i > 1)
+		{
+			(args.all_paths)[args.p++] = ft_strdup(av[i]);
+		}
 		i++;
 	}
-	if (!path)
-		path = ".";
-	listdir(path, 0, &args); //first arg is the path
+	// for (int i = 0; (args.all_paths)[i]; i++ )
+	// 	ft_printf("%d, %s\n", i, (args.all_paths)[i]);
+	if (args.error)
+		exit (1);//add error message?
+	if (!(args.all_paths)[0])
+		(args.all_paths)[0] = ".";
+	else
+		ft_strsort(&args);
+	// for (int i = 0; (args.all_paths)[i]; i++ )
+	// 	ft_printf("%d, %s\n", i, (args.all_paths)[i]);
+	args.i = -1;
+	while ((args.all_paths)[++args.i])
+	{
+		args.first = 0;
+		listdir((args.all_paths)[args.i], 0, &args); //first arg is the path
+		if (!args.error && args.p && args.i != args.p - 1)
+			ft_putchar('\n');
+		args.error = 0;
+	}
 	// ft_printf("%s\n", path);
 	// while (1)
 	// 		;
 	return (0);
 }
-

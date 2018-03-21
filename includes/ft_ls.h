@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/21 01:12:52 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/21 15:21:22 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ typedef struct		s_lsargs
 	int				r;
 	int				t;
 	int				a;
+	int				error;
+	char			**all_paths;
+	int				p;
+	int				i;
+	int				first;
 	// char			path[255];/////?
 	struct passwd	user;
 	struct group	group;
