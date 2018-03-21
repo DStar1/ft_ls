@@ -6,7 +6,7 @@
 #    By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/05 15:20:50 by hasmith           #+#    #+#              #
-#    Updated: 2018/03/20 23:39:19 by hasmith          ###   ########.fr        #
+#    Updated: 2018/03/21 01:13:12 by hasmith          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ TEST = <argv[1]>
 
 # IFLAG	= -I libft -I includes -g
 
-SRC = 	srcs/ft_ls.c srcs/ft_subdir.c srcs/dash_l.c srcs/print.c
+SRC = 	srcs/ft_ls.c srcs/ft_subdir.c srcs/dash_l.c srcs/print.c srcs/tree.c
 
 FLAGS = -Wall -Werror -Wextra -g
 

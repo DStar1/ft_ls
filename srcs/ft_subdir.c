@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:30:25 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/20 23:57:49 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/21 01:18:33 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*construct_path(char *path, char *name)
 
 /*
 ** print tree in alpha order
+**
 */
 
 void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args)
@@ -39,10 +40,10 @@ void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args)
 	if (tree == NULL)
 		return ;
 	subdir(tree->left, path, indent, args);
-	if (tree->dir)// && ft_strcmp(tree->d_name, ".") && ft_strcmp(tree->d_name, ".."))//tree->d_type == 4)
+	if (tree->dir)
 	{
 
-		if (ft_strcmp(tree->d_name, ".") != 0 && ft_strcmp(tree->d_name, "..") != 0)//hides the . directories (add -a flag check here)
+		if (ft_strcmp(tree->d_name, ".") != 0 && ft_strcmp(tree->d_name, "..") != 0)
 		{
 			path1 = construct_path(path, tree->d_name);
 			ft_printf("\n%s\n", path1);
