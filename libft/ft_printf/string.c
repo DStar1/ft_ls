@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 21:00:43 by hasmith           #+#    #+#             */
-/*   Updated: 2017/12/08 19:14:30 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/21 22:47:31 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static void		s_if_else(t_print *print, t_flags *flags)
 
 void			ft_string(t_print *print, t_flags *flags)
 {
+	IF(flags->star, flags->width = va_arg(print->ap, int));
 	print->data.str = va_arg(print->ap, char *);
 	if ((flags->p && print->data.str == NULL) || (flags->p && !flags->p2))
 	{
@@ -61,6 +62,7 @@ void			ft_string(t_print *print, t_flags *flags)
 
 void			ft_char(t_print *print, t_flags *flags)
 {
+	IF(flags->star, flags->width = va_arg(print->ap, int));
 	print->data.i = va_arg(print->ap, int);
 	flags->intlen = 1;
 	if (flags->width)

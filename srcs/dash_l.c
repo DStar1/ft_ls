@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/18 20:54:52 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/18 22:35:15 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/21 23:20:22 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,21 @@ static int	file_type(int mode, t_lsargs *args)
 		c = 'd';
 	else if (S_ISBLK(mode))
 	{
-		// args->device = 1;
+		args->device = 1;
 		c = 'b';
 	}
 	else if (S_ISCHR(mode))
 	{
-		// args->device = 1;
+		args->device = 1;
 		c = 'c';
 	}
 	else if (S_ISFIFO(mode))
 		c = 'p';
 	else if (S_ISLNK(mode))
+	{
+		args->fd = 1;
 		c = 'l';
+	}
 	else if (S_ISSOCK(mode))
 		c = 's';
 	else

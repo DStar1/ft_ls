@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/21 15:21:22 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/21 23:54:02 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ typedef struct		s_lsargs
 	int				p;
 	int				i;
 	int				first;
+	int				device;
+	int				fd;
+	char			*link_path;
 	// char			path[255];/////?
 	struct passwd	user;
 	struct group	group;
@@ -68,6 +71,15 @@ typedef struct		s_lsargs
 	int				left;
 	int				dir;
 	int				size_len;
+	int				size_links;
+	int				user_len;
+	int				group_len;
+	int				minor_len;
+	int				major_len;
+	unsigned int	minor;
+	unsigned int	major;
+	int				maj_min;
+	int				maj_min_len;
 	// int				time2;
 }					t_lsargs;
 

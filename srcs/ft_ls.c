@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/21 15:27:06 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/03/22 01:05:47 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,28 @@ int listdir_loop(char *path, t_lsargs **args, struct dirent *entry, t_bi **tree)
 	lstat(path2, &file_info);
 	(*args)->time = file_info.st_mtime;
 	(*args)->nsec = file_info.st_mtimespec.tv_nsec;
+	if (S_ISBLK(file_info.st_mode) || S_ISCHR(file_info.st_mode))
+		(*args)->device = 1;
 	if (!(!(*args)->a && ft_strncmp(entry->d_name, ".", 1) == 0))
 	{
 		if ((*args)->size_len < file_info.st_size)//count the blocks
 			(*args)->size_len = file_info.st_size;
+		if ((*args)->size_links < ft_intlen(file_info.st_nlink))
+			(*args)->size_links = ft_intlen(file_info.st_nlink);
+		if ((*args)->minor_len < ft_intlen(minor(file_info.st_rdev)))
+			(*args)->minor_len = ft_intlen(minor(file_info.st_rdev));
+		if ((*args)->major_len < ft_intlen(major(file_info.st_rdev)))
+			(*args)->major_len = ft_intlen(major(file_info.st_rdev));
+		if ((*args)->device)
+			(*args)->maj_min_len = (*args)->user_len + (*args)->group_len;
 		(*args)->blocks += file_info.st_blocks;
 	}
+	if ((*args)->user_len < ft_strlen((*getpwuid(file_info.st_uid)).pw_name))//////////
+		(*args)->user_len = ft_strlen((*getpwuid(file_info.st_uid)).pw_name);
+	if ((*args)->group_len < ft_strlen((*getgrgid(file_info.st_gid)).gr_name))//////////
+		(*args)->group_len = ft_strlen((*getgrgid(file_info.st_gid)).gr_name);
+	// if ((*args)->device)
+	// 	(*args)->maj_min_len = (*args)->user_len + (*args)->group_len;
 	if (S_ISDIR(file_info.st_mode))
 	{
 		if (!(*args)->a && ft_strncmp(entry->d_name, ".", 1) == 0)
@@ -64,14 +80,14 @@ void listdir(char *path, int indent, t_lsargs *args)
 	{
 		while ((entry = readdir(dir)) != NULL)
 		{
-
+			args->major = 0;
+			args->minor = 0;
 			listdir_loop(path, &args, entry, &tree);
 		}
 		args->size_len = ft_intlen(args->size_len);
-		if (args->first == 0 || (args->p > 1 && !args->c_r))
+		if ((args->first == 0 && args->p > 1) || (args->p > 1 && !args->c_r))
 		{
-			ft_printf("%s:\n", (args->all_paths)[args->i]);
-			
+			ft_printf("%s:\n", (args->all_paths)[args->i]);// srcs/:
 		}
 		if (args->l)
 			ft_printf("total %d\n", args->blocks);
@@ -80,7 +96,15 @@ void listdir(char *path, int indent, t_lsargs *args)
 			print_binary_rev(tree, path, args);
 		else
 			print_binary(tree, path, args);
+		///////set lengths back to zero for next directory padding////
 		args->size_len = 0;
+		args->size_links = 0;
+		args->group_len = 0;
+		args->user_len = 0;
+		args->minor_len = 0;
+		args->major_len = 0;
+		args->maj_min = 0;
+
 		closedir(dir);
 	}
 	else
@@ -105,10 +129,10 @@ int parse_arg(char *str, t_lsargs *args)
 	while (str[++i] != '\0')
 	{
 		str[i] == 'r' ? args->r = 1 : 0;
-		str[i] == 'a' ? args->a = 1 : 0;
 		str[i] == 'l' ? args->l = 1 : 0;
 		str[i] == 't' ? args->t = 1 : 0;
 		str[i] == 'R' ? args->c_r = 1 : 0;
+		str[i] == 'a' ? args->a = 1 : 0;
 		str[i] == '1' ? args->l = 0 : 0;
 		if (str[i] != 'r' && str[i] != 'a' && str[i] != '1'
 			&& str[i] != 'l' && str[i] != 't' && str[i] != 'R')
@@ -179,19 +203,24 @@ int main(int ac, char **av)//test with /dev
 	if (args.error)
 		exit (1);//add error message?
 	if (!(args.all_paths)[0])
-		(args.all_paths)[0] = ".";
-	else
-		ft_strsort(&args);
-	// for (int i = 0; (args.all_paths)[i]; i++ )
-	// 	ft_printf("%d, %s\n", i, (args.all_paths)[i]);
-	args.i = -1;
-	while ((args.all_paths)[++args.i])
 	{
-		args.first = 0;
-		listdir((args.all_paths)[args.i], 0, &args); //first arg is the path
-		if (!args.error && args.p && args.i != args.p - 1)
-			ft_putchar('\n');
-		args.error = 0;
+		(args.all_paths)[0] = ".";
+		listdir((args.all_paths)[args.i], 0, &args);
+	}
+	else
+	{
+		ft_strsort(&args);
+		// for (int i = 0; (args.all_paths)[i]; i++ )
+		// 	ft_printf("%d, %s\n", i, (args.all_paths)[i]);
+		args.i = -1;
+		while ((args.all_paths)[++args.i])
+		{
+			args.first = 0;
+			listdir((args.all_paths)[args.i], 0, &args); //first arg is the path
+			if (!args.error && args.p && args.i != args.p - 1)
+				ft_putchar('\n');
+			args.error = 0;
+		}
 	}
 	// ft_printf("%s\n", path);
 	// while (1)
