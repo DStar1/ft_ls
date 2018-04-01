@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:30:25 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/22 01:01:38 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/01 16:26:51 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args)
 	if (tree == NULL)
 		return ;
 	args->first = 1;
-	subdir(tree->left, path, indent, args);
+	subdir(tree->right, path, indent, args);
 	if (tree->dir)
 	{
 		if (ft_strcmp(tree->d_name, ".") != 0 && ft_strcmp(tree->d_name, "..") != 0)
@@ -53,5 +53,5 @@ void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args)
 			free(path1);
 		}
 	};
-	subdir(tree->right, path, indent, args);
+	subdir(tree->left, path, indent, args);
 }

@@ -6,10 +6,13 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 13:02:34 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/21 13:03:16 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/01 16:17:59 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int     bubble_sort(char **str)
+{
+    return (0);
+}
