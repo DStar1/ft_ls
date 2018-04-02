@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/21 23:54:02 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/01 21:11:02 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ typedef struct		s_lsargs
 	char			*month_time;
 	char			*path;
 	int				blocks;
-	char			*permissions;
+	char			*perms;
 	long			time;
 	long			sec;
 	long			nsec;

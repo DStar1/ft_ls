@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 01:11:40 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/21 01:13:47 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/01 21:30:39 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Add to binary tree helper
 */
 
-int	set_node(t_bi **tree, char *name, t_lsargs *args, int direction)
+int		set_node(t_bi **tree, char *name, t_lsargs *args, int direction)
 {
 	if (direction)
 	{
@@ -38,12 +38,12 @@ int	set_node(t_bi **tree, char *name, t_lsargs *args, int direction)
 		(*tree)->right->dir = args->dir;
 		(*tree)->right->left = NULL;
 		(*tree)->right->right = NULL;
-		return (1);	
+		return (1);
 	}
 	return (0);
 }
 
-int	add_to_binary_time(t_bi *tree, char *name, t_lsargs *args)
+int		add_to_binary_time(t_bi *tree, char *name, t_lsargs *args)
 {
 	if (args->t && args->time == tree->time)
 	{
@@ -71,7 +71,7 @@ int	add_to_binary_time(t_bi *tree, char *name, t_lsargs *args)
 ** Sort by alphabet
 */
 
-int	add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
+int		add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 {
 	int f_time;
 
@@ -79,16 +79,17 @@ int	add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 	{
 		f_time = add_to_binary_time(tree, name, args);
 		args->dir = dir;
-		if (f_time == 1)
-			return (1);
-		if ((ft_strcmp(name, tree->d_name) < 0 && (!args->t || f_time)) || (args->t && args->time > tree->time))
+		RETURN(1, f_time == 1);
+		if ((ft_strcmp(name, tree->d_name) < 0 && (!args->t ||
+			f_time)) || (args->t && args->time > tree->time))
 		{
 			if (!tree->left)
 				if (set_node(&tree, name, args, 1))
 					return (1);
 			tree = tree->left;
 		}
-		else if ((ft_strcmp(name, tree->d_name) >= 0 && (!args->t || f_time)) || (args->t && args->time < tree->time))
+		else if ((ft_strcmp(name, tree->d_name) >= 0 && (!args->t ||
+				f_time)) || (args->t && args->time < tree->time))
 		{
 			if (!tree->right)
 				if (set_node(&tree, name, args, 0))
@@ -103,7 +104,10 @@ int	add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 ** Set first node in tree
 */
 
-void set_first_node(t_bi **tree, struct dirent *entry, t_lsargs *args, int dir)
+void	set_first_node(t_bi **tree,
+						struct dirent *entry,
+						t_lsargs *args,
+						int dir)
 {
 	if (!(*tree))
 	{

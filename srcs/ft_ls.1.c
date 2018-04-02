@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/01 22:36:34 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/01 22:23:13 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,33 @@ int		listdir_loop(char *path, t_lsargs **args, struct dirent *entry, t_bi **tree
 }
 
 /*
+** Prints and resets
+** 	///////set lengths back to zero for next directory padding////
+** ft_printf("%s:\n", (args->all_paths)[args->i]);// srcs/:????????
+*/
+
+void	print_reset(t_lsargs *args, t_bi *tree, char *path)
+{
+	args->size_len = ft_intlen(args->size_len);
+	if ((args->first == 0 && args->p > 1) || (args->p > 1 && !args->c_r))
+		ft_printf("%s:\n", (args->all_paths)[args->i]);
+	if (args->l)
+		ft_printf("total %d\n", args->blocks);
+	args->blocks = 0;
+	if (args->r)
+		print_binary_rev(tree, path, args);
+	else
+		print_binary(tree, path, args);
+	args->size_len = 0;
+	args->size_links = 0;
+	args->group_len = 0;
+	args->user_len = 0;
+	args->minor_len = 0;
+	args->major_len = 0;
+	args->maj_min = 0;
+}
+
+/*
 ** Loop through names and then print the binary tree
 ** If -R flag, goes through binary tree and finds all
 ** directories and does listdir for each
@@ -82,24 +109,7 @@ void	listdir(char *path, int indent, t_lsargs *args)
 			args->minor = 0;
 			listdir_loop(path, &args, entry, &tree);
 		}
-		args->size_len = ft_intlen(args->size_len);
-		if ((args->first == 0 && args->p > 1) || (args->p > 1 && !args->c_r))
-			ft_printf("%s:\n", (args->all_paths)[args->i]);// srcs/:
-		if (args->l)
-			ft_printf("total %d\n", args->blocks);
-		args->blocks = 0;
-		if (args->r)
-			print_binary_rev(tree, path, args);
-		else
-			print_binary(tree, path, args);
-		///////set lengths back to zero for next directory padding////
-		args->size_len = 0;
-		args->size_links = 0;
-		args->group_len = 0;
-		args->user_len = 0;
-		args->minor_len = 0;
-		args->major_len = 0;
-		args->maj_min = 0;
+		print_reset(args, tree, path);
 		closedir(dir);
 	}
 	else
