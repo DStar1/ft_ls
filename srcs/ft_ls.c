@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/01 22:36:34 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/02 00:46:02 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		listdir_loop(char *path, t_lsargs **args, struct dirent *entry, t_bi **tree
 	(*args)->nsec = file_info.st_mtimespec.tv_nsec;
 	if (S_ISBLK(file_info.st_mode) || S_ISCHR(file_info.st_mode))
 		(*args)->device = 1;
-	if (!(!(*args)->a && ft_strncmp(entry->d_name, ".", 1) == 0))
+	if (!(!(*args)->a && ft_strncmp(entry->d_name, ".", 1) == 0))////////here problem?
 	{
 		if ((*args)->size_len < file_info.st_size)//count the blocks
 			(*args)->size_len = file_info.st_size;

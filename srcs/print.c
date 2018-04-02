@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 23:37:54 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/02 00:02:14 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/02 01:06:28 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,14 @@ void	print_l(t_bi *tree, char *path, t_lsargs *a)
 	setdata(tree, path, a);
 	ft_printf("%s  %*d %-*s  %-*s  ", a->perms, a->size_links, a->links, a->
 	user_len, a->user.pw_name, a->group_len, a->group.gr_name, a->size_links);
-	if (a->maj_min && !a->size_len)
+	if (a->maj_min && a->minor_len >= a->size_len)
 		ft_printf(" %*d, %*d", a->major_len, a->major, a->minor_len, a->minor);
-	else if (a->maj_min && a->size_len)
+	else if (a->maj_min && a->minor_len < a->size_len)
 		ft_printf(" %*d, %*d", a->major_len,
 		a->major, a->size_len - 1, a->minor);
-	else if (a->device && !a->size_len)
+	else if (a->device && a->minor_len >= a->size_len)
 		ft_printf(" %*d", a->major_len + a->minor_len + 2, a->size);
-	else if (a->device && a->size_len)
+	else if ((a->device) && a->minor_len < a->size_len)
 		ft_printf(" %*d", a->major_len + a->size_len + 1, a->size);
 	else
 		ft_printf("%*d", a->size_len, a->size);
