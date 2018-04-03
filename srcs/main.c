@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 21:44:20 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/02 18:28:19 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/02 18:54:03 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_strsort(t_lsargs *args)
 }
 
 /*
-** Add error message?
+** Helps main due to norm
 */
 
 void	main_helper(t_lsargs *args)
