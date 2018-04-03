@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 21:44:20 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/01 22:09:12 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/02 18:28:19 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int		parse_arg(char *str, t_lsargs *args)
 		{
 			ft_printf("ft_ls: illegal option -- %c\n", str[i]);
 			ft_printf("usage: ls [-alrRt1] [file ...]\n");
-			// ft_printf("Try 'ft_ls --help' for more information.\n");
 			args->error = 1;
 			return (1);
 		}
@@ -67,10 +66,14 @@ void	ft_strsort(t_lsargs *args)
 	}
 }
 
+/*
+** Add error message?
+*/
+
 void	main_helper(t_lsargs *args)
 {
 	if (args->error)
-		exit(1);//add error message?
+		exit(1);
 	if (!(args->all_paths)[0])
 	{
 		(args->all_paths)[0] = ".";

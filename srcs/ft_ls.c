@@ -6,11 +6,40 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/02 00:46:02 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/02 18:39:55 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
+
+/*
+** listdir_loop helper
+** count the blocks
+*/
+
+void	loop_helper(struct stat	*file_info,
+					t_lsargs **args,
+					struct dirent *entry)
+{
+	if (!(!(*args)->a && ft_strncmp(entry->d_name, ".", 1) == 0))
+	{
+		if ((*args)->size_len < file_info->st_size)
+			(*args)->size_len = file_info->st_size;
+		if ((*args)->size_links < ft_intlen(file_info->st_nlink))
+			(*args)->size_links = ft_intlen(file_info->st_nlink);
+		if ((*args)->minor_len < ft_intlen(minor(file_info->st_rdev)))
+			(*args)->minor_len = ft_intlen(minor(file_info->st_rdev));
+		if ((*args)->major_len < ft_intlen(major(file_info->st_rdev)))
+			(*args)->major_len = ft_intlen(major(file_info->st_rdev));
+		if ((*args)->device)
+			(*args)->maj_min_len = (*args)->user_len + (*args)->group_len;
+		(*args)->blocks += file_info->st_blocks;
+	}
+	if ((*args)->user_len < ft_strlen((*getpwuid(file_info->st_uid)).pw_name))
+		(*args)->user_len = ft_strlen((*getpwuid(file_info->st_uid)).pw_name);
+	if ((*args)->group_len < ft_strlen((*getgrgid(file_info->st_gid)).gr_name))
+		(*args)->group_len = ft_strlen((*getgrgid(file_info->st_gid)).gr_name);
+}
 
 /*
 ** listdir while loop helper
@@ -18,7 +47,10 @@
 ** hides the . directories unless -a flag
 */
 
-int		listdir_loop(char *path, t_lsargs **args, struct dirent *entry, t_bi **tree)
+int		listdir_loop(char *path,
+					t_lsargs **args,
+					struct dirent *entry,
+					t_bi **tree)
 {
 	struct stat	file_info;
 	char		*path2;
@@ -30,24 +62,7 @@ int		listdir_loop(char *path, t_lsargs **args, struct dirent *entry, t_bi **tree
 	(*args)->nsec = file_info.st_mtimespec.tv_nsec;
 	if (S_ISBLK(file_info.st_mode) || S_ISCHR(file_info.st_mode))
 		(*args)->device = 1;
-	if (!(!(*args)->a && ft_strncmp(entry->d_name, ".", 1) == 0))////////here problem?
-	{
-		if ((*args)->size_len < file_info.st_size)//count the blocks
-			(*args)->size_len = file_info.st_size;
-		if ((*args)->size_links < ft_intlen(file_info.st_nlink))
-			(*args)->size_links = ft_intlen(file_info.st_nlink);
-		if ((*args)->minor_len < ft_intlen(minor(file_info.st_rdev)))
-			(*args)->minor_len = ft_intlen(minor(file_info.st_rdev));
-		if ((*args)->major_len < ft_intlen(major(file_info.st_rdev)))
-			(*args)->major_len = ft_intlen(major(file_info.st_rdev));
-		if ((*args)->device)
-			(*args)->maj_min_len = (*args)->user_len + (*args)->group_len;
-		(*args)->blocks += file_info.st_blocks;
-	}
-	if ((*args)->user_len < ft_strlen((*getpwuid(file_info.st_uid)).pw_name))
-		(*args)->user_len = ft_strlen((*getpwuid(file_info.st_uid)).pw_name);
-	if ((*args)->group_len < ft_strlen((*getgrgid(file_info.st_gid)).gr_name))
-		(*args)->group_len = ft_strlen((*getgrgid(file_info.st_gid)).gr_name);
+	loop_helper(&file_info, args, entry);
 	if (!(*args)->a && ft_strncmp(entry->d_name, ".", 1) == 0)
 	{
 		free(path2);
@@ -59,6 +74,33 @@ int		listdir_loop(char *path, t_lsargs **args, struct dirent *entry, t_bi **tree
 		set_first_node(tree, entry, *args, 0);
 	free(path2);
 	return (0);
+}
+
+/*
+** Main helper
+** Print then reset
+** Set lengths back to zero for next directory padding
+*/
+
+void	print_reset(char *path, t_bi *tree, t_lsargs *args)
+{
+	args->size_len = ft_intlen(args->size_len);
+	if ((args->first == 0 && args->p > 1) || (args->p > 1 && !args->c_r))
+		ft_printf("%s:\n", (args->all_paths)[args->i]);
+	if (args->l)
+		ft_printf("total %d\n", args->blocks);
+	args->blocks = 0;
+	if (args->r)
+		print_binary_rev(tree, path, args);
+	else
+		print_binary(tree, path, args);
+	args->size_len = 0;
+	args->size_links = 0;
+	args->group_len = 0;
+	args->user_len = 0;
+	args->minor_len = 0;
+	args->major_len = 0;
+	args->maj_min = 0;
 }
 
 /*
@@ -82,24 +124,7 @@ void	listdir(char *path, int indent, t_lsargs *args)
 			args->minor = 0;
 			listdir_loop(path, &args, entry, &tree);
 		}
-		args->size_len = ft_intlen(args->size_len);
-		if ((args->first == 0 && args->p > 1) || (args->p > 1 && !args->c_r))
-			ft_printf("%s:\n", (args->all_paths)[args->i]);// srcs/:
-		if (args->l)
-			ft_printf("total %d\n", args->blocks);
-		args->blocks = 0;
-		if (args->r)
-			print_binary_rev(tree, path, args);
-		else
-			print_binary(tree, path, args);
-		///////set lengths back to zero for next directory padding////
-		args->size_len = 0;
-		args->size_links = 0;
-		args->group_len = 0;
-		args->user_len = 0;
-		args->minor_len = 0;
-		args->major_len = 0;
-		args->maj_min = 0;
+		print_reset(path, tree, args);
 		closedir(dir);
 	}
 	else

@@ -6,11 +6,17 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/18 20:54:52 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/01 20:56:29 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/02 16:49:19 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
+
+void		norm(int *i, char *c, int iset, char cset)
+{
+	*c = cset;
+	*i = iset;
+}
 
 static int	file_type(int mode, t_lsargs *args)
 {
@@ -21,19 +27,13 @@ static int	file_type(int mode, t_lsargs *args)
 	else if (S_ISDIR(mode))
 		c = 'd';
 	else if (S_ISBLK(mode))
-	{
-		BRACKETS(args->device = 1, c = 'b');
-	}
+		norm(&(args->device), &c, 1, 'b');
 	else if (S_ISCHR(mode))
-	{
-		BRACKETS(args->device = 1, c = 'c');
-	}
+		norm(&(args->device), &c, 1, 'c');
 	else if (S_ISFIFO(mode))
 		c = 'p';
 	else if (S_ISLNK(mode))
-	{
-		BRACKETS(args->fd = 1, c = 'l');
-	}
+		norm(&(args->fd), &c, 1, 'l');
 	else if (S_ISSOCK(mode))
 		c = 's';
 	else
