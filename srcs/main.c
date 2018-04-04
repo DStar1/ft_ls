@@ -6,11 +6,11 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 21:44:20 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/02 18:54:03 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/03 15:52:54 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_ls.h"
+#include "ft_ls.h"
 
 /*
 ** Parsing args
@@ -96,7 +96,6 @@ void	main_helper(t_lsargs *args)
 
 int		main(int ac, char **av)
 {
-	char		**path;
 	t_lsargs	args;
 	int			i;
 

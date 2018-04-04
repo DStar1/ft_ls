@@ -6,11 +6,11 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/18 20:54:52 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/02 16:49:19 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/03 15:52:54 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_ls.h"
+#include "ft_ls.h"
 
 void		norm(int *i, char *c, int iset, char cset)
 {

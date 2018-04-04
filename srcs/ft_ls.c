@@ -6,11 +6,11 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/02 18:39:55 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/03 15:52:54 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_ls.h"
+#include "ft_ls.h"
 
 /*
 ** listdir_loop helper
@@ -35,10 +35,10 @@ void	loop_helper(struct stat	*file_info,
 			(*args)->maj_min_len = (*args)->user_len + (*args)->group_len;
 		(*args)->blocks += file_info->st_blocks;
 	}
-	if ((*args)->user_len < ft_strlen((*getpwuid(file_info->st_uid)).pw_name))
-		(*args)->user_len = ft_strlen((*getpwuid(file_info->st_uid)).pw_name);
-	if ((*args)->group_len < ft_strlen((*getgrgid(file_info->st_gid)).gr_name))
-		(*args)->group_len = ft_strlen((*getgrgid(file_info->st_gid)).gr_name);
+	if ((*args)->user_len < (int)ft_strlen((*getpwuid(file_info->st_uid)).pw_name))
+		(*args)->user_len = (int)ft_strlen((*getpwuid(file_info->st_uid)).pw_name);
+	if ((*args)->group_len < (int)ft_strlen((*getgrgid(file_info->st_gid)).gr_name))
+		(*args)->group_len = (int)ft_strlen((*getgrgid(file_info->st_gid)).gr_name);
 }
 
 /*

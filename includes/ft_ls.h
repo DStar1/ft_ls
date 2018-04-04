@@ -6,14 +6,14 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/02 18:39:40 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/03 15:53:31 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
 
-# include "../libft/libft.h"
+# include "libft.h"
 # include <dirent.h>
 # include <sys/stat.h>
 

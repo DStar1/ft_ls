@@ -6,66 +6,57 @@
 #    By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/05 15:20:50 by hasmith           #+#    #+#              #
-#    Updated: 2018/04/02 18:58:32 by hasmith          ###   ########.fr        #
+#    Updated: 2018/04/03 17:43:00 by hasmith          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls
 
-LIB = lib.a
+FLAGS = -Wall -Wextra -Werror -g
 
-LIBFT = libft/libft.a
+SRC_DIR = ./srcs/
+OBJ_DIR = ./objs/
+INC_DIR = ./includes/
+LIBFT_DIR = ./libft/
 
-GIT = test
+SRC_FILES = ft_ls.c ft_subdir.c dash_l.c print.c tree.c main.c
+OBJ_FILES = $(SRC_FILES:.c=.o)
 
-MAIN = main.c
+SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+LIBFT = $(addprefix $(LIBFT_DIR), libft.a)
+LNK  = -L $(LIBFT_DIR)
 
-TEST = <argv[1]>
+.SILENT:
 
-# OBJ = $(addprefix ./objects/, $(SRC:.c=.o))
+all: obj $(LIBFT) $(NAME)
 
-# IFLAG	= -I libft -I includes -g
+obj:
+	@mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)%.o:$(SRC_DIR)%.c
+	@gcc $(FLAGS) -I $(INC_DIR) -I $(LIBFT_DIR) -o $@ -c $<
 
-SRC = 	srcs/ft_ls.c srcs/ft_subdir.c srcs/dash_l.c srcs/print.c srcs/tree.c srcs/main.c
+$(LIBFT):
+	@make -C $(LIBFT_DIR)
 
-FLAGS = -Wall -Werror -Wextra -g
-
-.SILENT:#doesn't show the behind the scenes stuff
-
-all: $(NAME)
-
-$(NAME):
-	make all -C libft
-	gcc -g -c $(SRC)
-	cp $(LIBFT) $(LIB)
-	ar rcs $(LIB) *.o
-	gcc $(FALGS) -g -o $(NAME) $(SRC) $(LIBFT)
-	printf '\033[32m[ ✔ ] %s\n\033[0m' "Created $(NAME)"
-
-# $(NAME): $(OBJ)
-# 	make -C libft/
-# 	gcc $(FALGS) -L libft -lft -I includes $^ -o $(NAME)
-
-# ./objects/%.o: ./srcs/%.c
-# 	mkdir -p objects
-# 	gcc $(IFLAG) -c $< -o $@
-
-cmain:
-	make re
-	./ft_ls
-	make clean
+$(NAME): $(OBJ)
+	printf "\033[32m%s\n\033[0m" "Compiling..."
+	@gcc $(OBJ) $(LNK) -lm $(LIBFT_DIR)/libft.a -o $(NAME)
+	printf "\033[32m[ ✔ ] %s\n\033[0m" "Created $(NAME)"
 
 clean:
-	/bin/rm -f *.o
-	make clean -C libft
-	printf '\033[31m[ ✔ ] %s\n\033[0m' "Cleaned $(NAME)"
+	@rm -Rf $(OBJ_DIR)
+	@make -C $(LIBFT_DIR) clean
+	printf "\033[31m[ ✔ ] %s\n\033[0m" "Cleaned $(NAME)"
 
 fclean: clean
-	make fclean -C libft
-	/bin/rm -f $(NAME) $(LIB)
-	printf '\033[31m[ ✔ ] %s\n\033[0m' "Fcleaned $(NAME)"
+	@rm -f $(NAME)
+	@make -C $(LIBFT_DIR) fclean
+	printf "\033[31m[ ✔ ] %s\n\033[0m" "Fcleaned $(NAME)"
 
 re: fclean all
+
+.PHONY: all clean fclean re
 
 git:
 #	make fclean
