@@ -6,11 +6,13 @@
 #    By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/05 15:20:50 by hasmith           #+#    #+#              #
-#    Updated: 2018/04/03 17:43:00 by hasmith          ###   ########.fr        #
+#    Updated: 2018/04/03 17:44:15 by hasmith          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls
+
+GIT = "test"
 
 FLAGS = -Wall -Wextra -Werror -g
 
