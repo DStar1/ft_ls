@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 01:11:40 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/04 00:20:26 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/04 02:02:33 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,27 +47,32 @@ int		add_to_binary_time(t_bi *tree, char *name, t_lsargs *args)
 {
 	if (args->t && args->time == tree->time)
 	{
-		// ft_printf("%s | ag > tre | args->nsec: %d; (tree)->nsec: %d\n", name);
+		 ft_printf("%s | ag > tre | args->nsec: %d; (tree)->nsec: %d\n", name, args->nsec, (tree)->nsec);
 		if (args->nsec > (tree)->nsec)
 		{
-			ft_printf("args->nsec: %d; (tree)->nsec: %d | argname: %s; treename: %s | ag > tre\n", args->nsec, (tree)->nsec, name, tree->d_name);
+			 ft_printf("args->nsec: %d; (tree)->nsec: %d | argname: %s; treename: %s | ag > tre\n", args->nsec, (tree)->nsec, name, tree->d_name);
 			if (!(tree)->left)
+				{printf("args->nsec: %ld; (tree)->nsec: %ld | argname: %s; treename: %s | left\n", args->nsec, (tree)->nsec, name, tree->d_name);
 				if (set_node(&tree, name, args, 1))
 					return (1);
+				}
 			(tree) = (tree)->left;
+			ft_printf("Done with left\n");
 		}
 		else if (args->nsec < (tree)->nsec)
 		{
-			ft_printf("args->nsec: %d; (tree)->nsec: %d | argname: %s; treename: %s | ag < tre\n", args->nsec, (tree)->nsec, name, tree->d_name);
+			 ft_printf("args->nsec: %d; (tree)->nsec: %d | argname: %s; treename: %s | ag < tre\n", args->nsec, (tree)->nsec, name, tree->d_name);
 			if (!(tree)->right)
+				{printf("args->nsec: %ld; (tree)->nsec: %zd | argname: %s; treename: %s | right\n", args->nsec, (tree)->nsec, name, tree->d_name);
 				if (set_node(&tree, name, args, 0))
 					return (1);
+				}
 			(tree) = (tree)->right;
 		}
-		// else{
+		//else{
 			return (2);
 			// ft_printf("Same time\n");
-			// }
+		//	}
 		// ft_printf("Same time\n");
 	}
 	// ft_printf("Not same time\n");
@@ -81,7 +86,7 @@ int		add_to_binary_time(t_bi *tree, char *name, t_lsargs *args)
 int		add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 {
 	int f_time;
-
+	ft_printf("SETTING %s\n", name);
 	while (tree)
 	{
 		f_time = add_to_binary_time(tree, name, args);
@@ -94,16 +99,18 @@ int		add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 			f_time)) || (args->t && args->time > tree->time))
 		{
 			if (!tree->left)
+				{ft_printf("args->nsec: %d; (tree)->nsec: %d | argname: %s; treename: %s | alpha-left\n", args->nsec, (tree)->nsec, name, tree->d_name);
 				if (set_node(&tree, name, args, 1))
-					return (1);
+					return (1);}
 			tree = tree->left;
 		}
 		else if ((ft_strcmp(name, tree->d_name) >= 0 && (!args->t ||
 				f_time)) || (args->t && args->time < tree->time))
 		{
 			if (!tree->right)
+				{ft_printf("args->nsec: %d; (tree)->nsec: %d | argname: %s; treename: %s | alpha-right\n", args->nsec, (tree)->nsec, name, tree->d_name);
 				if (set_node(&tree, name, args, 0))
-					return (1);
+					return (1);}
 			tree = tree->right;
 		}
 	}
