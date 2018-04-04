@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 21:44:20 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/03 15:52:54 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/04 00:19:57 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,9 @@ void	main_helper(t_lsargs *args)
 		{
 			args->first = 0;
 			listdir((args->all_paths)[args->i], 0, args);
-			if (!args->error && args->p && args->i != args->p - 1)
+			if ((!args->error && args->p && args->i != args->p - 1) && !args->one)
 				ft_putchar('\n');
+			args->one = 1;
 			args->error = 0;
 		}
 	}

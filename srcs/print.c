@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 23:37:54 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/03 15:52:54 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/04 00:19:37 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ void	free_binary(t_bi *tree)
 ** set data for dash l
 */
 
-int		setdata(t_bi *tree, char *path, t_lsargs *args)
+int		setdata(t_bi *tree, char *path, t_lsargs *args, int one)
 {
 	struct stat file_info;
 	char		*np;
 
 	(args->month_time) ? free(args->month_time) : 0;
-	np = construct_path(path, tree->d_name);
+	np = (!one) ? construct_path(path, tree->d_name) : tree->d_name;
 	lstat(np, &file_info);
 	args->perms = permissions(file_info.st_mode, args);
 	args->user = *getpwuid(file_info.st_uid);
@@ -55,7 +55,7 @@ int		setdata(t_bi *tree, char *path, t_lsargs *args)
 	}
 	else
 		args->maj_min = 0;
-	free(np);
+	(!one) ? free(np): 0;
 	return (0);
 }
 
@@ -63,9 +63,9 @@ int		setdata(t_bi *tree, char *path, t_lsargs *args)
 ** Print dash l
 */
 
-void	print_l(t_bi *tree, char *path, t_lsargs *a)
+void	print_l(t_bi *tree, char *path, t_lsargs *a, int one)
 {
-	setdata(tree, path, a);
+	setdata(tree, path, a, one);
 	ft_printf("%s  %*d %-*s  %-*s  ", a->perms, a->size_links, a->links, a->
 	user_len, a->user.pw_name, a->group_len, a->group.gr_name, a->size_links);
 	if (a->maj_min && a->minor_len >= a->size_len)
@@ -99,7 +99,7 @@ void	print_binary_rev(t_bi *tree, char *path, t_lsargs *args)
 		return ;
 	print_binary_rev(tree->right, path, args);
 	if (args->l)
-		print_l(tree, path, args);
+		print_l(tree, path, args, 0);
 	else
 		ft_printf("%s\n", tree->d_name);
 	print_binary_rev(tree->left, path, args);
@@ -109,17 +109,17 @@ void	print_binary_rev(t_bi *tree, char *path, t_lsargs *args)
 ** print tree in alpha order
 */
 
-void	print_binary(t_bi *tree, char *path, t_lsargs *args)
+void	print_binary(t_bi *tree, char *path, t_lsargs *args, int one)
 {
 	int intlen;
 
 	intlen = 0;
 	if (tree == NULL)
 		return ;
-	print_binary(tree->left, path, args);
+	print_binary(tree->left, path, args, one);
 	if (args->l)
-		print_l(tree, path, args);
+		print_l(tree, path, args, one);
 	else
-		ft_printf("%s\n", tree->d_name);
-	print_binary(tree->right, path, args);
+		ft_printf("%d, %d | %s\n", tree->time, tree->nsec, tree->d_name);
+	print_binary(tree->right, path, args, one);
 }

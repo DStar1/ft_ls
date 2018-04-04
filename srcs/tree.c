@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 01:11:40 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/03 15:52:54 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/04 00:20:26 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ int		add_to_binary_time(t_bi *tree, char *name, t_lsargs *args)
 {
 	if (args->t && args->time == tree->time)
 	{
+		// ft_printf("%s | ag > tre | args->nsec: %d; (tree)->nsec: %d\n", name);
 		if (args->nsec > (tree)->nsec)
 		{
+			ft_printf("args->nsec: %d; (tree)->nsec: %d | argname: %s; treename: %s | ag > tre\n", args->nsec, (tree)->nsec, name, tree->d_name);
 			if (!(tree)->left)
 				if (set_node(&tree, name, args, 1))
 					return (1);
@@ -56,14 +58,19 @@ int		add_to_binary_time(t_bi *tree, char *name, t_lsargs *args)
 		}
 		else if (args->nsec < (tree)->nsec)
 		{
+			ft_printf("args->nsec: %d; (tree)->nsec: %d | argname: %s; treename: %s | ag < tre\n", args->nsec, (tree)->nsec, name, tree->d_name);
 			if (!(tree)->right)
 				if (set_node(&tree, name, args, 0))
 					return (1);
 			(tree) = (tree)->right;
 		}
-		else
+		// else{
 			return (2);
+			// ft_printf("Same time\n");
+			// }
+		// ft_printf("Same time\n");
 	}
+	// ft_printf("Not same time\n");
 	return (0);
 }
 
@@ -79,7 +86,10 @@ int		add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 	{
 		f_time = add_to_binary_time(tree, name, args);
 		args->dir = dir;
-		RETURN(1, f_time == 1);
+		// RETURN(1, f_time == 1);
+		if (f_time == 1)
+			{/*ft_printf("args->t: %d; args->time: %d: tree->time: %d;\n", args->t, args->time, tree->time);*/return (1);}
+
 		if ((ft_strcmp(name, tree->d_name) < 0 && (!args->t ||
 			f_time)) || (args->t && args->time > tree->time))
 		{
@@ -105,14 +115,13 @@ int		add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 */
 
 void	set_first_node(t_bi **tree,
-						struct dirent *entry,
 						t_lsargs *args,
 						int dir)
 {
 	if (!(*tree))
 	{
 		(*tree) = (t_bi*)ft_memalloc(sizeof(t_bi));
-		(*tree)->d_name = ft_strdup(entry->d_name);
+		(*tree)->d_name = ft_strdup(args->d_name);
 		(*tree)->time = (args)->time;
 		(*tree)->nsec = (args)->nsec;
 		(*tree)->dir = dir;
@@ -120,5 +129,5 @@ void	set_first_node(t_bi **tree,
 		(*tree)->right = NULL;
 	}
 	else
-		add_to_binary(*tree, entry->d_name, (args), dir);
+		add_to_binary(*tree, args->d_name, (args), dir);
 }
