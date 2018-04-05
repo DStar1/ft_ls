@@ -6,11 +6,41 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/18 20:54:52 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/03 15:52:54 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/05 16:00:07 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+/*
+** Function: suffix
+** This function grabs the extended attribute values for
+** diff files and will suffix it to the end of the bits later
+** during printing.
+*/
+
+void		suffix(char *dir, t_lsargs *data)
+{
+	acl_t			acl;
+	acl_entry_t		tmp;
+
+	acl = acl_get_link_np(dir, ACL_TYPE_EXTENDED);
+	if (acl && acl_get_entry(acl, ACL_FIRST_ENTRY, &tmp) == -1)
+	{
+		acl_free(acl);
+		acl = 0;
+	}
+	if (listxattr(dir, 0, 0, 0) > 0)
+		data->suffix = '@';
+	else if (acl != 0)
+	{
+		acl_free(acl);
+		acl = 0;
+		data->suffix = '+';
+	}
+	else
+		data->suffix = ' ';
+}
 
 void		norm(int *i, char *c, int iset, char cset)
 {
@@ -45,7 +75,7 @@ char		*permissions(int mode, t_lsargs *args)
 {
 	static const char	*rwx[] = {"---", "--x", "-w-", "-wx",
 		"r--", "r-x", "rw-", "rwx"};
-	static char			bits[11];
+	static char			bits[12];
 
 	bits[0] = file_type(mode, args);
 	ft_strcpy(&bits[1], rwx[(mode >> 6) & 7]);
@@ -57,6 +87,7 @@ char		*permissions(int mode, t_lsargs *args)
 		bits[6] = (mode & S_IXGRP) ? 's' : 'l';
 	if (mode & S_ISVTX)
 		bits[9] = (mode & S_IXOTH) ? 't' : 'T';
-	bits[10] = '\0';
+	bits[10] = args->suffix;
+	bits[11] = '\0';
 	return (bits);
 }

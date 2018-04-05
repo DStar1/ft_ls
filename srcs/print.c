@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 23:37:54 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/04 17:05:03 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/05 16:04:12 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,25 @@ int		setdata(t_bi *tree, char *path, t_lsargs *args, int one)
 {
 	struct stat file_info;
 	char		*np;
+	char		buf[1024];
+	ssize_t		len;
+	// struct passwd	user;
+	// struct group	group;
 
 	(args->month_time) ? free(args->month_time) : 0;
 	np = (!one) ? construct_path(path, tree->d_name) : tree->d_name;
+	suffix(np, args);
 	lstat(np, &file_info);
 	args->perms = permissions(file_info.st_mode, args);
-	args->user = *getpwuid(file_info.st_uid);
-	args->group = *getgrgid(file_info.st_gid);
+	args->pw_name = (*getpwuid(file_info.st_uid)).pw_name;
+	args->gr_name = (*getgrgid(file_info.st_gid)).gr_name;
 	args->ctime = ctime(&tree->time);
 	args->month_time = ft_strsub(args->ctime, 4, 12);
 	args->links = file_info.st_nlink;
 	args->size = file_info.st_size;
-	(args->fd) ? args->link_path = ft_strsub(realpath(np, NULL),
-	ft_strlen(path) + 1, ft_strlen(realpath(np, NULL)) - ft_strlen(path)) : 0;
+	ft_bzero(buf, sizeof(buf));
+	if (args->fd && (len = readlink(np, buf, sizeof(buf))) != -1)
+		ft_strcpy(args->link_path, buf);
 	if (S_ISCHR(file_info.st_mode) || S_ISBLK(file_info.st_mode))
 	{
 		args->major = major(file_info.st_rdev);
@@ -66,8 +72,8 @@ int		setdata(t_bi *tree, char *path, t_lsargs *args, int one)
 void	print_l(t_bi *tree, char *path, t_lsargs *a, int one)
 {
 	setdata(tree, path, a, one);
-	ft_printf("%s  %*d %-*s  %-*s  ", a->perms, a->size_links, a->links, a->
-	user_len, a->user.pw_name, a->group_len, a->group.gr_name, a->size_links);
+	ft_printf("%s %*d %-*s  %-*s  ", a->perms, a->size_links, a->links, a->
+				user_len, a->pw_name, a->group_len, a->gr_name);
 	if (a->maj_min && a->minor_len >= a->size_len)
 		ft_printf(" %*d, %*d", a->major_len, a->major, a->minor_len, a->minor);
 	else if (a->maj_min && a->minor_len < a->size_len)
@@ -83,7 +89,6 @@ void	print_l(t_bi *tree, char *path, t_lsargs *a, int one)
 	if (a->fd)
 	{
 		ft_printf(" -> %s", a->link_path);
-		free(a->link_path);
 		a->fd = 0;
 	}
 	ft_putchar('\n');

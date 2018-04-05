@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/04 18:06:56 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/05 16:22:17 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,19 @@ int		listdir_loop(char *path,
 	(*args)->nsec = file_info.st_mtimespec.tv_nsec;
 	if (S_ISBLK(file_info.st_mode) || S_ISCHR(file_info.st_mode))
 		(*args)->device = 1;
-	loop_helper(&file_info, args);
+	((*args)->l) ? loop_helper(&file_info, args) : 0;
 	if (!(*args)->a && ft_strncmp((*args)->d_name, ".", 1) == 0)
 	{
-		free(path2);
+		(!one) ? free(path2) : 0;
+		// free(file_info);
 		return (1);
 	}
 	if (S_ISDIR(file_info.st_mode))
 		set_first_node(tree, *args, 1);
 	else
 		set_first_node(tree, *args, 0);
-	free(path2);
+	(!one) ? free(path2) : 0;
+	// free(file_info);
 	return (0);
 }
 

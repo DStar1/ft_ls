@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 01:11:40 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/04 17:03:36 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/05 16:50:52 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		add_to_binary_time(t_bi **tree, char *name, t_lsargs *args)
 {
 	if (args->t && args->time == (*tree)->time)
 	{
+		ft_printf("------------------------------------time is equal\n");
 		if (args->nsec > (*tree)->nsec)
 		{
 			if (!(*tree)->left)

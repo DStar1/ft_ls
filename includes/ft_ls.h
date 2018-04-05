@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/04 18:17:36 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/05 16:00:04 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,12 @@ typedef struct		s_lsargs
 	int				first;
 	int				device;
 	int				fd;
-	char			*link_path;
-	struct passwd	user;
-	struct group	group;
+	char			link_path[1024];
+	char			suffix;
+	// struct passwd	user;
+	// struct group	group;
+	char			*pw_name;
+	char			*gr_name;
 	char			*ctime;
 	int				links;
 	int				size;
@@ -102,6 +105,7 @@ char				*permissions(int mode, t_lsargs *args);
 char				*construct_path(char *path, char *name);
 void				print_binary_rev(t_bi *tree, char *path, t_lsargs *args);
 void				free_binary(t_bi *tree);
+void				suffix(char *dir, t_lsargs *data);
 void				set_first_node(t_bi **tree,
 									t_lsargs *args,
 									int dir);
