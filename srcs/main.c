@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 21:44:20 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/04 00:19:57 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/04 18:16:03 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,29 @@ void	ft_strswap(char **s1, char **s2)
 
 void	ft_strsort(t_lsargs *args)
 {
-	int i;
+	int			i;
+	int			index;
+	struct stat	file_info;
 
-	i = 0;
-	while ((args->all_paths)[i + 1])
-	{
+	i = -1;
+	while ((args->all_paths)[++i + 1])
 		if (ft_strcmp((args->all_paths)[i], (args->all_paths)[i + 1]) > 0)
 		{
 			ft_strswap(&(args->all_paths[i]), &(args->all_paths[i + 1]));
 			i = -1;
 		}
-		i++;
+	i = -1;
+	index = -1;
+	while ((args->all_paths)[++i + 1])
+	{
+		lstat((args->all_paths)[i], &file_info);
+		if (S_ISDIR(file_info.st_mode))
+		{
+			ft_strswap(&(args->all_paths[i]), &(args->all_paths[i + 1]));
+			i = index;
+		}
+		else
+			index++;
 	}
 }
 
@@ -87,7 +99,8 @@ void	main_helper(t_lsargs *args)
 		{
 			args->first = 0;
 			listdir((args->all_paths)[args->i], 0, args);
-			if ((!args->error && args->p && args->i != args->p - 1) && !args->one)
+			if ((!args->error && args->p &&
+				args->i != args->p - 1) && !args->one)
 				ft_putchar('\n');
 			args->one = 1;
 			args->error = 0;

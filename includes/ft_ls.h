@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/04 00:00:12 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/04 18:17:36 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,14 @@ void				subdir(t_bi *tree, char *path, int indent, t_lsargs *args);
 void				listdir(char *path, int indent, t_lsargs *args);
 char				*permissions(int mode, t_lsargs *args);
 char				*construct_path(char *path, char *name);
-void				print_binary(t_bi *tree, char *path, t_lsargs *args, int one);
 void				print_binary_rev(t_bi *tree, char *path, t_lsargs *args);
 void				free_binary(t_bi *tree);
 void				set_first_node(t_bi **tree,
 									t_lsargs *args,
 									int dir);
+void				print_binary(t_bi *tree,
+								char *path,
+								t_lsargs *args,
+								int one);
 
 #endif

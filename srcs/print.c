@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 23:37:54 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/04 00:19:37 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/04 17:05:03 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		setdata(t_bi *tree, char *path, t_lsargs *args, int one)
 	}
 	else
 		args->maj_min = 0;
-	(!one) ? free(np): 0;
+	(!one) ? free(np) : 0;
 	return (0);
 }
 
@@ -120,6 +120,6 @@ void	print_binary(t_bi *tree, char *path, t_lsargs *args, int one)
 	if (args->l)
 		print_l(tree, path, args, one);
 	else
-		ft_printf("%d, %d | %s\n", tree->time, tree->nsec, tree->d_name);
+		ft_printf("%s\n", tree->d_name);
 	print_binary(tree->right, path, args, one);
 }

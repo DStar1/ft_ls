@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/04 00:19:42 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/04 18:06:56 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,27 @@
 ** count the blocks
 */
 
-void	loop_helper(struct stat	*file_info,
+void	loop_helper(struct stat	*f_i,
 					t_lsargs **args)
 {
 	if (!(!(*args)->a && ft_strncmp((*args)->d_name, ".", 1) == 0))
 	{
-		if ((*args)->size_len < file_info->st_size)
-			(*args)->size_len = file_info->st_size;
-		if ((*args)->size_links < ft_intlen(file_info->st_nlink))
-			(*args)->size_links = ft_intlen(file_info->st_nlink);
-		if ((*args)->minor_len < ft_intlen(minor(file_info->st_rdev)))
-			(*args)->minor_len = ft_intlen(minor(file_info->st_rdev));
-		if ((*args)->major_len < ft_intlen(major(file_info->st_rdev)))
-			(*args)->major_len = ft_intlen(major(file_info->st_rdev));
+		if ((*args)->size_len < f_i->st_size)
+			(*args)->size_len = f_i->st_size;
+		if ((*args)->size_links < ft_intlen(f_i->st_nlink))
+			(*args)->size_links = ft_intlen(f_i->st_nlink);
+		if ((*args)->minor_len < ft_intlen(minor(f_i->st_rdev)))
+			(*args)->minor_len = ft_intlen(minor(f_i->st_rdev));
+		if ((*args)->major_len < ft_intlen(major(f_i->st_rdev)))
+			(*args)->major_len = ft_intlen(major(f_i->st_rdev));
 		if ((*args)->device)
 			(*args)->maj_min_len = (*args)->user_len + (*args)->group_len;
-		(*args)->blocks += file_info->st_blocks;
+		(*args)->blocks += f_i->st_blocks;
 	}
-	if ((*args)->user_len < (int)ft_strlen((*getpwuid(file_info->st_uid)).pw_name))
-		(*args)->user_len = (int)ft_strlen((*getpwuid(file_info->st_uid)).pw_name);
-	if ((*args)->group_len < (int)ft_strlen((*getgrgid(file_info->st_gid)).gr_name))
-		(*args)->group_len = (int)ft_strlen((*getgrgid(file_info->st_gid)).gr_name);
+	if ((*args)->user_len < (int)ft_strlen((*getpwuid(f_i->st_uid)).pw_name))
+		(*args)->user_len = (int)ft_strlen((*getpwuid(f_i->st_uid)).pw_name);
+	if ((*args)->group_len < (int)ft_strlen((*getgrgid(f_i->st_gid)).gr_name))
+		(*args)->group_len = (int)ft_strlen((*getgrgid(f_i->st_gid)).gr_name);
 }
 
 /*
@@ -67,7 +67,6 @@ int		listdir_loop(char *path,
 		free(path2);
 		return (1);
 	}
-	// ft_printf("setting node! (*args)->time: %d; (*args)->nsec: %d; entry->d_name: %s\n", (*args)->time, (*args)->nsec, entry->d_name);
 	if (S_ISDIR(file_info.st_mode))
 		set_first_node(tree, *args, 1);
 	else
@@ -85,7 +84,8 @@ int		listdir_loop(char *path,
 void	print_reset(char *path, t_bi *tree, t_lsargs *args, int one)
 {
 	args->size_len = ft_intlen(args->size_len);
-	if (((args->first == 0 && args->p > 1) || (args->p > 1 && !args->c_r)) && !one)
+	if (((args->first == 0 && args->p > 1)
+		|| (args->p > 1 && !args->c_r)) && !one)
 		ft_printf("%s:\n", (args->all_paths)[args->i]);
 	if (args->l && !one)
 		ft_printf("total %d\n", args->blocks);
@@ -104,6 +104,30 @@ void	print_reset(char *path, t_bi *tree, t_lsargs *args, int one)
 }
 
 /*
+** If arg is not directory
+*/
+
+void	listdir_else(char *path,
+					struct stat *file_info,
+					t_lsargs *args,
+					t_bi *tree)
+{
+	if (lstat(path, file_info) == 0)
+	{
+		args->d_name = ft_strdup(path);
+		args->one = 1;
+		listdir_loop(path, &args, &tree, 1);
+		free(args->d_name);
+		print_reset(path, tree, args, 1);
+	}
+	else
+	{
+		perror(ft_strjoin("ft_ls: ", path));
+		args->error = 1;
+	}
+}
+
+/*
 ** Loop through names and then print the binary tree
 ** If -R flag, goes through binary tree and finds all
 ** directories and does listdir for each
@@ -112,7 +136,7 @@ void	print_reset(char *path, t_bi *tree, t_lsargs *args, int one)
 void	listdir(char *path, int indent, t_lsargs *args)
 {
 	DIR				*dir;
-	struct dirent	*entry = NULL;
+	struct dirent	*entry;
 	t_bi			*tree;
 	struct stat		file_info;
 
@@ -132,19 +156,7 @@ void	listdir(char *path, int indent, t_lsargs *args)
 		closedir(dir);
 	}
 	else
-		if (lstat(path, &file_info) == 0)
-		{
-			args->d_name = ft_strdup(path);
-			args->one = 1;
-			listdir_loop(path, &args, &tree, 1);
-			free(args->d_name);
-			print_reset(path, tree, args, 1);
-		}
-		else
-		{
-			perror(ft_strjoin("ft_ls: ", path));
-			args->error = 1;
-		}
+		listdir_else(path, &file_info, args, tree);
 	if (args->c_r)
 		subdir(tree, path, indent, args);
 	free_binary(tree);
