@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 21:44:20 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/05 17:26:26 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 00:22:15 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,40 +41,51 @@ int		parse_arg(char *str, t_lsargs *args)
 	return (0);
 }
 
-void	ft_strswap(char **s1, char **s2)
-{
-	char *tmp;
+/*
+** Goes through binary tree of args based on alphabetical serch
+** If not reverse start left and go right, else inverse
+*/
 
-	tmp = *s1;
-	*s1 = *s2;
-	*s2 = tmp;
+void	args_binary(t_bi *tree, t_lsargs *args, int dir)
+{
+	if (tree == NULL)
+		return ;
+	(!args->r) ? args_binary(tree->left, args, dir)
+				: args_binary(tree->right, args, dir);
+	if (tree->dir == dir)
+	{
+		(dir) ? ft_printf("\n%s:\n", tree->d_name) : 0;
+		args->first = 0;
+		listdir(tree->d_name, 0, args);
+		args->error = 0;
+	}
+	(!args->r) ? args_binary(tree->right, args, dir)
+				: args_binary(tree->left, args, dir);
 }
 
-void	ft_strsort(t_lsargs *args)
+/*
+** Creates alpha sorted binary tree of args
+*/
+
+void	ft_strsort(t_bi **tree, t_lsargs *args)
 {
 	int			i;
-	int			index;
 	struct stat	file_info;
+	int			dir;
 
 	i = -1;
-	while ((args->all_paths)[++i + 1])
-		if (ft_strcmp((args->all_paths)[i], (args->all_paths)[i + 1]) > 0)
-		{
-			ft_strswap(&(args->all_paths[i]), &(args->all_paths[i + 1]));
-			i = -1;
-		}
-	i = -1;
-	index = -1;
-	while ((args->all_paths)[++i + 1])
+	while ((args->all_paths)[++i])
 	{
+		args->d_name = ft_strdup((args->all_paths)[i]);
 		lstat((args->all_paths)[i], &file_info);
+		args->time = file_info.st_mtime;
+		args->nsec = file_info.st_mtimespec.tv_nsec;
 		if (S_ISDIR(file_info.st_mode))
-		{
-			ft_strswap(&(args->all_paths[i]), &(args->all_paths[i + 1]));
-			i = index;
-		}
+			set_first_node(tree, args, 1);
 		else
-			index++;
+			set_first_node(tree, args, 0);
+		args->time = 0;
+		args->nsec = 0;
 	}
 }
 
@@ -84,6 +95,11 @@ void	ft_strsort(t_lsargs *args)
 
 void	main_helper(t_lsargs *args)
 {
+	t_bi	*tree;
+	int		dir;
+
+	dir = -1;
+	tree = NULL;
 	if (args->error)
 		exit(1);
 	if (!(args->all_paths)[0])
@@ -93,18 +109,10 @@ void	main_helper(t_lsargs *args)
 	}
 	else
 	{
-		ft_strsort(args);
-		args->i = -1;
-		while ((args->all_paths)[++args->i])
-		{
-			args->first = 0;
-			listdir((args->all_paths)[args->i], 0, args);
-			if ((!args->error && args->p &&
-				args->i != args->p - 1) && !args->one)
-				ft_putchar('\n');
-			args->one = 1;
-			args->error = 0;
-		}
+		ft_strsort(&tree, args);
+		while (++dir < 2)
+			args_binary(tree, args, dir);
+		free_binary(tree);
 	}
 }
 

@@ -6,24 +6,19 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 23:37:54 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/05 18:04:46 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 00:30:13 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-/*
-** print tree in alpha order
-*/
-
-void	free_binary(t_bi *tree)
+void	setdata2(t_lsargs *args, struct stat *file_info)
 {
-	if (tree == NULL)
-		return ;
-	free_binary(tree->left);
-	free_binary(tree->right);
-	free(tree->d_name);
-	free(tree);
+	args->perms = permissions(file_info->st_mode, args);
+	args->pw_name = (*getpwuid(file_info->st_uid)).pw_name;
+	args->gr_name = (*getgrgid(file_info->st_gid)).gr_name;
+	args->links = file_info->st_nlink;
+	args->size = file_info->st_size;
 }
 
 /*
@@ -36,20 +31,14 @@ int		setdata(t_bi *tree, char *path, t_lsargs *args, int one)
 	char		*np;
 	char		buf[1024];
 	ssize_t		len;
-	// struct passwd	user;
-	// struct group	group;
 
 	(args->month_time) ? free(args->month_time) : 0;
 	np = (!one) ? construct_path(path, tree->d_name) : tree->d_name;
 	suffix(np, args);
 	lstat(np, &file_info);
-	args->perms = permissions(file_info.st_mode, args);
-	args->pw_name = (*getpwuid(file_info.st_uid)).pw_name;
-	args->gr_name = (*getgrgid(file_info.st_gid)).gr_name;
+	setdata2(args, &file_info);
 	args->ctime = ctime(&tree->time);
 	args->month_time = ft_strsub(args->ctime, 4, 12);
-	args->links = file_info.st_nlink;
-	args->size = file_info.st_size;
 	ft_bzero(buf, sizeof(buf));
 	if (args->fd && (len = readlink(np, buf, sizeof(buf))) != -1)
 		ft_strcpy(args->link_path, buf);

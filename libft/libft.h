@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 16:56:52 by hasmith           #+#    #+#             */
-/*   Updated: 2018/03/20 22:16:33 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 00:00:36 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ char				*ft_strnstr(
 						const char *big,
 						const char *little,
 						size_t len);
+void				ft_strswap(char **s1, char **s2);
 char				*ft_strdup(const char *str);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);

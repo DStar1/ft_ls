@@ -6,11 +6,25 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 01:11:40 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/05 18:02:08 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 00:25:10 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+/*
+** print tree in alpha order
+*/
+
+void	free_binary(t_bi *tree)
+{
+	if (tree == NULL)
+		return ;
+	free_binary(tree->left);
+	free_binary(tree->right);
+	free(tree->d_name);
+	free(tree);
+}
 
 /*
 ** Add to binary tree helper
@@ -47,18 +61,17 @@ int		add_to_binary_time(t_bi **tree, char *name, t_lsargs *args)
 {
 	if (args->t && args->time == (*tree)->time)
 	{
-		// ft_printf("%d, %d | should be same(%s, %s), %s\n", args->time, (*tree)->time, args->d_name, name, (*tree)->d_name);
 		if (args->nsec > (*tree)->nsec)
 		{
 			if (!(*tree)->left)
-				if (set_node(&*tree, name, args, 1))
+				if (set_node(tree, name, args, 1))
 					return (1);
 			(*tree) = (*tree)->left;
 		}
 		else if (args->nsec < (*tree)->nsec)
 		{
 			if (!(*tree)->right)
-				if (set_node(&*tree, name, args, 0))
+				if (set_node(tree, name, args, 0))
 					return (1);
 			(*tree) = (*tree)->right;
 		}
@@ -78,10 +91,9 @@ int		add_to_binary(t_bi *tree, char *name, t_lsargs *args, int dir)
 
 	while (tree)
 	{
-		f_time = add_to_binary_time(&tree, name, args);
 		args->dir = dir;
+		f_time = add_to_binary_time(&tree, name, args);
 		RETURN(1, f_time == 1);
-		ft_printf("DIR: %d, %d, %d | should be same(%s, %s), %s\n", args-> dir, args->time, (tree)->time, args->d_name, name, (tree)->d_name);
 		if ((ft_strcmp(name, tree->d_name) < 0 && (!args->t ||
 			f_time)) || (args->t && args->time > tree->time))
 		{

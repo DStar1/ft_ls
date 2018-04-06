@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/05 17:50:45 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 00:23:38 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,6 @@ int		listdir_loop(char *path,
 void	print_reset(char *path, t_bi *tree, t_lsargs *args, int one)
 {
 	args->size_len = ft_intlen(args->size_len);
-	if (((args->first == 0 && args->p > 1)
-		|| (args->p > 1 && !args->c_r)) && !one)
-		ft_printf("%s:\n", (args->all_paths)[args->i]);
 	if (args->l && !one)
 		ft_printf("total %d\n", args->blocks);
 	args->blocks = 0;
@@ -145,7 +142,6 @@ void	listdir(char *path, int indent, t_lsargs *args)
 	ft_bzero(&tree, sizeof(&tree));
 	if ((dir = opendir(path)))
 	{
-		(args->i != 0) ? ft_putchar('\n') : 0;
 		while ((entry = readdir(dir)) != NULL)
 		{
 			args->major = 0;
@@ -157,7 +153,7 @@ void	listdir(char *path, int indent, t_lsargs *args)
 		print_reset(path, tree, args, 0);
 		closedir(dir);
 	}
-	else// if (args->first == 0)
+	else
 		listdir_else(path, &file_info, args, tree);
 	if (args->c_r)
 		subdir(tree, path, indent, args);

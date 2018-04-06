@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:30:25 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/05 17:43:52 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 00:20:22 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args)
 	{
 		if (ft_strcmp(tree->d_name, ".") && ft_strcmp(tree->d_name, ".."))
 		{
-			ft_printf("\n-------------------------NAME OF DIRECTORY: %s:\n", tree->d_name);
 			args->maj_min_len = 0;
 			args->device = 0;
 			path1 = construct_path(path, tree->d_name);

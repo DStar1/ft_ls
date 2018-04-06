@@ -75,6 +75,7 @@ SRC = 	ft_putchar.c \
 		ft_abs.c \
 		ft_memncpy.c \
 		ft_swap.c \
+		ft_strswap.c \
 		ft_lstsize.c
 
 PRINTF = 	ft_printf/parse.c \
