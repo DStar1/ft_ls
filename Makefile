@@ -6,13 +6,13 @@
 #    By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/05 15:20:50 by hasmith           #+#    #+#              #
-#    Updated: 2018/04/06 01:25:09 by hasmith          ###   ########.fr        #
+#    Updated: 2018/04/06 01:27:11 by hasmith          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls
 
-GIT = "test"
+M = "test"
 
 FLAGS = -g # -Wall -Wextra -Werror -g
 
@@ -63,5 +63,5 @@ re: fclean all
 git:
 #	make fclean
 	git add .
-	git commit -m '$(GIT)'
+	git commit -m '$(m)'
 	git push
