@@ -3,3 +3,5 @@ a.out
 *.o
 ft_ls
 *.a
+test*
+result*

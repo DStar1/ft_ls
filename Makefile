@@ -6,7 +6,7 @@
 #    By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/05 15:20:50 by hasmith           #+#    #+#              #
-#    Updated: 2018/04/04 22:21:42 by hasmith          ###   ########.fr        #
+#    Updated: 2018/04/06 01:25:09 by hasmith          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,6 @@ re: fclean all
 
 git:
 #	make fclean
-#	git add *
-#	sleep 3
+	git add .
 	git commit -m '$(GIT)'
 	git push
