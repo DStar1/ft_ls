@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/05 16:22:17 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/05 17:50:45 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,7 @@ void	listdir(char *path, int indent, t_lsargs *args)
 		print_reset(path, tree, args, 0);
 		closedir(dir);
 	}
-	else
+	else// if (args->first == 0)
 		listdir_else(path, &file_info, args, tree);
 	if (args->c_r)
 		subdir(tree, path, indent, args);
