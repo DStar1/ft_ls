@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 21:44:20 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/06 00:22:15 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 01:08:47 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	args_binary(t_bi *tree, t_lsargs *args, int dir)
 				: args_binary(tree->right, args, dir);
 	if (tree->dir == dir)
 	{
-		(dir) ? ft_printf("\n%s:\n", tree->d_name) : 0;
+		(dir && !args->first) ? ft_printf("\n%s:\n", tree->d_name) : 0;
 		args->first = 0;
 		listdir(tree->d_name, 0, args);
 		args->error = 0;
@@ -76,6 +76,7 @@ void	ft_strsort(t_bi **tree, t_lsargs *args)
 	i = -1;
 	while ((args->all_paths)[++i])
 	{
+		(args->d_name) ? free(args->d_name) : 0;
 		args->d_name = ft_strdup((args->all_paths)[i]);
 		lstat((args->all_paths)[i], &file_info);
 		args->time = file_info.st_mtime;
@@ -134,5 +135,6 @@ int		main(int ac, char **av)
 		i++;
 	}
 	main_helper(&args);
+	free_array(args.all_paths);
 	return (0);
 }

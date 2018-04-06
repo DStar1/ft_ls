@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/18 20:54:52 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/05 16:00:07 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 01:22:11 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void		suffix(char *dir, t_lsargs *data)
 	}
 	else
 		data->suffix = ' ';
+	(acl) ? acl_free(acl) : 0;
 }
 
 void		norm(int *i, char *c, int iset, char cset)

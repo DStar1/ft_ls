@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/06 00:23:38 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 01:14:58 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,10 +113,10 @@ void	listdir_else(char *path,
 {
 	if (lstat(path, file_info) == 0)
 	{
+		(args->d_name) ? free(args->d_name) : 0;
 		args->d_name = ft_strdup(path);
 		args->one = 1;
 		listdir_loop(path, &args, &tree, 1);
-		free(args->d_name);
 		print_reset(path, tree, args, 1);
 	}
 	else
@@ -146,9 +146,9 @@ void	listdir(char *path, int indent, t_lsargs *args)
 		{
 			args->major = 0;
 			args->minor = 0;
+			(args->d_name) ? free(args->d_name) : 0;
 			args->d_name = ft_strdup(entry->d_name);
 			listdir_loop(path, &args, &tree, 0);
-			free(args->d_name);
 		}
 		print_reset(path, tree, args, 0);
 		closedir(dir);
