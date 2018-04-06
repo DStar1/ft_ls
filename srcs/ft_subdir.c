@@ -6,21 +6,22 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:30:25 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/06 00:20:22 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 03:07:18 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-char	*construct_path(char *path, char *name)
+char	*construct_path(char *path, char *name, t_lsargs *args)
 {
 	char *newpath;
 
+	(void)args;
 	if (ft_strlen(path) > 0)
 	{
 		newpath = ft_strdup(path);
-		if (path[ft_strlen(path) - 1] != '/')
-			newpath = ft_strjoin_clr_1st(newpath, "/");
+		// if (path[ft_strlen(path) - 1] != '/' && !args->dir_main)// to keep the '//''
+			newpath = ft_strjoin_clr_1st(newpath, "/");//this keeps the path on
 		newpath = ft_strjoin_clr_1st(newpath, name);
 		return (newpath);
 	}
@@ -35,6 +36,7 @@ void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args)
 {
 	char *path1;
 
+	args->dir_main = 0;
 	if (tree == NULL)
 		return ;
 	args->first = 1;
@@ -48,7 +50,7 @@ void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args)
 		{
 			args->maj_min_len = 0;
 			args->device = 0;
-			path1 = construct_path(path, tree->d_name);
+			path1 = construct_path(path, tree->d_name, args);
 			ft_printf("\n%s:\n", path1);
 			listdir(path1, indent, args);
 			free(path1);

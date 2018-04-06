@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/06 01:14:58 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 03:02:58 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,12 @@ int		listdir_loop(char *path,
 {
 	struct stat	file_info;
 	char		*path2;
+	//segfaulted at YO2 ./ft_ls -l /Library/Scripts/42 
 
 	path2 = NULL;
-	path2 = (!one) ? construct_path(path, (*args)->d_name) : path;
-	lstat(path2, &file_info);
+	path2 = (!one) ? construct_path(path, (*args)->d_name, *args) : path;
+	if (lstat(path2, &file_info) == -1)
+		return (1);///////////////////////////free?
 	(*args)->time = file_info.st_mtime;
 	(*args)->nsec = file_info.st_mtimespec.tv_nsec;
 	if (S_ISBLK(file_info.st_mode) || S_ISCHR(file_info.st_mode))
@@ -65,7 +67,6 @@ int		listdir_loop(char *path,
 	if (!(*args)->a && ft_strncmp((*args)->d_name, ".", 1) == 0)
 	{
 		(!one) ? free(path2) : 0;
-		// free(file_info);
 		return (1);
 	}
 	if (S_ISDIR(file_info.st_mode))
@@ -73,7 +74,6 @@ int		listdir_loop(char *path,
 	else
 		set_first_node(tree, *args, 0);
 	(!one) ? free(path2) : 0;
-	// free(file_info);
 	return (0);
 }
 
@@ -86,6 +86,8 @@ int		listdir_loop(char *path,
 void	print_reset(char *path, t_bi *tree, t_lsargs *args, int one)
 {
 	args->size_len = ft_intlen(args->size_len);
+	if (args->dir_main)
+		ft_printf("%s:\n", args->dir_name);
 	if (args->l && !one)
 		ft_printf("total %d\n", args->blocks);
 	args->blocks = 0;
@@ -100,6 +102,7 @@ void	print_reset(char *path, t_bi *tree, t_lsargs *args, int one)
 	args->minor_len = 0;
 	args->major_len = 0;
 	args->maj_min = 0;
+	// free(args->dir_name);
 }
 
 /*
@@ -116,8 +119,8 @@ void	listdir_else(char *path,
 		(args->d_name) ? free(args->d_name) : 0;
 		args->d_name = ft_strdup(path);
 		args->one = 1;
-		listdir_loop(path, &args, &tree, 1);
-		print_reset(path, tree, args, 1);
+		if (!listdir_loop(path, &args, &tree, 1))
+			print_reset(path, tree, args, 1);
 	}
 	else
 	{
@@ -148,9 +151,9 @@ void	listdir(char *path, int indent, t_lsargs *args)
 			args->minor = 0;
 			(args->d_name) ? free(args->d_name) : 0;
 			args->d_name = ft_strdup(entry->d_name);
-			listdir_loop(path, &args, &tree, 0);
+			args->error = listdir_loop(path, &args, &tree, 0);
 		}
-		print_reset(path, tree, args, 0);
+		(!args->error) ? print_reset(path, tree, args, 0) : 0;
 		closedir(dir);
 	}
 	else

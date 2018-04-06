@@ -6,7 +6,7 @@
 #    By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/05 15:20:50 by hasmith           #+#    #+#              #
-#    Updated: 2018/04/06 01:27:11 by hasmith          ###   ########.fr        #
+#    Updated: 2018/04/06 01:27:39 by hasmith          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = ft_ls
 
 M = "test"
 
-FLAGS = -g # -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror -g
 
 SRC_DIR = ./srcs/
 OBJ_DIR = ./objs/

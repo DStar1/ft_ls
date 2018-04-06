@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 21:44:20 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/06 01:08:47 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 03:00:10 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,14 @@ void	args_binary(t_bi *tree, t_lsargs *args, int dir)
 				: args_binary(tree->right, args, dir);
 	if (tree->dir == dir)
 	{
-		(dir && !args->first) ? ft_printf("\n%s:\n", tree->d_name) : 0;
+		args->dir_main = dir;
+		(dir && args->first) ? ft_putchar('\n') : 0;
+		(!args->dir_name) ? free(args->dir_name) : 0;
+		args->dir_name = ft_strdup(tree->d_name);
 		args->first = 0;
 		listdir(tree->d_name, 0, args);
 		args->error = 0;
+		args->first++;
 	}
 	(!args->r) ? args_binary(tree->right, args, dir)
 				: args_binary(tree->left, args, dir);
@@ -71,14 +75,14 @@ void	ft_strsort(t_bi **tree, t_lsargs *args)
 {
 	int			i;
 	struct stat	file_info;
-	int			dir;
 
 	i = -1;
 	while ((args->all_paths)[++i])
 	{
 		(args->d_name) ? free(args->d_name) : 0;
 		args->d_name = ft_strdup((args->all_paths)[i]);
-		lstat((args->all_paths)[i], &file_info);
+		lstat((args->all_paths)[i], &file_info);//if (lstat((args->all_paths)[i], &file_info) == -1)
+			// {args->error = 1;break;}
 		args->time = file_info.st_mtime;
 		args->nsec = file_info.st_mtimespec.tv_nsec;
 		if (S_ISDIR(file_info.st_mode))
@@ -111,6 +115,7 @@ void	main_helper(t_lsargs *args)
 	else
 	{
 		ft_strsort(&tree, args);
+		args->first = 0;
 		while (++dir < 2)
 			args_binary(tree, args, dir);
 		free_binary(tree);

@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 23:37:54 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/06 00:30:13 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 03:03:16 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,20 @@
 
 void	setdata2(t_lsargs *args, struct stat *file_info)
 {
+	// int i;
+	// int j;
+	//segfaults at YO2 ./ft_ls -l /Library/Scripts/42 
+			// ft_printf("YO\n");
 	args->perms = permissions(file_info->st_mode, args);
+				// ft_printf("YO2\n");
 	args->pw_name = (*getpwuid(file_info->st_uid)).pw_name;
+				// ft_printf("YO3\n");
 	args->gr_name = (*getgrgid(file_info->st_gid)).gr_name;
+				// ft_printf("YO4\n");
 	args->links = file_info->st_nlink;
+				// ft_printf("YO5\n");
 	args->size = file_info->st_size;
+				// ft_printf("YO6\n");
 }
 
 /*
@@ -33,7 +42,7 @@ int		setdata(t_bi *tree, char *path, t_lsargs *args, int one)
 	ssize_t		len;
 
 	(args->month_time) ? free(args->month_time) : 0;
-	np = (!one) ? construct_path(path, tree->d_name) : tree->d_name;
+	np = (!one) ? construct_path(path, tree->d_name, args) : tree->d_name;
 	suffix(np, args);
 	lstat(np, &file_info);
 	setdata2(args, &file_info);

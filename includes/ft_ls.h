@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:15:38 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/05 23:41:57 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/06 03:03:30 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ typedef struct		s_lsargs
 	int				fd;
 	char			link_path[1024];
 	char			suffix;
-	// struct passwd	user;
-	// struct group	group;
+	int				dir_main;
+	char			*dir_name;
+	struct passwd	*user;
+	struct group	*group;
 	char			*pw_name;
 	char			*gr_name;
 	char			*ctime;
@@ -102,7 +104,7 @@ int					ft_ls(char *fmt, ...);
 void				subdir(t_bi *tree, char *path, int indent, t_lsargs *args);
 void				listdir(char *path, int indent, t_lsargs *args);
 char				*permissions(int mode, t_lsargs *args);
-char				*construct_path(char *path, char *name);
+char				*construct_path(char *path, char *name, t_lsargs *args);
 void				print_binary_rev(t_bi *tree, char *path, t_lsargs *args);
 void				free_binary(t_bi *tree);
 void				suffix(char *dir, t_lsargs *data);
