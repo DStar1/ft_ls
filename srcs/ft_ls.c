@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/06 03:02:58 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/08 19:02:27 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ int		listdir_loop(char *path,
 
 	path2 = NULL;
 	path2 = (!one) ? construct_path(path, (*args)->d_name, *args) : path;
-	if (lstat(path2, &file_info) == -1)
-		return (1);///////////////////////////free?
+	if (lstat(path2, &file_info) != 0)
+		return (2);///////////////////////////free?
 	(*args)->time = file_info.st_mtime;
 	(*args)->nsec = file_info.st_mtimespec.tv_nsec;
 	if (S_ISBLK(file_info.st_mode) || S_ISCHR(file_info.st_mode))
@@ -86,7 +86,7 @@ int		listdir_loop(char *path,
 void	print_reset(char *path, t_bi *tree, t_lsargs *args, int one)
 {
 	args->size_len = ft_intlen(args->size_len);
-	if (args->dir_main)
+	if (args->dir_main && args->first)
 		ft_printf("%s:\n", args->dir_name);
 	if (args->l && !one)
 		ft_printf("total %d\n", args->blocks);
@@ -153,7 +153,7 @@ void	listdir(char *path, int indent, t_lsargs *args)
 			args->d_name = ft_strdup(entry->d_name);
 			args->error = listdir_loop(path, &args, &tree, 0);
 		}
-		(!args->error) ? print_reset(path, tree, args, 0) : 0;
+		(args->error != 2) ? print_reset(path, tree, args, 0) : 0;
 		closedir(dir);
 	}
 	else
