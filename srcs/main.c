@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 21:44:20 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/06 03:00:10 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/08 18:38:13 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,6 @@ int		main(int ac, char **av)
 		i++;
 	}
 	main_helper(&args);
-	free_array(args.all_paths);
+	(ac > 2) ? free_array(args.all_paths) : 0;//free(args.all_paths[0]);
 	return (0);
 }
