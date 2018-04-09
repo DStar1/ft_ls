@@ -6,28 +6,28 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 23:37:54 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/06 03:03:16 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/08 20:36:06 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
+	//segfaulted at YO2 ./ft_ls -l /Library/Scripts/42 
+
 void	setdata2(t_lsargs *args, struct stat *file_info)
 {
-	// int i;
-	// int j;
-	//segfaults at YO2 ./ft_ls -l /Library/Scripts/42 
-			// ft_printf("YO\n");
+	if (time(NULL) - file_info->st_mtime >= 15724800)
+	{
+		args->month_time = ft_strsub(args->ctime, 4, 7);
+		args->month_time = ft_strjoin_clr_1st(args->month_time, ft_strsub(args->ctime, 19, 5));
+	}
+	else
+		args->month_time = ft_strsub(args->ctime, 4, 12);
 	args->perms = permissions(file_info->st_mode, args);
-				// ft_printf("YO2\n");
 	args->pw_name = (*getpwuid(file_info->st_uid)).pw_name;
-				// ft_printf("YO3\n");
 	args->gr_name = (*getgrgid(file_info->st_gid)).gr_name;
-				// ft_printf("YO4\n");
 	args->links = file_info->st_nlink;
-				// ft_printf("YO5\n");
 	args->size = file_info->st_size;
-				// ft_printf("YO6\n");
 }
 
 /*
@@ -45,9 +45,8 @@ int		setdata(t_bi *tree, char *path, t_lsargs *args, int one)
 	np = (!one) ? construct_path(path, tree->d_name, args) : tree->d_name;
 	suffix(np, args);
 	lstat(np, &file_info);
+		args->ctime = ctime(&tree->time);
 	setdata2(args, &file_info);
-	args->ctime = ctime(&tree->time);
-	args->month_time = ft_strsub(args->ctime, 4, 12);
 	ft_bzero(buf, sizeof(buf));
 	if (args->fd && (len = readlink(np, buf, sizeof(buf))) != -1)
 		ft_strcpy(args->link_path, buf);
