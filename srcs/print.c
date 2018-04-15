@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 23:37:54 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/08 20:36:06 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/15 16:34:05 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 
 void	setdata2(t_lsargs *args, struct stat *file_info)
 {
+	char *year;
+
+	year = ft_strsub(args->ctime, 19, 5);
 	if (time(NULL) - file_info->st_mtime >= 15724800)
 	{
 		args->month_time = ft_strsub(args->ctime, 4, 7);
-		args->month_time = ft_strjoin_clr_1st(args->month_time, ft_strsub(args->ctime, 19, 5));
+		args->month_time = ft_strjoin_clr_1st(args->month_time, year);
 	}
 	else
 		args->month_time = ft_strsub(args->ctime, 4, 12);
@@ -28,6 +31,7 @@ void	setdata2(t_lsargs *args, struct stat *file_info)
 	args->gr_name = (*getgrgid(file_info->st_gid)).gr_name;
 	args->links = file_info->st_nlink;
 	args->size = file_info->st_size;
+	free(year);
 }
 
 /*
