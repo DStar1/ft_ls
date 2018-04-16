@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/15 20:04:40 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/15 20:30:29 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		listdir_loop(char *path,
 	if (lstat(path2, &file_info) != 0)
 	{
 		(!one) ? free(path2) : 0;
-		ft_printf("PERMISSION DENIED!!!!!!!!\n");
+		// ft_printf("PERMISSION DENIED!!!!!!!!\n");
 		return (2);///////////////////////////free?
 	}
 	(*args)->time = file_info.st_mtime;
