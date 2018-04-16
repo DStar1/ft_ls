@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/15 18:55:20 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/04/15 20:04:40 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void	listdir_else(char *path,
 					t_lsargs *args,
 					t_bi *tree)
 {
-	// // char *tmp;
+	char *tmp;
 	(void)tree;
 	(void)file_info;
 	(void)path;
@@ -137,11 +137,12 @@ void	listdir_else(char *path,
 	// }
 	// else
 	// {
-		// tmp = ft_strrchr(path, '/') + 1;
+		tmp = ft_strjoin("ft_ls: ", args->d_name);//ft_strrchr(path, '/') + 1;
 		(args->d_name) ? free(args->d_name) : 0;
 		args->d_name = (ft_strrchr(path, '/')) ? ft_strdup(ft_strrchr(path, '/') + 1) : ft_strdup(path);//ft_strrchr(path, '/') + 1);
 		// (args->d_name) ? free(args->d_name) : 0;
-		perror(ft_strjoin("ft_ls: ", args->d_name));//ft_strjoin free?
+		perror(tmp);//ft_strjoin free?
+		free(tmp);
 		args->error = 1;
 	// }
 }
