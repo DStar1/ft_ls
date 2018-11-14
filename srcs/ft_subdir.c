@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:30:25 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/06 03:07:18 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/11/14 15:09:47 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ char	*construct_path(char *path, char *name, t_lsargs *args)
 	if (ft_strlen(path) > 0)
 	{
 		newpath = ft_strdup(path);
-		// if (path[ft_strlen(path) - 1] != '/' && !args->dir_main)// to keep the '//''
-			newpath = ft_strjoin_clr_1st(newpath, "/");//this keeps the path on
+		newpath = ft_strjoin_clr_1st(newpath, "/");
 		newpath = ft_strjoin_clr_1st(newpath, name);
 		return (newpath);
 	}
@@ -45,7 +44,6 @@ void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args)
 	else
 		subdir(tree->left, path, indent, args);
 	if (tree->dir)
-	{
 		if (ft_strcmp(tree->d_name, ".") && ft_strcmp(tree->d_name, ".."))
 		{
 			args->maj_min_len = 0;
@@ -55,7 +53,6 @@ void	subdir(t_bi *tree, char *path, int indent, t_lsargs *args)
 			listdir(path1, indent, args);
 			free(path1);
 		}
-	}
 	if (args->r)
 		subdir(tree->left, path, indent, args);
 	else

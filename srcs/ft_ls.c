@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:34:14 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/15 20:30:29 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/11/14 15:09:30 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,12 @@ int		listdir_loop(char *path,
 {
 	struct stat	file_info;
 	char		*path2;
-	//segfaulted at YO2 ./ft_ls -l /Library/Scripts/42 
 
-	path2 = NULL;
 	path2 = (!one) ? construct_path(path, (*args)->d_name, *args) : path;
-	// ft_printf("NOT CONSTRUCTED: %s\n", path);
 	if (lstat(path2, &file_info) != 0)
 	{
 		(!one) ? free(path2) : 0;
-		// ft_printf("PERMISSION DENIED!!!!!!!!\n");
-		return (2);///////////////////////////free?
+		return (2);
 	}
 	(*args)->time = file_info.st_mtime;
 	(*args)->nsec = file_info.st_mtimespec.tv_nsec;
@@ -107,7 +103,6 @@ void	print_reset(char *path, t_bi *tree, t_lsargs *args, int one)
 	args->minor_len = 0;
 	args->major_len = 0;
 	args->maj_min = 0;
-	// free(args->dir_name);
 }
 
 /*
@@ -120,31 +115,17 @@ void	listdir_else(char *path,
 					t_bi *tree)
 {
 	char *tmp;
+
 	(void)tree;
 	(void)file_info;
 	(void)path;
-	// (args->d_name) ? free(args->d_name) : 0;
-	// args->d_name = ft_strdup(ft_strrchr(path, '/'));
-
-	// if (lstat(path, file_info) == 0)
-	// {
-	// 	ft_printf("PERMISSION DENIED2!!!!!!!!\n");
-	// 	(args->d_name) ? free(args->d_name) : 0;
-	// 	args->d_name = ft_strdup(path);//ft_strrchr(path, '/'));
-	// 	args->one = 1;
-	// 	if (!listdir_loop(path, &args, &tree, 1))
-	// 		print_reset(path, tree, args, 1);
-	// }
-	// else
-	// {
-		tmp = ft_strjoin("ft_ls: ", args->d_name);//ft_strrchr(path, '/') + 1;
-		(args->d_name) ? free(args->d_name) : 0;
-		args->d_name = (ft_strrchr(path, '/')) ? ft_strdup(ft_strrchr(path, '/') + 1) : ft_strdup(path);//ft_strrchr(path, '/') + 1);
-		// (args->d_name) ? free(args->d_name) : 0;
-		perror(tmp);//ft_strjoin free?
-		free(tmp);
-		args->error = 1;
-	// }
+	tmp = ft_strjoin("ft_ls: ", args->d_name);
+	(args->d_name) ? free(args->d_name) : 0;
+	args->d_name = (ft_strrchr(path, '/')) ?
+			ft_strdup(ft_strrchr(path, '/') + 1) : ft_strdup(path);
+	perror(tmp);
+	free(tmp);
+	args->error = 1;
 }
 
 /*
@@ -165,7 +146,6 @@ void	listdir(char *path, int indent, t_lsargs *args)
 	{
 		while ((entry = readdir(dir)) != NULL)
 		{
-			// ft_printf("FILE?FOLDER: %s\n", path);
 			args->major = 0;
 			args->minor = 0;
 			(args->d_name) ? free(args->d_name) : 0;

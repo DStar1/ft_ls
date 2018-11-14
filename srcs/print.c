@@ -6,13 +6,11 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 23:37:54 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/15 16:47:43 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/11/14 15:10:31 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-
-	//segfaulted at YO2 ./ft_ls -l /Library/Scripts/42 
 
 void	setdata2(t_lsargs *args, struct stat *file_info)
 {
@@ -49,7 +47,7 @@ int		setdata(t_bi *tree, char *path, t_lsargs *args, int one)
 	np = (!one) ? construct_path(path, tree->d_name, args) : tree->d_name;
 	suffix(np, args);
 	lstat(np, &file_info);
-		args->ctime = ctime(&tree->time);
+	args->ctime = ctime(&tree->time);
 	setdata2(args, &file_info);
 	ft_bzero(buf, sizeof(buf));
 	if (args->fd && (len = readlink(np, buf, sizeof(buf))) != -1)

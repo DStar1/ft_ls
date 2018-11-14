@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 21:44:20 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/15 20:16:18 by hasmith          ###   ########.fr       */
+/*   Updated: 2018/11/14 15:11:29 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,7 @@ void	ft_strsort(t_bi **tree, t_lsargs *args)
 	{
 		(args->d_name) ? free(args->d_name) : 0;
 		args->d_name = ft_strdup((args->all_paths)[i]);
-		lstat((args->all_paths)[i], &file_info);//if (lstat((args->all_paths)[i], &file_info) == -1)
-			// {args->error = 1;break;}
+		lstat((args->all_paths)[i], &file_info);
 		args->time = file_info.st_mtime;
 		args->nsec = file_info.st_mtimespec.tv_nsec;
 		if (S_ISDIR(file_info.st_mode))
@@ -140,8 +139,6 @@ int		main(int ac, char **av)
 		i++;
 	}
 	main_helper(&args);
-	(ac > 2) ? free_array(args.all_paths) : 0;//free(args.all_paths[0]);
-	// while (1)
-	// 	;
+	(ac > 2) ? free_array(args.all_paths) : 0;
 	return (0);
 }

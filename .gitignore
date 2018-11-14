@@ -5,3 +5,7 @@ ft_ls
 *.a
 test*
 result*
+libft/*.out
+libft/libft.a
+leaks
+objs/*
