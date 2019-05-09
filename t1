@@ -1,0 +1,1963 @@
+total 321
+drwx------@ 65 root     wheel           2210 May  8 16:33 .fseventsd
+d-wx-wx-wt@ 44 root     wheel           1496 May  8 13:27 .Trashes
+drwxr-xr-x@  5 root     wheel            170 May  8 08:02 Volumes
+d--x--x--x@  8 root     wheel            272 May  8 00:07 .DocumentRevisions-V100
+dr-xr-xr-x   3 root     wheel           4589 May  8 00:06 dev
+drwxrwxr-x+ 90 root     admin           3060 May  7 19:36 Applications
+drwx------@ 19 exam     applications     646 May  7 11:14 exam
+drwxr-xr-x  35 root     wheel           1258 May  7 09:00 .
+drwxr-xr-x  35 root     wheel           1258 May  7 09:00 ..
+drwxr-xr-x@  2 root     wheel             68 May  2 11:49 .PKInstallSandboxManager-SystemSoftware
+drwxr-xr-x  29 hasmith  2017_april      4096 Apr 19 23:05 nfs
+drwxr-xr-x+ 63 root     wheel           2142 Oct 16  2018 Library
+drwxr-xr-x@ 12 root     wheel            408 May  8  2018 usr
+drwxr-xr-x@ 63 root     wheel           2142 Mar  5  2018 sbin
+drwxr-xr-x@ 39 root     wheel           1326 Mar  5  2018 bin
+-rw-------@  1 root     wheel         131072 Jan 24  2018 .hotfiles.btree
+drwxr-xr-x   6 root     admin            204 Jan 16  2018 Users
+drwxrwxrwt   2 root     wheel             68 Jan 16  2018 goinfre
+-rw-rw-r--   1 root     admin           6148 Nov  8  2017 .DS_Store
+drwx------@  5 root     wheel            170 Nov  8  2017 .Spotlight-V100
+dr-xr-xr-x@  2 root     wheel             68 Nov  8  2017 home
+dr-xr-xr-x@  2 root     wheel             68 Nov  8  2017 net
+drwxr-xr-x@  6 root     wheel            204 Nov  8  2017 private
+lrwxr-xr-x   1 root     wheel             11 Nov  8  2017 var -> private/var
+lrwxr-xr-x   1 root     wheel             11 Nov  8  2017 tmp -> private/tmp
+lrwxr-xr-x   1 root     wheel             11 Nov  8  2017 etc -> private/etc
+drwxr-xr-x@  4 root     wheel            136 Oct 25  2017 System
+----------@  1 root     admin              0 Oct  2  2017 .file
+drwxr-xr-x@  2 root     wheel             68 Oct  2  2017 .vol
+drwxr-xr-x@  2 root     wheel             68 Oct  2  2017 Network
+drwxrwxr-t@  2 root     admin             68 Oct  2  2017 cores
+-rw-r--r--@  1 root     wheel            313 Aug 31  2017 installer.failurerequests
+drwxr-xr-x   3 root     wheel            102 Sep 26  2016 opt
+
+//.fseventsd:
+
+//.Trashes:
+
+//Volumes:
+total 8
+drwxr-xr-x@  5 root  wheel   170 May  8 08:02 .
+lrwxr-xr-x   1 root  wheel     1 May  8 00:06 Mac OS -> /
+drwxr-xr-x  35 root  wheel  1258 May  7 09:00 ..
+drwxrwxr-x  10 root  admin   408 Mar 26 09:01 Storage
+drwxr-xr-x   8 root  wheel   340 Nov  8  2017 Data
+
+//Volumes/Storage:
+total 0
+drwx------@   6 root  admin   204 May  8 17:27 .fseventsd
+d-wx-wx-wt@  58 root  wheel  1972 May  8 13:57 .TemporaryItems
+d-wx-wx-wt@  44 root  wheel  1496 May  8 13:27 .Trashes
+drwxrwxrwt   13 root  admin   442 May  8 13:26 cache
+drwxr-xr-x@   5 root  wheel   170 May  8 08:02 ..
+drwxrwxrwt  100 root  admin  3400 May  7 17:45 goinfre
+drwxrwxr-x   10 root  admin   408 Mar 26 09:01 .
+drwx------@   5 root  admin   170 Jul  4  2016 .Spotlight-V100
+
+//Volumes/Storage/.fseventsd:
+
+//Volumes/Storage/.TemporaryItems:
+
+//Volumes/Storage/.Trashes:
+
+//Volumes/Storage/cache:
+total 0
+drwxrwxrwt  13 root         admin           442 May  8 13:26 .
+drwx------   4 hasmith      2017_april      136 May  8 13:26 hasmith
+drwx------@  4 gabrady      2018_september  136 May  7 17:45 gabrady
+drwx------@  4 mnurkass     2019_april      136 May  7 14:04 mnurkass
+drwx------@  4 gemaximo     2019_january    136 May  6 13:11 gemaximo
+drwx------@  4 jtsai        2018_march      136 May  3 11:23 jtsai
+drwx------@  4 kiblack      2019_april      136 May  1 17:10 kiblack
+drwx------@  4 ljunzhen     2018_january    136 Apr 23 17:02 ljunzhen
+drwx------@  4 fkutchko     2019_april      136 Apr 16 23:50 fkutchko
+drwx------@  4 hackathon32  event           136 Mar 30 10:46 hackathon32
+drwx------@  4 jmocniak     2018_january    136 Mar 27 23:46 jmocniak
+drwx------@  4 junpark      2019_january    136 Mar 26 15:38 junpark
+drwxrwxr-x  10 root         admin           408 Mar 26 09:01 ..
+
+//Volumes/Storage/cache/hasmith:
+total 0
+drwx------   4 hasmith  2017_april  136 May  8 13:26 .
+drwxrwxrwt  13 root     admin       442 May  8 13:26 ..
+drwxr-xr-x   2 hasmith  2017_april   68 May  8 13:26 .cocoapods
+drwxr-xr-x  11 hasmith  2017_april  374 May  8 13:26 Library
+
+//Volumes/Storage/cache/hasmith/.cocoapods:
+total 0
+drwxr-xr-x  2 hasmith  2017_april   68 May  8 13:26 .
+drwx------  4 hasmith  2017_april  136 May  8 13:26 ..
+
+//Volumes/Storage/cache/hasmith/Library:
+total 0
+drwxr-xr-x  93 hasmith  2017_april  3162 May  8 17:03 Preferences
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 16:17 Logs
+drwx------  16 hasmith  2017_april   544 May  8 16:17 Caches
+drwx------   8 hasmith  2017_april   272 May  8 15:57 Saved Application State
+drwxr-xr-x  20 hasmith  2017_april   680 May  8 13:58 Application Support
+drwx------   3 hasmith  2017_april   102 May  8 13:29 Dictionaries
+drwx------  12 hasmith  2017_april   408 May  8 13:26 Calendars
+drwxr-xr-x  11 hasmith  2017_april   374 May  8 13:26 .
+drwx------   4 hasmith  2017_april   136 May  8 13:26 ..
+drwxr-xr-x   2 hasmith  2017_april    68 May  8 13:26 Developer
+drwx------   2 hasmith  2017_april    68 May  8 13:26 Suggestions
+
+//Volumes/Storage/cache/hasmith/Library/Preferences:
+total 824
+drwxr-xr-x  93 hasmith  2017_april   3162 May  8 17:03 .
+-rw-------   1 hasmith  2017_april    190 May  8 17:03 com.apple.AddressBook.plist
+-rw-------   1 hasmith  2017_april    152 May  8 17:03 com.apple.textInput.keyboardServices.textReplacement.plist
+-rw-------   1 hasmith  2017_april   3662 May  8 17:03 com.apple.xpc.activity2.plist
+-rw-r--r--   1 hasmith  2017_april    628 May  8 16:40 com.apple.security.cloudkeychainproxy3.keysToRegister.plist
+-rw-------   1 hasmith  2017_april    221 May  8 16:18 com.apple.madrid.plist
+-rw-------   1 hasmith  2017_april    839 May  8 15:58 .GlobalPreferences.plist
+-rw-------   1 hasmith  2017_april   3295 May  8 15:58 com.apple.finder.plist
+-rw-------   1 hasmith  2017_april    244 May  8 15:58 com.microsoft.VSCode.plist
+-rw-------   1 hasmith  2017_april    290 May  8 15:57 com.apple.systempreferences.plist
+drwx------  19 hasmith  2017_april    646 May  8 15:57 ByHost
+-rw-------   1 hasmith  2017_april    705 May  8 15:57 com.apple.spaces.plist
+-rw-------   1 hasmith  2017_april    195 May  8 15:34 com.google.Chrome.plist
+-rw-------   1 hasmith  2017_april     98 May  8 15:26 com.apple.SharedWebCredentials.plist
+-rw-------   1 hasmith  2017_april    198 May  8 14:42 com.spotify.client.plist
+-rw-------   1 hasmith  2017_april   5624 May  8 13:58 com.apple.ncprefs.plist
+-rw-------   1 hasmith  2017_april     80 May  8 13:58 com.spotify.client.helper.plist
+-rw-------   1 hasmith  2017_april    163 May  8 13:57 com.apple.commerce.plist
+-rw-------   1 hasmith  2017_april    329 May  8 13:36 com.apple.routined.plist
+-rw-------   1 hasmith  2017_april    975 May  8 13:34 com.apple.preferences.extensions.ShareMenu.plist
+-rw-------   1 hasmith  2017_april    104 May  8 13:32 com.apple.corespotlightui.plist
+drwx------   3 hasmith  2017_april    102 May  8 13:30 com.apple.LaunchServices
+-rw-------   1 hasmith  2017_april    661 May  8 13:30 com.google.Keystone.Agent.plist
+-rw-------   1 hasmith  2017_april   1885 May  8 13:29 com.apple.touristd.plist
+-rw-------   1 hasmith  2017_april  13219 May  8 13:28 com.apple.ServicesMenu.Services.plist
+-rw-------   1 hasmith  2017_april   2442 May  8 13:28 com.apple.parsecd.plist
+-rw-------   1 hasmith  2017_april    212 May  8 13:28 com.apple.identityservicesd.plist
+-rw-------   1 hasmith  2017_april     69 May  8 13:27 com.apple.appstore.plist
+-rw-------   1 hasmith  2017_april    211 May  8 13:27 com.apple.coreservices.uiagent.plist
+-rw-------   1 hasmith  2017_april   5556 May  8 13:27 com.googlecode.iterm2.plist
+-rw-------   1 hasmith  2017_april    422 May  8 13:27 ckkeyrolld.plist
+-rw-------   1 hasmith  2017_april  15188 May  8 13:27 com.apple.dock.plist
+-rw-------   1 hasmith  2017_april     92 May  8 13:27 com.apple.QuickLookDaemon.plist
+-rw-------   1 hasmith  2017_april     82 May  8 13:27 com.apple.imservice.ids.iMessage.plist
+-rw-------   1 hasmith  2017_april    778 May  8 13:27 com.apple.driver.AppleBluetoothMultitouch.trackpad.plist
+-rw-------   1 hasmith  2017_april    409 May  8 13:27 com.apple.systemuiserver.plist
+-rw-------   1 hasmith  2017_april    875 May  8 13:27 com.apple.AppleMultitouchTrackpad.plist
+-rw-------   1 hasmith  2017_april    146 May  8 13:27 com.apple.Spotlight.plist
+-rw-------   1 hasmith  2017_april    345 May  8 13:27 com.apple.driver.AppleBluetoothMultitouch.mouse.plist
+-rw-------   1 hasmith  2017_april    120 May  8 13:27 com.apple.iChat.AIM.plist
+-rw-------   1 hasmith  2017_april     82 May  8 13:27 com.apple.imservice.ids.FaceTime.plist
+-rw-------   1 hasmith  2017_april    115 May  8 13:27 com.apple.universalaccess.plist
+-rw-------   1 hasmith  2017_april    361 May  8 13:27 com.apple.AppleMultitouchMouse.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:27 com.apple.CallHistorySyncHelper.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:27 com.apple.Messages.plist
+-rw-------   1 hasmith  2017_april    868 May  8 13:27 com.apple.calculateframework.plist
+-rw-------   1 hasmith  2017_april    104 May  8 13:27 com.apple.CoreGraphics.plist
+-rw-------   1 hasmith  2017_april    199 May  8 13:27 com.apple.driver.AppleHIDMouse.plist
+-rw-------   1 hasmith  2017_april     96 May  8 13:27 com.apple.iChat.Jabber.plist
+-rw-------   1 hasmith  2017_april     85 May  8 13:27 com.apple.BezelServices.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:27 com.apple.cloudpaird.plist
+-rw-------   1 hasmith  2017_april    286 May  8 13:27 com.apple.HIToolbox.plist
+-rw-------   1 hasmith  2017_april    662 May  8 13:27 com.apple.SetupAssistant.plist
+-rw-------   1 hasmith  2017_april  17510 May  8 13:27 com.apple.facetime.bag.plist
+-rw-------   1 hasmith  2017_april    131 May  8 13:27 com.apple.icloud.fmfd.plist
+-rw-------   1 hasmith  2017_april    219 May  8 13:27 com.apple.imagent.plist
+-rw-------   1 hasmith  2017_april     96 May  8 13:27 com.apple.imessage.plist
+-rw-------   1 hasmith  2017_april     98 May  8 13:27 com.apple.sharingd.plist
+-rw-------   1 hasmith  2017_april    358 May  8 13:27 com.apple.TelephonyUtilities.plist
+-rw-------   1 hasmith  2017_april     69 May  8 13:27 com.apple.appstore.commerce.plist
+-rw-------   1 hasmith  2017_april    213 May  8 13:27 com.apple.assistant.backedup.plist
+-rw-------   1 hasmith  2017_april   8533 May  8 13:27 com.apple.imessage.bag.plist
+-rw-------   1 hasmith  2017_april    735 May  8 13:27 com.apple.notificationcenterui.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:27 com.apple.coreservices.useractivityd.dynamicuseractivites.plist
+-rw-------   1 hasmith  2017_april     75 May  8 13:27 com.apple.iChat.plist
+-rw-------   1 hasmith  2017_april     67 May  8 13:27 com.apple.Siri.plist
+-rw-------   1 hasmith  2017_april     67 May  8 13:26 com.apple.assistant.support.plist
+-rw-------   1 hasmith  2017_april    357 May  8 13:26 com.apple.coreauthd.plist
+-rw-------   1 hasmith  2017_april     83 May  8 13:26 com.apple.assistant.plist
+-rw-------   1 hasmith  2017_april    377 May  8 13:26 com.apple.GEO.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:26 com.apple.bookstoreagent.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:26 com.apple.commerce.configurator.plist
+-rw-------   1 hasmith  2017_april     99 May  8 13:26 com.apple.loginwindow.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:26 com.apple.storeagent.plist
+-rw-------   1 hasmith  2017_april   1351 May  8 13:26 com.apple.commerce.knownclients.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:26 com.apple.configurator.ui.commerce.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:26 com.apple.iBooksX.commerce.plist
+-rw-------   1 hasmith  2017_april    102 May  8 13:26 com.apple.SafariBookmarksSyncAgent.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:26 com.apple.accounts.plist
+-rw-------   1 hasmith  2017_april    103 May  8 13:26 com.apple.cloudd.plist
+-rw-------   1 hasmith  2017_april     85 May  8 13:26 com.apple.iCal.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:26 com.apple.ids.subservices.plist
+-rw-------   1 hasmith  2017_april     62 May  8 13:26 com.apple.imdpersistence.IMDPersistenceAgent.plist
+-rw-------   1 hasmith  2017_april     69 May  8 13:26 com.apple.talagent.plist
+-rw-------   1 hasmith  2017_april    197 May  8 13:26 loginwindow.plist
+-rw-------   1 hasmith  2017_april    817 May  8 13:26 com.apple.CommCenter.counts.plist
+-rw-------   1 hasmith  2017_april     42 May  8 13:26 com.apple.screensaver.plist
+-rw-------   1 hasmith  2017_april     56 May  8 13:26 com.apple.wifi.keychain-format.plist
+-rw-------   1 hasmith  2017_april     71 May  8 13:26 com.apple.DictionaryServices.plist
+-rw-------   1 hasmith  2017_april     67 May  8 13:26 com.apple.ipTelephony.plist
+-rw-------   1 hasmith  2017_april     83 May  8 13:26 com.apple.UserAccountUpdater.plist
+-rw-------   1 hasmith  2017_april    127 May  8 13:26 com.apple.symbolichotkeys.plist
+drwxr-xr-x  11 hasmith  2017_april    374 May  8 13:26 ..
+
+//Volumes/Storage/cache/hasmith/Library/Preferences/ByHost:
+total 136
+drwxr-xr-x  93 hasmith  2017_april  3162 May  8 17:03 ..
+drwx------  19 hasmith  2017_april   646 May  8 15:57 .
+-rw-------   1 hasmith  2017_april   603 May  8 15:57 com.apple.loginwindow.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april   253 May  8 15:57 com.apple.systempreferences.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april    61 May  8 13:29 com.apple.identityservices.idstatuscache.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april   169 May  8 13:27 com.apple.coreservices.appleidauthenticationinfo.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april   836 May  8 13:27 .GlobalPreferences.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april   183 May  8 13:27 com.apple.iChat.SubNet.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april   191 May  8 13:27 com.apple.QuickLookDaemon.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april   398 May  8 13:27 com.apple.imservice.SMS.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april   103 May  8 13:27 com.apple.dock.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april    54 May  8 13:27 com.apple.iChat.Jabber.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april    54 May  8 13:27 com.apple.imservice.ids.FaceTime.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april    99 May  8 13:27 com.apple.iChat.AIM.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april   101 May  8 13:27 com.apple.imservice.ids.iMessage.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april    60 May  8 13:26 com.apple.notificationcenterui.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april    74 May  8 13:26 com.apple.ManagedClient.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april   258 May  8 13:26 com.apple.commcenter.csidata.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+-rw-------   1 hasmith  2017_april    73 May  8 13:26 com.apple.Bluetooth.CB5E7333-5B29-57F0-B4C1-0FB9EE130122.plist
+
+//Volumes/Storage/cache/hasmith/Library/Preferences/com.apple.LaunchServices:
+total 8
+drwxr-xr-x  93 hasmith  2017_april  3162 May  8 17:03 ..
+drwx------   3 hasmith  2017_april   102 May  8 13:30 .
+-rw-r--r--   1 hasmith  2017_april   428 May  8 13:30 com.apple.launchservices.secure.plist
+
+//Volumes/Storage/cache/hasmith/Library/Logs:
+total 0
+drwx------   2 hasmith  2017_april   68 May  8 17:05 DiagnosticReports
+drwxr-xr-x   6 hasmith  2017_april  204 May  8 16:25 Homebrew
+drwxr-xr-x   6 hasmith  2017_april  204 May  8 16:17 .
+drwx------   2 hasmith  2017_april   68 May  8 13:30 Code
+drwxr-xr-x   4 hasmith  2017_april  136 May  8 13:26 SMSMigrator
+drwxr-xr-x  11 hasmith  2017_april  374 May  8 13:26 ..
+
+//Volumes/Storage/cache/hasmith/Library/Logs/DiagnosticReports:
+total 0
+drwx------  2 hasmith  2017_april   68 May  8 17:05 .
+drwxr-xr-x  6 hasmith  2017_april  204 May  8 16:17 ..
+
+//Volumes/Storage/cache/hasmith/Library/Logs/Homebrew:
+total 0
+drwxr-xr-x  11 hasmith  2017_april  374 May  8 16:32 ruby
+drwxr-xr-x   6 hasmith  2017_april  204 May  8 16:25 .
+drwxr-xr-x   2 hasmith  2017_april   68 May  8 16:25 readline
+drwxr-xr-x  12 hasmith  2017_april  408 May  8 16:23 openssl
+drwxr-xr-x   6 hasmith  2017_april  204 May  8 16:17 ..
+drwxr-xr-x   2 hasmith  2017_april   68 May  8 16:17 libyaml
+
+//Volumes/Storage/cache/hasmith/Library/Logs/Homebrew/ruby:
+total 9904
+drwxr-xr-x  11 hasmith  2017_april      374 May  8 16:32 .
+-rw-r--r--   1 hasmith  2017_april  1538467 May  8 16:32 config.log
+-rw-r--r--   1 hasmith  2017_april    16410 May  8 16:31 04.ruby
+-rw-r--r--   1 hasmith  2017_april     8032 May  8 16:31 03.make
+-rw-r--r--   1 hasmith  2017_april    72479 May  8 16:30 02.make
+-rw-r--r--   1 hasmith  2017_april     3326 May  8 16:30 03.make.cc
+-rw-r--r--   1 hasmith  2017_april  2424087 May  8 16:29 02.make.cc
+-rw-r--r--   1 hasmith  2017_april    28752 May  8 16:27 01.configure
+-rw-r--r--   1 hasmith  2017_april   960081 May  8 16:27 01.configure.cc
+-rw-r--r--   1 hasmith  2017_april        4 May  8 16:26 00.options.out
+drwxr-xr-x   6 hasmith  2017_april      204 May  8 16:25 ..
+
+//Volumes/Storage/cache/hasmith/Library/Logs/Homebrew/readline:
+total 0
+drwxr-xr-x  6 hasmith  2017_april  204 May  8 16:25 ..
+drwxr-xr-x  2 hasmith  2017_april   68 May  8 16:25 .
+
+//Volumes/Storage/cache/hasmith/Library/Logs/Homebrew/openssl:
+total 4744
+drwxr-xr-x   6 hasmith  2017_april      204 May  8 16:25 ..
+-rw-r--r--   1 hasmith  2017_april    88910 May  8 16:25 05.make
+-rw-r--r--   1 hasmith  2017_april     5451 May  8 16:23 05.make.cc
+drwxr-xr-x  12 hasmith  2017_april      408 May  8 16:23 .
+-rw-r--r--   1 hasmith  2017_april   590718 May  8 16:23 04.make
+-rw-r--r--   1 hasmith  2017_april   433514 May  8 16:21 03.make
+-rw-r--r--   1 hasmith  2017_april  1095939 May  8 16:21 03.make.cc
+-rw-r--r--   1 hasmith  2017_april    44835 May  8 16:18 02.make
+-rw-r--r--   1 hasmith  2017_april   138043 May  8 16:18 02.make.cc
+-rw-r--r--   1 hasmith  2017_april     9231 May  8 16:17 01.perl
+-rw-r--r--   1 hasmith  2017_april        7 May  8 16:17 00.options.out
+-rw-r--r--   1 hasmith  2017_april      404 May  8 16:17 01.perl.cc
+
+//Volumes/Storage/cache/hasmith/Library/Logs/Homebrew/libyaml:
+total 0
+drwxr-xr-x  6 hasmith  2017_april  204 May  8 16:25 ..
+drwxr-xr-x  2 hasmith  2017_april   68 May  8 16:17 .
+
+//Volumes/Storage/cache/hasmith/Library/Logs/Code:
+total 0
+drwxr-xr-x  6 hasmith  2017_april  204 May  8 16:17 ..
+drwx------  2 hasmith  2017_april   68 May  8 13:30 .
+
+//Volumes/Storage/cache/hasmith/Library/Logs/SMSMigrator:
+total 16
+drwxr-xr-x  6 hasmith  2017_april  204 May  8 16:17 ..
+-rw-------  1 hasmith  2017_april  735 May  8 13:26 SMSMigrator.log
+drwxr-xr-x  4 hasmith  2017_april  136 May  8 13:26 .
+-rw-------  1 hasmith  2017_april  106 May  8 13:26 IMDPersistenceMerge.log
+
+//Volumes/Storage/cache/hasmith/Library/Caches:
+total 328
+drwxr-xr-x  11 hasmith  2017_april     374 May  8 16:37 Homebrew
+drwx------  16 hasmith  2017_april     544 May  8 16:17 .
+-rw-r--r--   1 hasmith  2017_april   16711 May  8 15:58 com.apple.nsservicescache.plist
+-rw-r--r--   1 hasmith  2017_april    1881 May  8 15:57 com.apple.preferencepanes.usercache
+-rw-r--r--   1 hasmith  2017_april  143360 May  8 15:57 com.apple.preferencepanes.searchindexcache
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 14:30 com.microsoft.VSCode.ShipIt
+drwx------   4 hasmith  2017_april     136 May  8 13:58 com.spotify.client
+drwxr-xr-x   5 hasmith  2017_april     170 May  8 13:57 com.apple.commerce
+drwxr-xr-x@ 20 hasmith  2017_april     680 May  8 13:36 com.apple.parsecd
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 13:31 typescript
+drwx------@  3 hasmith  2017_april     102 May  8 13:29 Google
+drwxr-xr-x@  4 hasmith  2017_april     136 May  8 13:28 com.apple.DictionaryServices
+drwxr-xr-x   2 hasmith  2017_april      68 May  8 13:28 Maps
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 13:26 com.apple.appstore
+drwxr-xr-x@  3 hasmith  2017_april     102 May  8 13:26 com.apple.nsurlsessiond
+drwxr-xr-x  11 hasmith  2017_april     374 May  8 13:26 ..
+
+//Volumes/Storage/cache/hasmith/Library/Caches/Homebrew:
+total 608
+drwxr-xr-x  11 hasmith  2017_april     374 May  8 16:37 .
+-rw-r--r--   1 hasmith  2017_april       0 May  8 16:37 .cleaned
+-rw-r--r--   1 hasmith  2017_april   24381 May  8 16:35 linkage.json
+drwxr-xr-x   7 hasmith  2017_april     238 May  8 16:31 downloads
+lrwxr-xr-x   1 hasmith  2017_april      94 May  8 16:31 ruby--rubygems--3.0.3.tgz -> downloads/590e1818e7eac6270fe33282ed860abd3a5eab0db9adf2097eac564ecb446b5a--rubygems-3.0.3.tgz
+lrwxr-xr-x   1 hasmith  2017_april      93 May  8 16:25 ruby--2.6.3.tar.xz -> downloads/560f28185f8505e1bfa48f762e0e421aadf30d2cce18858c97b9b1131e906f6a--ruby-2.6.3.tar.xz
+lrwxr-xr-x   1 hasmith  2017_april     118 May  8 16:25 readline--8.0.0_1.high_sierra.bottle.tar.gz -> downloads/b9bbf4556a67410f96a14fb5465f6f11887ec0ba28fa76f2ff2743e61d74bb38--readline-8.0.0_1.high_sierra.bottle.tar.gz
+lrwxr-xr-x   1 hasmith  2017_april      97 May  8 16:17 openssl--1.0.2r.tar.gz -> downloads/c1e19c114acc64c24950a742352d31f4a4285c2c9a2553128a60cb836b330ac3--openssl-1.0.2r.tar.gz
+lrwxr-xr-x   1 hasmith  2017_april     115 May  8 16:17 libyaml--0.2.2.high_sierra.bottle.tar.gz -> downloads/a604fea2b23334d0497d5d78676ae61a84e00ee9b4b17728e69fb2c9ed5768ca--libyaml-0.2.2.high_sierra.bottle.tar.gz
+drwx------  16 hasmith  2017_april     544 May  8 16:17 ..
+-rw-r--r--   1 hasmith  2017_april  265742 May  8 16:17 descriptions.json
+
+//Volumes/Storage/cache/hasmith/Library/Caches/Homebrew/downloads:
+total 36720
+drwxr-xr-x  11 hasmith  2017_april       374 May  8 16:37 ..
+drwxr-xr-x   7 hasmith  2017_april       238 May  8 16:31 .
+-rw-r--r--   1 hasmith  2017_april    529287 Apr 26 22:36 b9bbf4556a67410f96a14fb5465f6f11887ec0ba28fa76f2ff2743e61d74bb38--readline-8.0.0_1.high_sierra.bottle.tar.gz
+-rw-r--r--   1 hasmith  2017_april  11904360 Apr 17 08:25 560f28185f8505e1bfa48f762e0e421aadf30d2cce18858c97b9b1131e906f6a--ruby-2.6.3.tar.xz
+-rw-r--r--   1 hasmith  2017_april    105151 Mar 13 09:19 a604fea2b23334d0497d5d78676ae61a84e00ee9b4b17728e69fb2c9ed5768ca--libyaml-0.2.2.high_sierra.bottle.tar.gz
+-rw-r--r--   1 hasmith  2017_april    904175 Mar  4 15:35 590e1818e7eac6270fe33282ed860abd3a5eab0db9adf2097eac564ecb446b5a--rubygems-3.0.3.tgz
+-rw-r--r--   1 hasmith  2017_april   5348369 Feb 26 06:34 c1e19c114acc64c24950a742352d31f4a4285c2c9a2553128a60cb836b330ac3--openssl-1.0.2r.tar.gz
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.microsoft.VSCode.ShipIt:
+total 8
+drwx------  16 hasmith  2017_april  544 May  8 16:17 ..
+drwxr-xr-x   3 hasmith  2017_april  102 May  8 14:30 .
+-rw-r--r--   1 hasmith  2017_april  325 May  8 13:30 ShipItState.plist
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client:
+total 0
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 Data
+drwx------  16 hasmith  2017_april   544 May  8 16:17 ..
+drwx------   4 hasmith  2017_april   136 May  8 13:58 .
+drwx------  13 hasmith  2017_april   442 May  8 13:58 Browser
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data:
+total 0
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 .
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 16:37 59
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 16:31 8e
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 16:27 62
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 16:27 b6
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 16:23 0b
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 16:18 21
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 16:09 48
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 16:02 39
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 15:57 45
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 15:51 bc
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 15:45 71
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 15:45 a4
+drwxr-xr-x   5 hasmith  2017_april   170 May  8 15:41 99
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 15:37 86
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 15:33 3a
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 15:28 51
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 15:18 83
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 15:15 5b
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 15:10 ea
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 15:00 a8
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:54 2a
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:51 77
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:50 ec
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:46 7e
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:42 ba
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:32 dd
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:28 37
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:24 ab
+drwxr-xr-x   2 hasmith  2017_april    68 May  8 14:08 42
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:05 96
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:03 12
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:03 18
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:03 08
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 3d
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 93
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 40
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 e0
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 b2
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 2e
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 bd
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 49
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:01 98
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:01 b5
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:01 89
+drwxr-xr-x   5 hasmith  2017_april   170 May  8 14:01 a9
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:01 a2
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:00 eb
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:00 1c
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:00 ac
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:00 95
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 90
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 3c
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 13:59 36
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 00
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 13:59 b3
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 09
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 70
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 75
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 23
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 2d
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 30
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 38
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 4f
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 5a
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 64
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 7d
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 9d
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 9e
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 a7
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 c3
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 c9
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 cc
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 13:59 d4
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 e6
+drwx------   4 hasmith  2017_april   136 May  8 13:58 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:58 5d
+drwxr-xr-x   2 hasmith  2017_april    68 May  8 13:58 c4
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/59:
+total 280
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 16:37 .
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+-rw-r--r--   1 hasmith  2017_april  139380 May  8 16:37 597e8be1ed58de43e2664f3fa7820d08ae9ad12e.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/8e:
+total 120
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 16:31 .
+-rw-r--r--   1 hasmith  2017_april  59772 May  8 16:31 8ecb294f8a48289afc0eb6f6adfe585977d26ec6.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/62:
+total 272
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april     136 May  8 16:27 .
+-rw-r--r--   1 hasmith  2017_april  121670 May  8 16:27 62bcba4d4ee7b6b120b037424338e1bbb9971212.file
+-rw-r--r--   1 hasmith  2017_april   15825 May  8 13:59 623fbadc50798a632e10305a4c276c07af8350bc.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/b6:
+total 144
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april    136 May  8 16:27 .
+-rw-r--r--   1 hasmith  2017_april  62228 May  8 16:27 b62e72d155f6c1a9d70c24987149348ecdd7915e.file
+-rw-r--r--   1 hasmith  2017_april   5708 May  8 13:59 b6672d49a9b2f9f21e5e8e09a3d0ee9649913c5e.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/0b:
+total 200
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 16:23 .
+-rw-r--r--   1 hasmith  2017_april  98503 May  8 16:23 0b08ee8d2a9f6768c4190534076899bb337a059e.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/21:
+total 288
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april    136 May  8 16:18 .
+-rw-r--r--   1 hasmith  2017_april  84558 May  8 16:18 21fa3aa0543fc798a2716b12d2790fed4111a29d.file
+-rw-r--r--   1 hasmith  2017_april  59648 May  8 15:24 21dd8475bc4537217706962b65688a6da03e4aef.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/48:
+total 472
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 16:09 .
+-rw-r--r--   1 hasmith  2017_april  238745 May  8 16:09 4829bd434c0234c8dbd0f43795aceadbf20d7956.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/39:
+total 296
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 16:02 .
+-rw-r--r--   1 hasmith  2017_april  147501 May  8 16:02 3954885f73f0016f72ea3dc75c62fd034a889ede.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/45:
+total 8072
+drwxr-xr-x  78 hasmith  2017_april     2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april      136 May  8 15:57 .
+-rw-r--r--   1 hasmith  2017_april   183575 May  8 15:57 45e0510afca17b9aef4d6d21b29e4437a83e86b1.file
+-rw-r--r--   1 hasmith  2017_april  3947940 May  8 14:02 45b3103f415302f897834a5b8bece327ecbb7329.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/bc:
+total 272
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 15:51 .
+-rw-r--r--   1 hasmith  2017_april  137810 May  8 15:51 bc662ae8db43d5dfccd7a97fea3bf97845fe14f3.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/71:
+total 464
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april     136 May  8 15:45 .
+-rw-r--r--   1 hasmith  2017_april  232115 May  8 15:45 71f1925b117e3e2287d96a5b51f556e1b5722bac.file
+-rw-r--r--   1 hasmith  2017_april     493 May  8 14:00 71d36abc4ef5cfc7f264ec644966818a25483cd0.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/a4:
+total 320
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april     136 May  8 15:45 .
+-rw-r--r--   1 hasmith  2017_april  154279 May  8 15:45 a48fb86ad4cc8e6cd4852679c42b7cbfa55c0973.file
+-rw-r--r--   1 hasmith  2017_april    7675 May  8 13:59 a4135091b20b8b8e9f72d28c788d439b8d877443.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/99:
+total 536
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   5 hasmith  2017_april     170 May  8 15:41 .
+-rw-r--r--   1 hasmith  2017_april  111059 May  8 15:41 990eab048dc798deafd08cb0da0e2415980d6dd6.file
+-rw-r--r--   1 hasmith  2017_april  154840 May  8 15:02 99034d4b58375c38b2e27967bef28f9938b6e201.file
+-rw-r--r--   1 hasmith  2017_april    2610 May  8 13:58 9903f38c69f0d11718825927fbf1d1faaee38e51.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/86:
+total 480
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april     136 May  8 15:37 .
+-rw-r--r--   1 hasmith  2017_april  147960 May  8 15:37 867266aaa5ab22de627ba82a1b1efc1d1c54e30d.file
+-rw-r--r--   1 hasmith  2017_april   91320 May  8 13:59 865d9889f8194e9cb42fc9634d57ebec40fc643a.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/3a:
+total 632
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april     136 May  8 15:33 .
+-rw-r--r--   1 hasmith  2017_april  112083 May  8 15:33 3aa0edcc5fa00a1f53ca199380d6f07f67b7a354.file
+-rw-r--r--   1 hasmith  2017_april  205777 May  8 14:38 3a6237bbbd222f51ce3009a10421c1b1c6f9c8a7.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/51:
+total 384
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april     136 May  8 15:28 .
+-rw-r--r--   1 hasmith  2017_april  122089 May  8 15:28 5139c40304beb30daeeefad0cb076798e49abdd6.file
+-rw-r--r--   1 hasmith  2017_april   72579 May  8 14:20 5175ebdc499f2c5b7b4362662a5f826834c74710.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/83:
+total 152
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 15:18 .
+-rw-r--r--   1 hasmith  2017_april  76077 May  8 15:18 83a1d0c7975f5f454c3ef1b5bc59cb17c8934829.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/5b:
+total 264
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 15:15 .
+-rw-r--r--   1 hasmith  2017_april  135082 May  8 15:15 5b9509e55cee95cbb56f3b4deb2babccddc2dbc6.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/ea:
+total 264
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 15:10 .
+-rw-r--r--   1 hasmith  2017_april  131788 May  8 15:10 ea949e3bf59e4d9489dcc2566cfcb4288ae29576.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/a8:
+total 160
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 15:00 .
+-rw-r--r--   1 hasmith  2017_april  79046 May  8 15:00 a8342a2b283d5a477ccf0071d658150a15769d09.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/2a:
+total 272
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 14:54 .
+-rw-r--r--   1 hasmith  2017_april  135259 May  8 14:54 2a67ef5e76a8225df052a63ed8789d557bdfe013.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/77:
+total 344
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april     136 May  8 14:51 .
+-rw-r--r--   1 hasmith  2017_april   68697 May  8 14:51 77f8a34072e90ee404afea48f2b9bb65ab709faf.file
+-rw-r--r--   1 hasmith  2017_april  106027 May  8 14:05 77d80dd3612759724ed98887c1daa64d351f03ae.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/ec:
+total 32
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 14:50 .
+-rw-r--r--   1 hasmith  2017_april  15752 May  8 14:50 ec8ee3fe71e3c1d7bf07c53601c48ea4d5d4ebe3.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/7e:
+total 328
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april     136 May  8 14:46 .
+-rw-r--r--   1 hasmith  2017_april  161165 May  8 14:46 7eb8ef9e49edc93b7640540dcee42ec3de14fd14.file
+-rw-r--r--   1 hasmith  2017_april    3940 May  8 13:59 7e0068171534d060964b0f767b302a5125442b16.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/ba:
+total 184
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 14:42 .
+-rw-r--r--   1 hasmith  2017_april  93173 May  8 14:42 bab5702aacd67ccb05f6bb107f62ad187b369581.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/dd:
+total 304
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 14:32 .
+-rw-r--r--   1 hasmith  2017_april  152996 May  8 14:32 dd04e66332929d7283097ae92c7146c57611afa1.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/37:
+total 128
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 14:28 .
+-rw-r--r--   1 hasmith  2017_april  63065 May  8 14:28 377628596355353c38487f114a05bef9f8b0ea18.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/ab:
+total 120
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 14:24 .
+-rw-r--r--   1 hasmith  2017_april  59242 May  8 14:24 ab90507c1794b7bfa1250495db25ebdbeea5976d.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/42:
+total 0
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   2 hasmith  2017_april    68 May  8 14:08 .
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/96:
+total 13976
+drwxr-xr-x  78 hasmith  2017_april     2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april      102 May  8 14:05 .
+-rw-r--r--   1 hasmith  2017_april  7152284 May  8 14:05 9613eedb3d8018ce94a213cb097571bd3e2387ef.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/12:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:03 .
+-rw-r--r--   1 hasmith  2017_april  5179 May  8 14:03 129ef928e19f1bc4273d67fe3426ff994c14b6df.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/18:
+total 136
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april    136 May  8 14:03 .
+-rw-r--r--   1 hasmith  2017_april   1486 May  8 14:03 1894a387fab049f4897f18ffb239f392b6a5079d.file
+-rw-r--r--   1 hasmith  2017_april  62715 May  8 13:59 187a712adc70f0f1230d6358f6e9dfb51c9452a1.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/08:
+total 8
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:03 .
+-rw-r--r--   1 hasmith  2017_april  1073 May  8 14:03 0836cbb9b9e9ff33c9254606f3de2727c8f4d7aa.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/3d:
+total 8
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 .
+-rw-r--r--   1 hasmith  2017_april  2793 May  8 14:02 3d177611f3440c6a42a28f0e3c6a29fcfc3c9a1b.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/93:
+total 11280
+drwxr-xr-x  78 hasmith  2017_april     2652 May  8 16:37 ..
+-rw-r--r--   1 hasmith  2017_april  5774136 May  8 14:02 93b0ee6b0afd13062bdaa0f1f26a6a741b367d1f.file
+drwxr-xr-x   3 hasmith  2017_april      102 May  8 14:02 .
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/40:
+total 40
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 14:02 .
+-rw-r--r--   1 hasmith  2017_april  17771 May  8 14:02 4015dbf02f42586465b215d6b234e279c613e5b0.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/e0:
+total 136
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 14:02 .
+-rw-r--r--   1 hasmith  2017_april  68469 May  8 14:02 e08fe3e6c37dc13152afb31840455761afee761a.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/b2:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 .
+-rw-r--r--   1 hasmith  2017_april  6763 May  8 14:02 b28cb969c58d13dc7dd1b595634ee3f95e713b1f.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/2e:
+total 32
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 14:02 .
+-rw-r--r--   1 hasmith  2017_april  14631 May  8 14:02 2e9bdcf6b654daa7434aebef6adb17802a359786.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/bd:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 .
+-rw-r--r--   1 hasmith  2017_april  4753 May  8 14:02 bdb8d6398567a6cbaedaebcd023cf2b3f5915c6b.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/49:
+total 24
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:02 .
+-rw-r--r--   1 hasmith  2017_april  9407 May  8 14:02 498475fe90c12c8921d54691674a2a330b1e3cb0.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/98:
+total 8
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:01 .
+-rw-r--r--   1 hasmith  2017_april   967 May  8 14:01 98033e80209b64ddbbc9d4d3ebd70c0d83e0fa28.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/b5:
+total 32
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 14:01 .
+-rw-r--r--   1 hasmith  2017_april  15310 May  8 14:01 b504c131f0af60d8aebdf5ebcb07970f22096920.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/89:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:01 .
+-rw-r--r--   1 hasmith  2017_april  7717 May  8 14:01 89c9e6bdb846aafd603ec5f705f8bd152e81b2a2.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/a9:
+total 280
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   5 hasmith  2017_april     170 May  8 14:01 .
+-rw-r--r--   1 hasmith  2017_april    1099 May  8 14:01 a91f848e32cfa884bf2d57deced082b99055fb90.file
+-rw-r--r--   1 hasmith  2017_april     358 May  8 14:01 a94319c0ef0e00bd74f63bbf658c96e74b2bb657.file
+-rw-r--r--   1 hasmith  2017_april  131168 May  8 13:59 a925530bcf0724e16402fe002b9c3814ad119842.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/a2:
+total 8
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:01 .
+-rw-r--r--   1 hasmith  2017_april   353 May  8 14:01 a265371b7c618c8f0ad0e17acbf1ae82480b8877.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/eb:
+total 8
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:00 .
+-rw-r--r--   1 hasmith  2017_april  1537 May  8 14:00 ebeee0321571fcd85114ab40031ee99732ba9545.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/1c:
+total 24
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:00 .
+-rw-r--r--   1 hasmith  2017_april   344 May  8 14:00 1cd4aef8662014cf33319de3d709eddf4b39d3f0.file
+-rw-r--r--   1 hasmith  2017_april  5894 May  8 13:59 1c04eed1835557aa67dbbf7bf7de298456e2ac1a.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/ac:
+total 8
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:00 .
+-rw-r--r--   1 hasmith  2017_april   796 May  8 14:00 ac9338a2fef95cdf6c59da62144cd84901195dd7.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/95:
+total 32
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:00 .
+-rw-r--r--   1 hasmith  2017_april  8328 May  8 14:00 95572214066f55107583fba3d632c6c8ce394040.file
+-rw-r--r--   1 hasmith  2017_april   649 May  8 13:59 9532d629828b13886c0d28b98a97fcfe430f48d1.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/90:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  5134 May  8 13:59 909dcf5de1b89357c057adc6253d6e994dc9dfac.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/3c:
+total 72
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  33457 May  8 13:59 3c23e718ecb9fadb4ce807151724edc3e64bf33a.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/36:
+total 5304
+drwxr-xr-x  78 hasmith  2017_april     2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april      136 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  2703832 May  8 13:59 36cdd61f2d1ebc8d92bba726632367725dcc29e7.file
+-rw-r--r--   1 hasmith  2017_april     7374 May  8 13:59 36896d41934a3633f2d53be36f730e2cfae39c63.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/00:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  4694 May  8 13:59 0089a8625d753ea693c3b6431f7202f34aa30d7c.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/b3:
+total 7808
+drwxr-xr-x  78 hasmith  2017_april     2652 May  8 16:37 ..
+-rw-r--r--   1 hasmith  2017_april  3861952 May  8 13:59 b34ad1a0401ca11dc91f273c2501284c60e36bf4.file
+drwxr-xr-x   4 hasmith  2017_april      136 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april   131168 May  8 13:59 b30a3bcabc658dc5250547baadc458055fa4aac9.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/09:
+total 5424
+drwxr-xr-x  78 hasmith  2017_april     2652 May  8 16:37 ..
+-rw-r--r--   1 hasmith  2017_april  2776344 May  8 13:59 09b81c322a419de36032e7df97e0473d2b5180b4.file
+drwxr-xr-x   3 hasmith  2017_april      102 May  8 13:59 .
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/70:
+total 464
+drwxr-xr-x  78 hasmith  2017_april    2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april     102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  234706 May  8 13:59 70698df4fa1a4c6da8b4a24b38cd5f2805c690f1.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/75:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  6772 May  8 13:59 75a43d1e43ba73706ba876c9925a6071e638b346.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/23:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  4736 May  8 13:59 231c1259b72a62e48bc5e1cd44059c38651cfea4.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/2d:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  4989 May  8 13:59 2d3a8fdc022664523f89e8e1ea4b9d1cb4586099.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/30:
+total 24
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  11003 May  8 13:59 30a59c32c011556eb02feb30da01a92eb33225c1.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/38:
+total 48
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  24145 May  8 13:59 38ef38b579e8b8280a460890599ef95b0d1a3aea.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/4f:
+total 24
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  8867 May  8 13:59 4f917e803eb17d617ff2c331a1aeb84ca36a93a7.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/5a:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  4376 May  8 13:59 5a1c66bd0c99f2807e5d163133b84ed447d518b1.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/64:
+total 24
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  11388 May  8 13:59 64d485abc8ae1f2428ee039fa935f4e9a84b9ad9.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/7d:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  8095 May  8 13:59 7d93318b1d754df3ca76b7b0826779e7face840e.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/9d:
+total 24
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  11010 May  8 13:59 9d09b04e94fd4fabfb7d929da09b72f8f4f3cf16.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/9e:
+total 8
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  3402 May  8 13:59 9e1be81d1f83ad28cf31c0973556d4559da85895.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/a7:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  5596 May  8 13:59 a75df2ddd6a71a38600b8f6177571a88f437a276.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/c3:
+total 24
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  12231 May  8 13:59 c34e1f07479dcd441ed280c13d6aa8ceed41e3ce.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/c9:
+total 16
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  4722 May  8 13:59 c9fa31d1352a44ea765fd56dd88f46a5bf81b152.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/cc:
+total 96
+drwxr-xr-x  78 hasmith  2017_april   2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april    102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  48432 May  8 13:59 cca45298356d842fa17ef259649d9ba0dcc3b5a8.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/d4:
+total 32
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  6596 May  8 13:59 d4345218ffeebfdd547cb703cd3a07eed4394a85.file
+-rw-r--r--   1 hasmith  2017_april  5374 May  8 13:59 d4fc6f28e14b10663be81c5fa001429da84bbe0d.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/e6:
+total 24
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:59 .
+-rw-r--r--   1 hasmith  2017_april  9463 May  8 13:59 e61b33c30780ce210d85ce5ff2f4381115f0a6b6.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/5d:
+total 8
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 13:58 .
+-rw-r--r--   1 hasmith  2017_april   317 May  8 13:58 5dd0ed59064cca4b42cd210db06c3d0a91fea4f5.file
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Data/c4:
+total 0
+drwxr-xr-x  78 hasmith  2017_april  2652 May  8 16:37 ..
+drwxr-xr-x   2 hasmith  2017_april    68 May  8 13:58 .
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Browser:
+total 336
+drwx------  61 hasmith  2017_april    2074 May  8 14:24 Cache
+-rw-r--r--   1 hasmith  2017_april   28672 May  8 13:59 Cookies
+-rw-r--r--   1 hasmith  2017_april       0 May  8 13:59 Cookies-journal
+-rw-r--r--   1 hasmith  2017_april  131072 May  8 13:59 Visited Links
+drwx------   4 hasmith  2017_april     136 May  8 13:58 ..
+-rw-------   1 hasmith  2017_april     125 May  8 13:58 LOG
+drwx------  13 hasmith  2017_april     442 May  8 13:58 .
+-rw-------   1 hasmith  2017_april       0 May  8 13:58 000003.log
+-rw-------   1 hasmith  2017_april      16 May  8 13:58 CURRENT
+-rw-------   1 hasmith  2017_april       0 May  8 13:58 LOCK
+-rw-------   1 hasmith  2017_april      41 May  8 13:58 MANIFEST-000001
+drwx------   3 hasmith  2017_april     102 May  8 13:58 Local Storage
+drwx------   7 hasmith  2017_april     238 May  8 13:58 GPUCache
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Browser/Cache:
+total 18968
+-rw-------   1 hasmith  2017_april   270336 May  8 17:28 data_1
+-rw-------   1 hasmith  2017_april    45056 May  8 14:24 data_0
+drwx------  61 hasmith  2017_april     2074 May  8 14:24 .
+-rw-------   1 hasmith  2017_april  4202496 May  8 13:59 data_3
+-rw-------   1 hasmith  2017_april    21055 May  8 13:59 f_000036
+-rw-------   1 hasmith  2017_april  1056768 May  8 13:59 data_2
+-rw-------   1 hasmith  2017_april    26914 May  8 13:59 f_000003
+-rw-------   1 hasmith  2017_april    23488 May  8 13:59 f_000004
+-rw-------   1 hasmith  2017_april    21825 May  8 13:59 f_000005
+-rw-------   1 hasmith  2017_april    57141 May  8 13:59 f_000006
+-rw-------   1 hasmith  2017_april    57245 May  8 13:59 f_000007
+-rw-------   1 hasmith  2017_april    37335 May  8 13:59 f_000008
+-rw-------   1 hasmith  2017_april    75319 May  8 13:59 f_000009
+-rw-------   1 hasmith  2017_april    41563 May  8 13:59 f_00000a
+-rw-------   1 hasmith  2017_april    31432 May  8 13:59 f_00000b
+-rw-------   1 hasmith  2017_april    34333 May  8 13:59 f_00000c
+-rw-------   1 hasmith  2017_april    46276 May  8 13:59 f_00000d
+-rw-------   1 hasmith  2017_april    41701 May  8 13:59 f_00000e
+-rw-------   1 hasmith  2017_april    34254 May  8 13:59 f_00000f
+-rw-------   1 hasmith  2017_april    51577 May  8 13:59 f_000010
+-rw-------   1 hasmith  2017_april    17997 May  8 13:59 f_000011
+-rw-------   1 hasmith  2017_april    27154 May  8 13:59 f_000012
+-rw-------   1 hasmith  2017_april    24418 May  8 13:59 f_000013
+-rw-------   1 hasmith  2017_april    27660 May  8 13:59 f_000014
+-rw-------   1 hasmith  2017_april    31157 May  8 13:59 f_000015
+-rw-------   1 hasmith  2017_april    47255 May  8 13:59 f_000016
+-rw-------   1 hasmith  2017_april    18815 May  8 13:59 f_000017
+-rw-------   1 hasmith  2017_april    42012 May  8 13:59 f_000018
+-rw-------   1 hasmith  2017_april    28960 May  8 13:59 f_000019
+-rw-------   1 hasmith  2017_april    18891 May  8 13:59 f_00001a
+-rw-------   1 hasmith  2017_april    25704 May  8 13:59 f_00001b
+-rw-------   1 hasmith  2017_april    31851 May  8 13:59 f_00001c
+-rw-------   1 hasmith  2017_april    36748 May  8 13:59 f_00001d
+-rw-------   1 hasmith  2017_april    39655 May  8 13:59 f_00001e
+-rw-------   1 hasmith  2017_april    37997 May  8 13:59 f_00001f
+-rw-------   1 hasmith  2017_april    18351 May  8 13:59 f_000020
+-rw-------   1 hasmith  2017_april    20878 May  8 13:59 f_000021
+-rw-------   1 hasmith  2017_april    24533 May  8 13:59 f_000022
+-rw-------   1 hasmith  2017_april    48426 May  8 13:59 f_000023
+-rw-------   1 hasmith  2017_april    39398 May  8 13:59 f_000024
+-rw-------   1 hasmith  2017_april    47915 May  8 13:59 f_000025
+-rw-------   1 hasmith  2017_april    31129 May  8 13:59 f_000026
+-rw-------   1 hasmith  2017_april    26266 May  8 13:59 f_000027
+-rw-------   1 hasmith  2017_april    18035 May  8 13:59 f_000028
+-rw-------   1 hasmith  2017_april    17875 May  8 13:59 f_000029
+-rw-------   1 hasmith  2017_april    29039 May  8 13:59 f_00002a
+-rw-------   1 hasmith  2017_april    27727 May  8 13:59 f_00002b
+-rw-------   1 hasmith  2017_april    26707 May  8 13:59 f_00002c
+-rw-------   1 hasmith  2017_april    34968 May  8 13:59 f_00002d
+-rw-------   1 hasmith  2017_april    19745 May  8 13:59 f_00002e
+-rw-------   1 hasmith  2017_april    29649 May  8 13:59 f_00002f
+-rw-------   1 hasmith  2017_april    35780 May  8 13:59 f_000030
+-rw-------   1 hasmith  2017_april    27834 May  8 13:59 f_000031
+-rw-------   1 hasmith  2017_april    25888 May  8 13:59 f_000032
+-rw-------   1 hasmith  2017_april    27457 May  8 13:59 f_000033
+-rw-------   1 hasmith  2017_april    28651 May  8 13:59 f_000034
+-rw-------   1 hasmith  2017_april    28679 May  8 13:59 f_000035
+-rw-------   1 hasmith  2017_april    55804 May  8 13:59 f_000002
+-rw-------   1 hasmith  2017_april  1755276 May  8 13:58 f_000001
+drwx------  13 hasmith  2017_april      442 May  8 13:58 ..
+-rw-------   1 hasmith  2017_april   524656 May  8 13:58 index
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Browser/Local Storage:
+total 0
+drwx------  13 hasmith  2017_april  442 May  8 13:58 ..
+drwx------   3 hasmith  2017_april  102 May  8 13:58 .
+drwx------   7 hasmith  2017_april  238 May  8 13:58 leveldb
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Browser/Local Storage/leveldb:
+total 48
+-rw-------  1 hasmith  2017_april  12031 May  8 14:00 000003.log
+drwx------  7 hasmith  2017_april    238 May  8 13:58 .
+drwx------  3 hasmith  2017_april    102 May  8 13:58 ..
+-rw-------  1 hasmith  2017_april     16 May  8 13:58 CURRENT
+-rw-------  1 hasmith  2017_april      0 May  8 13:58 LOCK
+-rw-------  1 hasmith  2017_april     71 May  8 13:58 LOG
+-rw-------  1 hasmith  2017_april     41 May  8 13:58 MANIFEST-000001
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.spotify.client/Browser/GPUCache:
+total 1096
+-rw-------   1 hasmith  2017_april  270336 May  8 17:28 data_1
+drwx------  13 hasmith  2017_april     442 May  8 13:58 ..
+drwx------   7 hasmith  2017_april     238 May  8 13:58 .
+-rw-------   1 hasmith  2017_april    8192 May  8 13:58 data_0
+-rw-------   1 hasmith  2017_april    8192 May  8 13:58 data_2
+-rw-------   1 hasmith  2017_april    8192 May  8 13:58 data_3
+-rw-------   1 hasmith  2017_april  262512 May  8 13:58 index
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.apple.commerce:
+total 40
+drwx------  16 hasmith  2017_april   544 May  8 16:17 ..
+drwxr-xr-x   5 hasmith  2017_april   170 May  8 13:57 .
+-rw-r--r--   1 hasmith  2017_april   555 May  8 13:57 UpdateOperationAudit.plist
+-rw-r--r--   1 hasmith  2017_april  9831 May  8 13:57 updates.plist
+-rw-r--r--   1 hasmith  2017_april  1216 May  8 13:27 SoftwareMap
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.apple.parsecd:
+total 40376
+drwx------  16 hasmith  2017_april      544 May  8 16:17 ..
+drwxr-xr-x@ 20 hasmith  2017_april      680 May  8 13:36 .
+-rw-------@  1 hasmith  2017_april  3954492 May  8 13:28 spotlight_model_resources
+-rw-------@  1 hasmith  2017_april    57671 May  8 13:28 crowdsourcing_whitelist_url
+-rw-------@  1 hasmith  2017_april  3960576 May  8 13:28 correction_dict_url
+-rw-------@  1 hasmith  2017_april     1268 May  8 13:28 dictionary_resources_url
+-rw-------@  1 hasmith  2017_april     3928 May  8 13:28 qi_features_url
+-rw-------@  1 hasmith  2017_april      171 May  8 13:28 lookup_hints_monthly_url
+-rw-------@  1 hasmith  2017_april      198 May  8 13:28 silhouette_config
+-rw-------@  1 hasmith  2017_april  1030535 May  8 13:28 silhouette_topic_mapping
+-rw-------@  1 hasmith  2017_april  3543503 May  8 13:28 lookup_hints_weekly_url
+-rw-------@  1 hasmith  2017_april  3399208 May  8 13:28 spotlight_phrase_dictionary.map
+-rw-------@  1 hasmith  2017_april       90 May  8 13:28 crowdsourcing_blacklist_url
+-rw-------@  1 hasmith  2017_april   168014 May  8 13:28 installed_app_whitelist_url
+-rw-------@  1 hasmith  2017_april  4255015 May  8 13:28 autofill_tld_whitelist_url
+-rw-------@  1 hasmith  2017_april    54964 May  8 13:28 silhouette_whitelisted_topics
+-rw-------@  1 hasmith  2017_april   148768 May  8 13:28 spotlight_stopword.map
+drwxr-xr-x@  3 hasmith  2017_april      102 May  8 13:27 EngagedCompletions
+-rw-------@  1 hasmith  2017_april    56198 May  8 13:26 bag.plist
+drwxr-xr-x@  8 hasmith  2017_april      272 May  8 13:26 CustomFeedback
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.apple.parsecd/EngagedCompletions:
+total 48
+drwxr-xr-x@ 20 hasmith  2017_april    680 May  8 13:36 ..
+drwxr-xr-x@  3 hasmith  2017_april    102 May  8 13:27 .
+-rw-r--r--@  1 hasmith  2017_april  24576 May  8 13:27 Cache.db
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.apple.parsecd/CustomFeedback:
+total 0
+drwxr-xr-x@ 20 hasmith  2017_april  680 May  8 13:36 ..
+drwxr-xr-x@  8 hasmith  2017_april  272 May  8 13:26 .
+drwxr-xr-x@  2 hasmith  2017_april   68 May  8 13:26 EngagedCompletions
+drwxr-xr-x@  2 hasmith  2017_april   68 May  8 13:26 ProactiveEventTracker
+drwxr-xr-x@  2 hasmith  2017_april   68 May  8 13:26 SafariAutoFill
+drwxr-xr-x@  2 hasmith  2017_april   68 May  8 13:26 SafariAutoPlay
+drwxr-xr-x@  2 hasmith  2017_april   68 May  8 13:26 SpotlightResultFeatures
+drwxr-xr-x@  2 hasmith  2017_april   68 May  8 13:26 Trystero
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.apple.parsecd/CustomFeedback/EngagedCompletions:
+total 0
+drwxr-xr-x@ 2 hasmith  2017_april   68 May  8 13:26 .
+drwxr-xr-x@ 8 hasmith  2017_april  272 May  8 13:26 ..
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.apple.parsecd/CustomFeedback/ProactiveEventTracker:
+total 0
+drwxr-xr-x@ 2 hasmith  2017_april   68 May  8 13:26 .
+drwxr-xr-x@ 8 hasmith  2017_april  272 May  8 13:26 ..
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.apple.parsecd/CustomFeedback/SafariAutoFill:
+total 0
+drwxr-xr-x@ 2 hasmith  2017_april   68 May  8 13:26 .
+drwxr-xr-x@ 8 hasmith  2017_april  272 May  8 13:26 ..
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.apple.parsecd/CustomFeedback/SafariAutoPlay:
+total 0
+drwxr-xr-x@ 2 hasmith  2017_april   68 May  8 13:26 .
+drwxr-xr-x@ 8 hasmith  2017_april  272 May  8 13:26 ..
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.apple.parsecd/CustomFeedback/SpotlightResultFeatures:
+total 0
+drwxr-xr-x@ 2 hasmith  2017_april   68 May  8 13:26 .
+drwxr-xr-x@ 8 hasmith  2017_april  272 May  8 13:26 ..
+
+//Volumes/Storage/cache/hasmith/Library/Caches/com.apple.parsecd/CustomFeedback/Trystero:
+total 0
+drwxr-xr-x@ 2 hasmith  2017_april   68 May  8 13:26 .
+drwxr-xr-x@ 8 hasmith  2017_april  272 May  8 13:26 ..
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript:
+total 0
+drwx------  16 hasmith  2017_april  544 May  8 16:17 ..
+drwxr-xr-x   5 hasmith  2017_april  170 May  8 15:29 3.3
+drwxr-xr-x   3 hasmith  2017_april  102 May  8 13:31 .
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3:
+total 184
+drwxr-xr-x    5 hasmith  2017_april    170 May  8 15:29 .
+drwxr-xr-x  106 hasmith  2017_april   3604 May  8 15:29 node_modules
+-rw-r--r--    1 hasmith  2017_april  89401 May  8 15:29 package-lock.json
+-rw-r--r--    1 hasmith  2017_april   2402 May  8 15:29 package.json
+drwxr-xr-x    3 hasmith  2017_april    102 May  8 13:31 ..
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules:
+total 0
+drwxr-xr-x    5 hasmith  2017_april   170 May  8 15:29 ..
+drwxr-xr-x  106 hasmith  2017_april  3604 May  8 15:29 .
+drwxr-xr-x   86 hasmith  2017_april  2924 May  8 15:29 @types
+drwxr-xr-x    3 hasmith  2017_april   102 May  8 15:04 .bin
+drwxr-xr-x   15 hasmith  2017_april   510 May  8 15:04 debug
+drwxr-xr-x    8 hasmith  2017_april   272 May  8 15:04 define-property
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 extend-shallow
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 fragment-cache
+drwxr-xr-x    5 hasmith  2017_april   170 May  8 15:04 get-value
+drwxr-xr-x    9 hasmith  2017_april   306 May  8 15:04 graceful-fs
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 has-flag
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 has-value
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 has-values
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 inherits
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 is-accessor-descriptor
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 is-binary-path
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 is-buffer
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 is-data-descriptor
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 is-descriptor
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 is-extendable
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 is-extglob
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 is-glob
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 is-number
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 is-plain-object
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 is-windows
+drwxr-xr-x   10 hasmith  2017_april   340 May  8 15:04 isarray
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 isobject
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 kind-of
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 map-cache
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 mixin-deep
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 ms
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 ansi-styles
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 anymatch
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 arr-diff
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 arr-flatten
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 arr-union
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 array-unique
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 assign-symbols
+drwxr-xr-x    5 hasmith  2017_april   170 May  8 15:04 async-each
+drwxr-xr-x   11 hasmith  2017_april   374 May  8 15:04 atob
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 base
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 binary-extensions
+drwxr-xr-x    8 hasmith  2017_april   272 May  8 15:04 braces
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 cache-base
+drwxr-xr-x    9 hasmith  2017_april   306 May  8 15:04 chalk
+drwxr-xr-x    8 hasmith  2017_april   272 May  8 15:04 chokidar
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 class-utils
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 collection-visit
+drwxr-xr-x    9 hasmith  2017_april   306 May  8 15:04 color-convert
+drwxr-xr-x    9 hasmith  2017_april   306 May  8 15:04 color-name
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 component-emitter
+drwxr-xr-x    5 hasmith  2017_april   170 May  8 15:04 copy-descriptor
+drwxr-xr-x    8 hasmith  2017_april   272 May  8 15:04 core-util-is
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 decode-uri-component
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 escape-string-regexp
+drwxr-xr-x    9 hasmith  2017_april   306 May  8 15:04 expand-brackets
+drwxr-xr-x    9 hasmith  2017_april   306 May  8 15:04 extglob
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 fill-range
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 for-in
+drwxr-xr-x   13 hasmith  2017_april   442 May  8 15:04 fsevents
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 glob-parent
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 map-visit
+drwxr-xr-x    8 hasmith  2017_april   272 May  8 15:04 micromatch
+drwxr-xr-x   30 hasmith  2017_april  1020 May  8 15:04 nan
+drwxr-xr-x    8 hasmith  2017_april   272 May  8 15:04 nanomatch
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 normalize-path
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 object-copy
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 object-visit
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 object.pick
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 pascalcase
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 path-dirname
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 path-is-absolute
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 posix-character-classes
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 process-nextick-args
+drwxr-xr-x   18 hasmith  2017_april   612 May  8 15:04 readable-stream
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 readdirp
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 regex-not
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 remove-trailing-separator
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 repeat-element
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 repeat-string
+drwxr-xr-x   11 hasmith  2017_april   374 May  8 15:04 resolve-url
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 ret
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 safe-buffer
+drwxr-xr-x    9 hasmith  2017_april   306 May  8 15:04 safe-regex
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 set-value
+drwxr-xr-x    8 hasmith  2017_april   272 May  8 15:04 snapdragon
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 snapdragon-node
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 snapdragon-util
+drwxr-xr-x    9 hasmith  2017_april   306 May  8 15:04 source-map
+drwxr-xr-x   16 hasmith  2017_april   544 May  8 15:04 source-map-resolve
+drwxr-xr-x   12 hasmith  2017_april   408 May  8 15:04 source-map-url
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 split-string
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 static-extend
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 string_decoder
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 supports-color
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 to-object-path
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 to-regex
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 to-regex-range
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 union-value
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 unset-value
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 15:04 upath
+drwxr-xr-x    8 hasmith  2017_april   272 May  8 15:04 urix
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 use
+drwxr-xr-x    8 hasmith  2017_april   272 May  8 15:04 util-deprecate
+drwxr-xr-x    5 hasmith  2017_april   170 May  8 15:04 types-registry
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 14:07 csstype
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types:
+total 0
+drwxr-xr-x   86 hasmith  2017_april  2924 May  8 15:29 .
+drwxr-xr-x  106 hasmith  2017_april  3604 May  8 15:29 ..
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:29 react-twitter-auth
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:06 oauth
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:06 passport-oauth2
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 caseless
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 dateformat
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 eslint
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 estree
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 events
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 express-jwt
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 express-unless
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 form-data
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 glob
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 glob-stream
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 glob-watcher
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 gulp
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 gulp-nodemon
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 gulp-util
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 json-schema
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 jsonwebtoken
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 minimatch
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 orchestrator
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 q
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 readable-stream
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 replace-ext
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 request
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 sequencify
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 sprintf
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 through2
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 tough-cookie
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 undertaker
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 undertaker-registry
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 vinyl
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 15:04 vinyl-fs
+drwxr-xr-x    9 hasmith  2017_april   306 May  8 14:07 react-dom
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 14:07 scheduler
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 compression
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 connect-mongo
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 cookie-parser
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 cors
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 helmet
+drwxr-xr-x   14 hasmith  2017_april   476 May  8 14:07 history
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 invariant
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 14:07 nodemailer
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 object-assign
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 passport-local-mongoose
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 prop-types
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 14:07 react
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 react-router
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 react-router-dom
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 14:07 warning
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 async
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 atob
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 bcryptjs
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 body-parser
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 bson
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 connect
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 connect-ensure-login
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 connect-flash
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 cookie
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 cookie-signature
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 debug
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 depd
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 dotenv
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 ejs
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 express
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 express-ejs-layouts
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 express-serve-static-core
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 express-session
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 merge-descriptors
+drwxr-xr-x    7 hasmith  2017_april   238 May  8 13:31 mime
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 mongodb
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 mongoose
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 morgan
+drwxr-xr-x   48 hasmith  2017_april  1632 May  8 13:31 node
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 on-headers
+drwxr-xr-x    5 hasmith  2017_april   170 May  8 13:31 parseurl
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 passport
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 passport-local
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 passport-strategy
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 passport-twitter
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 pause
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 range-parser
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 serve-static
+drwxr-xr-x    6 hasmith  2017_april   204 May  8 13:31 uid-safe
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/react-twitter-auth:
+total 32
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:29 .
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+-rw-r--r--   1 hasmith  2017_april  1792 May  8 15:29 package.json
+-rw-r--r--   1 hasmith  2017_april  1162 Aug  6  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   581 Aug  6  2018 README.md
+-rw-r--r--   1 hasmith  2017_april   925 Aug  6  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/oauth:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:06 .
+-rw-r--r--   1 hasmith  2017_april  1706 May  8 15:06 package.json
+-rw-r--r--   1 hasmith  2017_april  7497 Oct 15  2018 index.d.ts
+-rw-r--r--   1 hasmith  2017_april  1183 Oct 15  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   534 Oct 15  2018 README.md
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/passport-oauth2:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:06 .
+-rw-r--r--   1 hasmith  2017_april  2023 May  8 15:06 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Dec 10 15:45 LICENSE
+-rw-r--r--   1 hasmith  2017_april   698 Dec 10 15:45 README.md
+-rw-r--r--   1 hasmith  2017_april  3996 Dec 10 15:45 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/caseless:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1822 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Mar 11 11:30 LICENSE
+-rw-r--r--   1 hasmith  2017_april   575 Mar 11 11:30 README.md
+-rw-r--r--   1 hasmith  2017_april  1257 Mar 11 11:30 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/dateformat:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1712 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Dec 24 21:33 LICENSE
+-rw-r--r--   1 hasmith  2017_april   547 Dec 24 21:33 README.md
+-rw-r--r--   1 hasmith  2017_april  2540 Dec 24 21:33 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/eslint:
+total 64
+drwxr-xr-x  86 hasmith  2017_april   2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april    204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april   1813 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april   1183 Jan 28 12:34 LICENSE
+-rw-r--r--   1 hasmith  2017_april    577 Jan 28 12:34 README.md
+-rw-r--r--   1 hasmith  2017_april  17278 Jan 28 12:34 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/estree:
+total 56
+drwxr-xr-x  86 hasmith  2017_april   2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april    204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april   1588 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april   1183 Apr 17  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april    498 Apr 17  2018 README.md
+-rw-r--r--   1 hasmith  2017_april  15492 Apr 17  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/events:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1676 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Jan 23 19:19 LICENSE
+-rw-r--r--   1 hasmith  2017_april   527 Jan 23 19:19 README.md
+-rw-r--r--   1 hasmith  2017_april  1273 Jan 23 19:19 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/express-jwt:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1992 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Mar 19 16:48 LICENSE
+-rw-r--r--   1 hasmith  2017_april   660 Mar 19 16:48 README.md
+-rw-r--r--   1 hasmith  2017_april  2063 Mar 19 16:48 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/express-unless:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1897 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Feb 13 12:02 LICENSE
+-rw-r--r--   1 hasmith  2017_april   623 Feb 13 12:02 README.md
+-rw-r--r--   1 hasmith  2017_april  1090 Feb 13 12:02 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/form-data:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1813 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Nov  8  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   610 Nov  8  2017 README.md
+-rw-r--r--   1 hasmith  2017_april  1501 Nov  8  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/glob:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1791 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Sep 27  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   563 Sep 27  2018 README.md
+-rw-r--r--   1 hasmith  2017_april  3053 Sep 27  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/glob-stream:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1762 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1162 Dec  3  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   556 Dec  3  2017 README.md
+-rw-r--r--   1 hasmith  2017_april  1724 Dec  3  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/glob-watcher:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1720 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Apr 22 15:55 LICENSE
+-rw-r--r--   1 hasmith  2017_april   515 Apr 22 15:55 README.md
+-rw-r--r--   1 hasmith  2017_april  7271 Apr 22 15:55 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/gulp:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1856 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Mar  5 09:40 LICENSE
+-rw-r--r--   1 hasmith  2017_april   598 Mar  5 09:40 README.md
+-rw-r--r--   1 hasmith  2017_april  3163 Mar  5 09:40 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/gulp-nodemon:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1650 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1162 Jan 29  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   504 Jan 29  2018 README.md
+-rw-r--r--   1 hasmith  2017_april  2613 Jan 29  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/gulp-util:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1695 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Nov  9  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   510 Nov  9  2017 README.md
+-rw-r--r--   1 hasmith  2017_april  3876 Nov  9  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/json-schema:
+total 72
+drwxr-xr-x  86 hasmith  2017_april   2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april    204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april   1923 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april   1183 Feb 13 10:42 LICENSE
+-rw-r--r--   1 hasmith  2017_april    654 Feb 13 10:42 README.md
+-rw-r--r--   1 hasmith  2017_april  24269 Feb 13 10:42 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/jsonwebtoken:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  2145 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Mar  7 16:40 LICENSE
+-rw-r--r--   1 hasmith  2017_april   734 Mar  7 16:40 README.md
+-rw-r--r--   1 hasmith  2017_april  6032 Mar  7 16:40 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/minimatch:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1683 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1162 Jan  4  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   537 Jan  4  2018 README.md
+-rw-r--r--   1 hasmith  2017_april  5588 Jan  4  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/orchestrator:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1758 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Nov  9  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   569 Nov  9  2017 README.md
+-rw-r--r--   1 hasmith  2017_april  7482 Nov  9  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/q:
+total 80
+drwxr-xr-x  86 hasmith  2017_april   2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april    204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april   1940 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april   1183 Mar 13 10:15 LICENSE
+-rw-r--r--   1 hasmith  2017_april    658 Mar 13 10:15 README.md
+-rw-r--r--   1 hasmith  2017_april  26866 Mar 13 10:15 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/readable-stream:
+total 48
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1780 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Feb 27 13:32 LICENSE
+-rw-r--r--   1 hasmith  2017_april   552 Feb 27 13:32 README.md
+-rw-r--r--   1 hasmith  2017_april  9376 Feb 27 13:32 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/replace-ext:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1555 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april   599 Sep 19  2016 README.md
+-rw-r--r--   1 hasmith  2017_april   327 Sep 19  2016 index.d.ts
+-rw-r--r--   1 hasmith  2017_april   784 Sep 19  2016 types-metadata.json
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/request:
+total 56
+drwxr-xr-x  86 hasmith  2017_april   2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april    204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april   2427 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april   1183 Nov  4  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april    900 Nov  4  2018 README.md
+-rw-r--r--   1 hasmith  2017_april  14713 Nov  4  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/sequencify:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1608 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april   635 Oct 16  2017 index.d.ts
+-rw-r--r--   1 hasmith  2017_april  1183 Oct 16  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   498 Oct 16  2017 README.md
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/sprintf:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1680 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1162 Aug 29  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   553 Aug 29  2017 README.md
+-rw-r--r--   1 hasmith  2017_april   506 Aug 29  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/through2:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  2063 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1162 Sep  7  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   720 Sep  7  2018 README.md
+-rw-r--r--   1 hasmith  2017_april  1888 Sep  7  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/tough-cookie:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1829 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Jan 17 15:41 LICENSE
+-rw-r--r--   1 hasmith  2017_april   594 Jan 17 15:41 README.md
+-rw-r--r--   1 hasmith  2017_april  7891 Jan 17 15:41 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/undertaker:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1885 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Apr  7 18:15 LICENSE
+-rw-r--r--   1 hasmith  2017_april   612 Apr  7 18:15 README.md
+-rw-r--r--   1 hasmith  2017_april  5166 Apr  7 18:15 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/undertaker-registry:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1737 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Oct 25  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   551 Oct 25  2017 README.md
+-rw-r--r--   1 hasmith  2017_april  1897 Oct 25  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/vinyl:
+total 48
+drwxr-xr-x  86 hasmith  2017_april   2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april    204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april   1842 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april   1183 Apr 10 09:24 LICENSE
+-rw-r--r--   1 hasmith  2017_april    560 Apr 10 09:24 README.md
+-rw-r--r--   1 hasmith  2017_april  10835 Apr 10 09:24 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/vinyl-fs:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 15:04 .
+-rw-r--r--   1 hasmith  2017_april  1878 May  8 15:04 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Feb 13 16:21 LICENSE
+-rw-r--r--   1 hasmith  2017_april   611 Feb 13 16:21 README.md
+-rw-r--r--   1 hasmith  2017_april  7732 Feb 13 16:21 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/react-dom:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   9 hasmith  2017_april   306 May  8 14:07 .
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:07 node-stream
+-rw-r--r--   1 hasmith  2017_april  2115 May  8 14:07 package.json
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:07 server
+drwxr-xr-x   3 hasmith  2017_april   102 May  8 14:07 test-utils
+-rw-r--r--   1 hasmith  2017_april  1183 Apr 11 10:57 LICENSE
+-rw-r--r--   1 hasmith  2017_april   758 Apr 11 10:57 README.md
+-rw-r--r--   1 hasmith  2017_april  3351 Apr 11 10:57 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/react-dom/node-stream:
+total 8
+drwxr-xr-x  3 hasmith  2017_april  102 May  8 14:07 .
+drwxr-xr-x  9 hasmith  2017_april  306 May  8 14:07 ..
+-rw-r--r--  1 hasmith  2017_april  643 Apr 11 10:57 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/react-dom/server:
+total 8
+drwxr-xr-x  3 hasmith  2017_april   102 May  8 14:07 .
+drwxr-xr-x  9 hasmith  2017_april   306 May  8 14:07 ..
+-rw-r--r--  1 hasmith  2017_april  1889 Apr 11 10:57 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/react-dom/test-utils:
+total 24
+drwxr-xr-x  3 hasmith  2017_april    102 May  8 14:07 .
+drwxr-xr-x  9 hasmith  2017_april    306 May  8 14:07 ..
+-rw-r--r--  1 hasmith  2017_april  10912 Apr 11 10:57 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/scheduler:
+total 48
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   7 hasmith  2017_april   238 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1756 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Apr  9 11:02 LICENSE
+-rw-r--r--   1 hasmith  2017_april   534 Apr  9 11:02 README.md
+-rw-r--r--   1 hasmith  2017_april  1490 Apr  9 11:02 index.d.ts
+-rw-r--r--   1 hasmith  2017_april  4122 Apr  9 11:02 tracing.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/compression:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1740 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april  1162 Mar 15  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   554 Mar 15  2018 README.md
+-rw-r--r--   1 hasmith  2017_april  2127 Mar 15  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/connect-mongo:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1824 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Mar  5 08:40 LICENSE
+-rw-r--r--   1 hasmith  2017_april   577 Mar  5 08:40 README.md
+-rw-r--r--   1 hasmith  2017_april  3230 Mar  5 08:40 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/cookie-parser:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1762 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april  1162 Aug 21  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   565 Aug 21  2017 README.md
+-rw-r--r--   1 hasmith  2017_april  1037 Aug 21  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/cors:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1617 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Apr 25 15:24 LICENSE
+-rw-r--r--   1 hasmith  2017_april   485 Apr 25 15:24 README.md
+-rw-r--r--   1 hasmith  2017_april  1061 Apr 25 15:24 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/helmet:
+total 48
+drwxr-xr-x  86 hasmith  2017_april   2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april    204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april   1932 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april   1183 Mar  7 15:20 LICENSE
+-rw-r--r--   1 hasmith  2017_april    648 Mar  7 15:20 README.md
+-rw-r--r--   1 hasmith  2017_april  10148 Mar  7 15:20 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/history:
+total 96
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x  14 hasmith  2017_april   476 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1837 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april   668 Oct 17  2018 DOMUtils.d.ts
+-rw-r--r--   1 hasmith  2017_april    33 Oct 17  2018 ExecutionEnvironment.d.ts
+-rw-r--r--   1 hasmith  2017_april   321 Oct 17  2018 LocationUtils.d.ts
+-rw-r--r--   1 hasmith  2017_april   461 Oct 17  2018 PathUtils.d.ts
+-rw-r--r--   1 hasmith  2017_april   341 Oct 17  2018 createBrowserHistory.d.ts
+-rw-r--r--   1 hasmith  2017_april   365 Oct 17  2018 createHashHistory.d.ts
+-rw-r--r--   1 hasmith  2017_april   579 Oct 17  2018 createMemoryHistory.d.ts
+-rw-r--r--   1 hasmith  2017_april   690 Oct 17  2018 createTransitionManager.d.ts
+-rw-r--r--   1 hasmith  2017_april  3881 Oct 17  2018 index.d.ts
+-rw-r--r--   1 hasmith  2017_april  1183 Oct 17  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   589 Oct 17  2018 README.md
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/invariant:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1605 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april  1162 Aug 21  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   504 Aug 21  2017 README.md
+-rw-r--r--   1 hasmith  2017_april   450 Aug 21  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/nodemailer:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   7 hasmith  2017_april   238 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1873 May  8 14:07 package.json
+drwxr-xr-x  21 hasmith  2017_april   714 May  8 14:07 lib
+-rw-r--r--   1 hasmith  2017_april  1183 Apr 26 12:28 LICENSE
+-rw-r--r--   1 hasmith  2017_april   604 Apr 26 12:28 README.md
+-rw-r--r--   1 hasmith  2017_april  2908 Apr 26 12:28 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/nodemailer/lib:
+total 144
+drwxr-xr-x   7 hasmith  2017_april   238 May  8 14:07 ..
+drwxr-xr-x  21 hasmith  2017_april   714 May  8 14:07 .
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:07 fetch
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:07 mailer
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:07 mime-funcs
+drwxr-xr-x   5 hasmith  2017_april   170 May  8 14:07 sendmail-transport
+-rw-r--r--   1 hasmith  2017_april   452 Apr 26 12:28 addressparser.d.ts
+-rw-r--r--   1 hasmith  2017_april   576 Apr 26 12:28 base64.d.ts
+-rw-r--r--   1 hasmith  2017_april  1864 Apr 26 12:28 dkim.d.ts
+-rw-r--r--   1 hasmith  2017_april  1216 Apr 26 12:28 json-transport.d.ts
+-rw-r--r--   1 hasmith  2017_april   711 Apr 26 12:28 mail-composer.d.ts
+-rw-r--r--   1 hasmith  2017_april  4930 Apr 26 12:28 mime-node.d.ts
+-rw-r--r--   1 hasmith  2017_april   677 Apr 26 12:28 qp.d.ts
+-rw-r--r--   1 hasmith  2017_april  2597 Apr 26 12:28 ses-transport.d.ts
+-rw-r--r--   1 hasmith  2017_april  1885 Apr 26 12:28 shared.d.ts
+-rw-r--r--   1 hasmith  2017_april  9477 Apr 26 12:28 smtp-connection.d.ts
+-rw-r--r--   1 hasmith  2017_april  3532 Apr 26 12:28 smtp-pool.d.ts
+-rw-r--r--   1 hasmith  2017_april  2584 Apr 26 12:28 smtp-transport.d.ts
+-rw-r--r--   1 hasmith  2017_april  1608 Apr 26 12:28 stream-transport.d.ts
+-rw-r--r--   1 hasmith  2017_april   303 Apr 26 12:28 well-known.d.ts
+-rw-r--r--   1 hasmith  2017_april  4003 Apr 26 12:28 xoauth2.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/nodemailer/lib/fetch:
+total 16
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:07 .
+drwxr-xr-x  21 hasmith  2017_april   714 May  8 14:07 ..
+-rw-r--r--   1 hasmith  2017_april  1510 Apr 26 12:28 cookies.d.ts
+-rw-r--r--   1 hasmith  2017_april   932 Apr 26 12:28 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/nodemailer/lib/mailer:
+total 32
+drwxr-xr-x   4 hasmith  2017_april    136 May  8 14:07 .
+drwxr-xr-x  21 hasmith  2017_april    714 May  8 14:07 ..
+-rw-r--r--   1 hasmith  2017_april  11849 Apr 26 12:28 index.d.ts
+-rw-r--r--   1 hasmith  2017_april    699 Apr 26 12:28 mail-message.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/nodemailer/lib/mime-funcs:
+total 16
+drwxr-xr-x   4 hasmith  2017_april   136 May  8 14:07 .
+drwxr-xr-x  21 hasmith  2017_april   714 May  8 14:07 ..
+-rw-r--r--   1 hasmith  2017_april  3182 Apr 26 12:28 index.d.ts
+-rw-r--r--   1 hasmith  2017_april   133 Apr 26 12:28 mime-types.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/nodemailer/lib/sendmail-transport:
+total 24
+drwxr-xr-x   5 hasmith  2017_april   170 May  8 14:07 .
+drwxr-xr-x  21 hasmith  2017_april   714 May  8 14:07 ..
+-rw-r--r--   1 hasmith  2017_april  1681 Apr 26 12:28 index.d.ts
+-rw-r--r--   1 hasmith  2017_april   129 Apr 26 12:28 le-unix.d.ts
+-rw-r--r--   1 hasmith  2017_april   135 Apr 26 12:28 le-windows.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/object-assign:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1596 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april   901 Oct 26  2016 index.d.ts
+-rw-r--r--   1 hasmith  2017_april   602 Oct 26  2016 README.md
+-rw-r--r--   1 hasmith  2017_april   787 Oct 26  2016 types-metadata.json
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/passport-local-mongoose:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1814 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Nov 18 18:00 LICENSE
+-rw-r--r--   1 hasmith  2017_april   564 Nov 18 18:00 README.md
+-rw-r--r--   1 hasmith  2017_april  3996 Nov 18 18:00 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/prop-types:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1884 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Apr 17 14:01 LICENSE
+-rw-r--r--   1 hasmith  2017_april   607 Apr 17 14:01 README.md
+-rw-r--r--   1 hasmith  2017_april  3679 Apr 17 14:01 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/react:
+total 296
+drwxr-xr-x  86 hasmith  2017_april    2924 May  8 15:29 ..
+drwxr-xr-x   7 hasmith  2017_april     238 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april    3603 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april    1183 May  7 20:15 LICENSE
+-rw-r--r--   1 hasmith  2017_april    1499 May  7 20:15 README.md
+-rw-r--r--   1 hasmith  2017_april    6748 May  7 20:15 global.d.ts
+-rw-r--r--   1 hasmith  2017_april  129579 May  7 20:15 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/react-router:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  3629 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 May  7 15:59 LICENSE
+-rw-r--r--   1 hasmith  2017_april  1506 May  7 15:59 README.md
+-rw-r--r--   1 hasmith  2017_april  5534 May  7 15:59 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/react-router-dom:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  2179 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 May  6 01:59 LICENSE
+-rw-r--r--   1 hasmith  2017_april   755 May  6 01:59 README.md
+-rw-r--r--   1 hasmith  2017_april  2084 May  6 01:59 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/warning:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 14:07 .
+-rw-r--r--   1 hasmith  2017_april  1485 May  8 14:07 package.json
+-rw-r--r--   1 hasmith  2017_april   558 Nov 30  2016 README.md
+-rw-r--r--   1 hasmith  2017_april   325 Nov 30  2016 index.d.ts
+-rw-r--r--   1 hasmith  2017_april   699 Nov 30  2016 types-metadata.json
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/async:
+total 56
+drwxr-xr-x  86 hasmith  2017_april   2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april    204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april   2045 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april   1183 May  8 11:19 LICENSE
+-rw-r--r--   1 hasmith  2017_april    706 May  8 11:19 README.md
+-rw-r--r--   1 hasmith  2017_april  15557 May  8 11:19 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/atob:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  1601 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Mar 12 10:11 LICENSE
+-rw-r--r--   1 hasmith  2017_april   494 Mar 12 10:11 README.md
+-rw-r--r--   1 hasmith  2017_april   322 Mar 12 10:11 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/bcryptjs:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  1764 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Sep 19  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   581 Sep 19  2018 README.md
+-rw-r--r--   1 hasmith  2017_april  5283 Sep 19  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/body-parser:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  2133 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Apr 24  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   744 Apr 24  2018 README.md
+-rw-r--r--   1 hasmith  2017_april  1877 Apr 24  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/bson:
+total 72
+drwxr-xr-x  86 hasmith  2017_april   2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april    204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april   1793 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april   1183 Feb 12 11:47 LICENSE
+-rw-r--r--   1 hasmith  2017_april    580 Feb 12 11:47 README.md
+-rw-r--r--   1 hasmith  2017_april  22710 Feb 12 11:47 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/connect:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  1702 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Apr 16  2018 LICENSE
+-rw-r--r--   1 hasmith  2017_april   537 Apr 16  2018 README.md
+-rw-r--r--   1 hasmith  2017_april  3415 Apr 16  2018 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/connect-ensure-login:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  1753 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Nov  8  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   551 Nov  8  2017 README.md
+-rw-r--r--   1 hasmith  2017_april  2374 Nov  8  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/connect-flash:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  1685 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Nov  8  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   529 Nov  8  2017 README.md
+-rw-r--r--   1 hasmith  2017_april   758 Nov  8  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/cookie:
+total 40
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  1580 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Nov 20 08:52 LICENSE
+-rw-r--r--   1 hasmith  2017_april   473 Nov 20 08:52 README.md
+-rw-r--r--   1 hasmith  2017_april  5007 Nov 20 08:52 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/cookie-signature:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  1703 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Feb 13 08:16 LICENSE
+-rw-r--r--   1 hasmith  2017_april   529 Feb 13 08:16 README.md
+-rw-r--r--   1 hasmith  2017_april   581 Feb 13 08:16 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/debug:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  2042 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1183 Apr 11 17:07 LICENSE
+-rw-r--r--   1 hasmith  2017_april   708 Apr 11 17:07 README.md
+-rw-r--r--   1 hasmith  2017_april  1446 Apr 11 17:07 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/depd:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  1665 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1162 Sep  7  2017 LICENSE
+-rw-r--r--   1 hasmith  2017_april   536 Sep  7  2017 README.md
+-rw-r--r--   1 hasmith  2017_april  1654 Sep  7  2017 index.d.ts
+
+//Volumes/Storage/cache/hasmith/Library/Caches/typescript/3.3/node_modules/@types/dotenv:
+total 32
+drwxr-xr-x  86 hasmith  2017_april  2924 May  8 15:29 ..
+drwxr-xr-x   6 hasmith  2017_april   204 May  8 13:31 .
+-rw-r--r--   1 hasmith  2017_april  1905 May  8 13:31 package.json
+-rw-r--r--   1 hasmith  2017_april  1984 Mar 29 11:46 index.d.ts
+-rw-r--r--   1 hasmith  2017_april  1183 Mar 29 11:46 LICENSE
+-rw-r--r--   1 hasmith  2017_april   624 Mar 

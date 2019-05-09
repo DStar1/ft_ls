@@ -6,7 +6,7 @@
 /*   By: hasmith <hasmith@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/18 20:54:52 by hasmith           #+#    #+#             */
-/*   Updated: 2018/04/08 18:33:02 by hasmith          ###   ########.fr       */
+/*   Updated: 2019/05/08 17:37:01 by hasmith          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		suffix(char *dir, t_lsargs *data)
 		acl_free(acl);
 		acl = 0;
 	}
-	if (listxattr(dir, 0, 0, 0) > 0)
+	if (listxattr(dir, 0, 0, XATTR_NOFOLLOW) != 0)
 		data->suffix = '@';
 	else if (acl != 0)
 	{
